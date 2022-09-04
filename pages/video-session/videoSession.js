@@ -1,5 +1,5 @@
 import React from 'react'
-import './videoSession.scss'
+import styles from './videoSession.module.scss'
 
 
 
@@ -7,7 +7,7 @@ import './videoSession.scss'
 function VideoSession() {
   return (
     <div>
-      <div className="video-cover" >
+      {/* <div className="video-cover" >
         <img src="images/video-session/video-avatar.png" alt=''/>
       </div>
       <div className="video-cover-second">
@@ -26,7 +26,7 @@ function VideoSession() {
         <div className="video-cover-utils-video">
         <img src="images/video-session/video-cancel.svg" alt=""/>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
