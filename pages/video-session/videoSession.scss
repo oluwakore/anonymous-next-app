@@ -1,0 +1,68 @@
+.video-cover {
+  height: 100vh;
+  width: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+.video-cover-second {
+  margin-top: -100vh;
+  display: flex;
+  flex-direction: row;
+
+
+  .video-cover-second-expand {
+    // background-color: black;
+    height: 41px;
+    width: 41px;
+    margin-left: -60px;
+    margin-top: 20px;
+  }
+}
+
+.video-cover-utils {
+  margin: auto;
+  margin-top: 22%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  // background-color:  greenyellow;
+  height: 128px;
+  width: 570px;
+  z-index: 100;
+}
+
+.video-cover-utils-mic {
+  background-color: #ffff;
+  width: 126px;
+  height: 126px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-cover-utils-phone {
+  background-color: #FF0000;
+  width: 126px;
+  height: 126px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.video-cover-utils-video {
+  background-color: #ffff;
+  width: 126px;
+  height: 126px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

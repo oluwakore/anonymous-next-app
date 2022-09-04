@@ -1,0 +1,147 @@
+.shareStoryContainer {
+  // margin-top: 59px;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: center;
+  padding: 2em;
+  // height: 80vh;
+  // width: 100%;
+  // background-color: coral;
+
+  .shareStoryTitle {
+    h1 {
+      text-align: center;
+      font-weight: 600;
+      font-size: 2.1rem;
+    }
+    p {
+      text-align: center;
+      // margin-top: -20px;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+  }
+
+  .shareStoryForm {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    gap: 3rem;
+    // width: 70%;
+    // margin-top: 100px;
+    // width: 70%;
+    // outline: 3px solid firebrick;
+    // padding: 4em;
+
+
+
+    .btnShare {
+      // margin-top: 130px;
+      // width: 100%;
+      background-color: #0e0b8b;
+      color: #ffff;
+      border-radius: 2rem;
+      padding: 1rem 2rem;
+      outline: none;
+      border: none; 
+      font-size: 1.1em;
+      
+      // margin-bottom: 200px;
+    }
+
+    .shareStoryMic {
+      // margin-top: 42.5px;
+      background-color: #0e0b8b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 4.5em;
+      width: 6em;
+      margin: auto !important;
+    }
+
+    .shareStoryTextarea {
+      margin-top: 3rem !important;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      // justify-content: center;
+      // align-items: center;
+      // outline: 2px solid magenta;
+      margin: auto;
+      // padding: 1rem;
+      width: 80%;
+      height: 100%;
+       min-height: 500px;
+      border: 2px solid #0e0b8b;
+      border-radius: 1.2rem;
+
+
+      textarea {
+        // margin-top: 10px;
+        // margin-left: 10px;
+        // margin-right: -2em;
+        // margin: auto;
+        // flex: 1;
+        background: transparent;
+        min-height: 30em;
+        width: 100%;
+        padding: 1em;
+        border: none;
+        outline: none;
+        resize: none;
+        // resize: none;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+.sharestorytop {
+  // outline: 3px solid yellow;
+  // width: 100%;
+  // margin: auto !important;
+}
+
+.sharestorymiccover {
+  // outline:  3px solid firebrick;
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+}
+
+.textareaCover {
+  // outline: 3px solid blueviolet;
+  min-height: 30rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .shareStoryTop {
+    // outline: 3px solid yellow;
+    // width: 90% !important;
+  }
+
+  .shareStoryTitle {
+    h1 {
+      font-size: 1.6rem !important;
+    }
+    p {
+      
+      font-size: .8rem !important;
+    }
+  }
+
+  .btnShare  { 
+    font-size: 0.95rem;
+    
+  }
+
+  .shareStoryContainer { 
+    height: 80vh;
+  }
+}

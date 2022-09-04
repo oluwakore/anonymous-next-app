@@ -1,0 +1,303 @@
+
+
+.landingContainer {
+  // overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  // outline: 3px solid green;
+  // justify-content: space-between;
+  align-items: center;
+  // margin-top: 3rem;
+  // padding-bottom: 10rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // background-image: url('./images/Home/landing-pic.jpg');
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Poppins';
+  // padding-left: 2rem;
+  // padding-right: 2rem;
+  
+  .wavyPart{
+    width: 100%;
+    // bottom: 1rem !important;
+    // outline: 3px solid white !important;
+    // position: absolute;
+    // border: 2px solid rgba($color: #ffff, $alpha: 1);
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      outline: none;
+     //  align-self: flex-end;
+     //  justify-self: flex-end;
+     }
+  }
+ 
+
+
+  .landingNav {
+   
+    margin-top: 3rem;
+    // outline: 3px solid firebrick;
+    display: flex;
+    flex-direction: row;
+    gap: 4em;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+
+    .landingImg {
+       img {
+        margin: auto;
+       }
+    }
+
+    .landingNavItems1 {
+      // outline: 3px solid yellow;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      ul {
+
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+        // padding: 0 2rem;
+        margin: auto;
+        li {
+          list-style-type: none;
+          color: #ffff;
+          font-size: 1.2rem;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .landingButtons {
+      display: flex;
+      // outline: 2px solid white;
+      gap: 2em;
+
+      .button1 {
+      background: transparent;
+      color: #ffff;
+      border: 2px solid #ffff;
+      font-size: 1rem;
+      border-radius: 50px;
+      padding: .5rem 2.5rem;
+      outline: none;
+      cursor: pointer;
+      // min-width: 100px;
+      &:hover {
+        // background: #ffff;
+        color: #0e0b8b;
+        border: 2px solid #0e0b8b;
+      }
+      }
+
+      .button2 {
+        background: #0e0b8b;
+        color: #ffff;
+        border: none;
+        font-size: 1rem;
+        border-radius: 50px;
+        padding: .5rem 2.5rem;
+        outline: none;
+        cursor: pointer;
+
+        &:hover {
+          color: #0e0b8b;
+          background: white;
+        }
+      }
+
+    }    
+  }
+
+  .landingDesc {
+    // outline: 3px solid green;
+    width: 90%;
+    margin-top: 10rem;
+    
+    h1 {
+      font-size: 3rem;
+      line-height: 5rem;
+      font-weight: 700;
+      color: #ffff;
+    }
+
+    p {
+      width: 45%;
+      // outline: 3px solid white;
+      color: #ffff;
+      font-size: 1.5rem;
+    }
+
+    button {
+      background-color: #ffff;
+      color: #0e0b8b;
+      outline: none;
+      border: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      border-radius: 2rem;
+      padding: 0.6rem 2rem;
+
+      &:hover {
+        color: #ffff;
+        background-color: #0e0b8b;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px)  {
+ .landingNavItems1 { 
+  ul {
+    gap: 2rem !important;
+    li {
+      font-size: .7rem;
+    }
+  }
+ }
+
+ .landingButtons {
+  display: flex;
+  gap: .5rem !important;
+
+  .button1 {
+ 
+  font-size: .8rem;
+ 
+  padding: .5rem 1rem !important;
+  
+  }
+
+  .button2 {
+    
+    padding: .5rem 1rem !important;
+   
+  }
+
+}
+
+.landingNav {
+  width: 95% !important;
+  gap: 2rem !important;
+}
+
+.landingDesc {
+  // outline: 3px solid green;
+  width: 95% !important;
+  
+  h1 {
+    font-size: 2.4rem !important;
+    line-height: 4rem !important;
+  }
+
+  p {
+    width: 50% !important;
+    font-size: 1.4rem !important;
+  }
+
+  button {
+    font-weight: 510 !important;
+  }
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .logo-css {
+//   float: left;
+//   padding-top: 70px;
+// }
+
+// nav {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// nav ul {
+//   display: flex;
+//   align-items: center;
+//   gap: 60px;
+//   list-style: none;
+//   margin: 0;
+//   padding-top: 65px;
+// }
+
+// nav ul li a {
+//   font-family: "Poppins", sans-serif;
+//   font-weight: 600;
+//   font-size: 16px;
+//   color: #FFFFFF;
+//   text-decoration: none;
+// }
+
+// nav ul li a:hover {
+//   color: #0A66C2;
+// }
+
+// .landing-container {
+//     display: flex;
+//     height: 100vh;
+//     width: 100%;
+//     align-items: center;
+// }
+
+// .landing-container .landing-parent h1 {
+//     font-family: 'Poppins', sans-serif;
+//     font-weight: 700;
+//     font-size: 45px;
+//     line-height: 60px;
+//     color: #fff;
+//     margin-top: -50px;
+//     margin-bottom: 20px;
+//   }
+
+// .landing-container .landing-parent p {
+//     font-family: 'Poppins', sans-serif;
+//     font-weight: 500;
+//     font-size: 18px;
+//     line-height: 30px;
+//     color: #fff;
+//     margin-bottom: 30px;
+//   }
+
+// .landing-container .landing-parent {
+//     width: 650px;
+//   }
+
+// .AC {
+//   color: #00BCD7;
+// }
+// .primary-btn:hover {
+//   color: aliceblue;
+//   border: 2px solid #fff;
+//   background-color: #0A66C2;
+// }

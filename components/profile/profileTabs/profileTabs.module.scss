@@ -1,0 +1,162 @@
+.topContainer {
+  display: flex;
+
+  .coverMain {
+    // outline: 3px solid red;
+    margin: 5rem 0;
+    width: 100%;
+
+    .menuList {
+      display: flex;
+      flex-direction: column;
+      margin-top: 2rem;
+
+      .card {
+        font-size: 1.2rem;
+        color: rgba($color: #000000, $alpha: 0.5);
+        padding: 1rem;
+        display: flex;
+        // justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        cursor: pointer;
+      }
+
+      .cardActive {
+        background: #c1bfff;
+        color: #0e0b8b;
+      }
+    }
+
+    .avatarName {
+      background: #0e0b8b;
+      width: fit-content;
+      padding: 1rem 1.5rem;
+      border: 5px solid #ffff;
+      border-radius: 50%;
+      margin: auto;
+      h1 {
+        color: #ffff;
+        margin: auto;
+        font-size: 3.5rem;
+      }
+    }
+
+    .avatarNameDetails {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 0.8rem;
+        font-style: italic;
+        line-height: 0.2rem;
+      }
+    }
+  }
+
+  .sidebar {
+    flex: 1;
+    background: #dfdfdf;
+    // height: 100vh;
+    // padding: 2rem;
+  }
+
+  .comps {
+    flex: 4;
+    // justify-content: center;
+    // align-items: center;
+    // outline: 3px solid green;
+    margin: auto;
+
+    .compsCover {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8rem;
+
+
+      margin: auto;
+      // outline: 3px solid red;
+      width: fit-content;
+      padding: 2rem;
+
+      .detailsCover {
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+          font-size: 1.5rem;
+          color: #0e0b8b;
+          font-weight: 600;
+        }
+
+        .formCover {
+          background: #C1BFFF66;
+          padding: 5rem 2rem;
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          width: 30rem;
+          border-radius: 1rem;
+
+          .formCover1Button {
+
+           margin: auto;
+
+           button {
+            color: #ffff;
+            background: #0e0b8b;
+            font-size: 1.1rem;
+            border-radius: .2rem;
+            padding: .5rem 1rem;
+            outline: none;
+            border: none;
+            cursor: pointer;
+           }
+          }
+
+          .fillPart {
+            display: flex;
+            flex-direction: column;
+            gap: .2rem;
+            // outline: 3px solid green;
+
+            label {
+              color: #000000;
+              font-size: 1rem;
+            }
+
+            input {
+              outline: none;
+              border: 2px solid #0e0b8b;
+              background: transparent;
+              padding: .5rem 1rem;
+            }
+
+          }
+        }
+      }
+    }
+  }
+
+  .logoutPart {
+    margin-top: 8rem;
+    padding: 1rem 2rem;
+    h2 {
+      font-size: 1.2rem;
+      color: rgba($color: #000000, $alpha: 0.5);
+      cursor: pointer;
+    }
+
+    &:hover {
+      background: #c1bfff;
+      h2 {
+        color: #0e0b8b;
+      }
+    }
+  }
+}

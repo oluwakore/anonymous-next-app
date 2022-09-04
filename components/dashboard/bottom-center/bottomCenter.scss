@@ -1,0 +1,26 @@
+.bottom-center-container {
+  display: flex;
+  flex-direction: row;
+  background-color: #fcfcfc;
+  // outline: 3px solid firebrick;
+
+.bottom-left-part {
+  background-color: #0e0b8b;
+  width: 5.1%;
+}
+}
+
+
+
+@media screen and (max-width: 1024px)  {
+
+  .bottom-left-part {
+    background-color: #0e0b8b;
+    width: 3% !important;
+  }
+
+
+
+}
+
+

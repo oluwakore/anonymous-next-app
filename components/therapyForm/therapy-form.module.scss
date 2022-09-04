@@ -1,0 +1,482 @@
+.therapyFormContainerCover {
+  background-color:  #fcfcfc;
+  height: 100%;
+  // padding: 3rem;
+  // overflow: hidden;
+}
+
+.therapyFormContainer {
+  margin-top: .7rem;
+  // height: 100vh;
+  // display: flex;
+  // flex-direction: column;
+  
+//  outline: 3px solid salmon;
+
+
+  .therapyFormContainerTitle {
+   
+    text-align: center;
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+    
+    }
+    p {
+      font-size:  1rem;
+      font-weight: 500;
+     
+    }
+  }
+
+  .therapyForm1Container {
+    // outline: 3px solid green;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    padding: 2rem;
+    margin-top: 2rem !important;
+    width: fit-content;
+    // margin: auto;
+   
+  }
+  .formContainer1 {
+    // outline: 3px solid yellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5rem;
+    gap: 2rem;
+    margin: auto;
+    width: 80%;
+  }
+
+  .therapyForm1RadioGroups {
+    display: flex;
+    flex-direction: column;
+    // outline: 3px solid chartreuse;
+    justify-content: space-between;
+    gap: 2rem;
+    
+
+    h2 {
+      font-size: 1.2rem;
+    }
+
+    .therapyForm1RadioGroups1 {
+      display: flex;
+      flex-direction: row;
+      gap: 3rem;
+      // justify-content: space-between;
+      width: fit-content;
+      // padding: 0 30px;
+      // margin-bottom: 75px;
+      // margin-top: 20px;
+      // background-color: crimson;
+    }
+
+    .therapyForm1RadioGroups2 {
+      display: flex;
+      flex-direction: row;
+      gap: 3rem;
+      width: fit-content;
+      // justify-content: space-between;
+      // padding: 0 30px;
+      // margin-bottom: 75px;
+      // background-color: crimson;
+      // margin-top: 40px;
+    }
+    .therapyForm1RadioGroups3 {
+      display: flex;
+      flex-direction: row;
+      // outline: 3px solid firebrick;
+      justify-content: flex-start;
+      gap: 3rem;
+      // padding: 0 30px;
+      // margin-bottom: 75px;
+      // background-color: crimson;
+      // margin-top: 55px;
+      // background-color: coral;
+      // justify-content: space-between;
+      // width: 620px;
+
+      .therapyFormInputText {
+        display: flex;
+        flex-direction: row;
+        // justify-content: space-between;
+        // align-items: center;
+        // background-color: chartreuse;
+        border: 2px solid #0e0b8b;
+        // height: 54px;
+        // width: 294px;
+        // padding: 20px;
+        padding: .4rem;
+        border-radius: 1rem;
+
+        input[type="input"] {
+          // width: 250px;
+          // height: 48px;
+          font-size: .9rem;
+          outline: none;
+          border: none;
+          background: transparent;
+
+        }
+      }
+    }
+    .therapyForm1RadioGroups4 {
+      display: flex;
+      flex-direction: row;
+      gap: 3rem;
+    }
+    .therapyForm1RadioGroups5 {
+      display: flex;
+      flex-direction: row;
+      gap: 3rem;
+    }
+  }
+
+
+  .therapyForm1Headers {
+    border-right: 2px solid #5a5757;
+    display: flex;
+    padding: 0 2rem;
+    flex-direction: column;
+    gap: 7rem;
+
+   h2 {
+    font-size: 2rem;
+   }
+  }
+
+  .therapyColumns {
+    display: flex;
+    flex-direction: column;
+    // margin-right: 100px;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      // color: purple;
+      font-size: 1.1rem;
+      font-weight: 400;
+    }
+    span {
+      font-size: 1.1rem;
+      // font-weight: 500.5;
+    }
+    
+    input[type="radio"] {
+      width: 2.5em;
+      height: 2.5em;
+     accent-color: black;
+    }
+  }
+
+
+  .therapyButton {
+  
+  
+    
+    button {
+      background-color: #0e0b8b;
+      padding: .5em 6em;
+      border-radius: 2em;
+      color: #ffff;
+      font-size: 1.2rem;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+
+  .therapyForm1RadioGroups02 {
+    display: flex;
+    flex-direction: column;
+    // outline: 3px solid chartreuse;
+    justify-content: space-between;
+    gap: 2rem;
+   
+
+    h2 {
+      font-size: 1.2rem;
+    }
+
+    .therapyForm1RadioGroups01 {
+      display: flex;
+      flex-direction: row;
+      gap: 3rem;
+    }
+
+    .therapyForm1RadioGroups002 {
+      display: flex;
+      flex-direction: row;
+      gap: 3rem;
+    }
+    .therapyForm1RadioGroups03 {
+      display: flex;
+      flex-direction: row;
+      gap: 3rem;
+
+      .therapyFormInputText {
+        display: flex;
+        flex-direction: row;
+       
+        align-items: center;
+       
+        border: 2px solid #0e0b8b;
+     
+      }
+    }
+    .therapyForm1RadioGroups04 {
+      display: flex;
+      flex-direction: row;
+      gap: 3rem;
+      // padding: 0 30px;
+      // margin-bottom: 75px;
+      // margin-top: 100px;
+      // background-color: crimson;
+    }
+    .therapyForm1RadioGroups05 {
+      display: flex;
+      flex-direction: row;
+      gap: 3rem;
+     
+    }
+  }
+
+  .therapyForm2Container {
+    display: flex;
+    flex-direction: row;
+    
+  }
+
+  .therapyButton01 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    // margin-top: 5em;
+    padding: 3em;
+   
+    
+    button {
+       // height: 59px;
+      // width: 234px;
+      width: 50%;
+      background-color: #0e0b8b;
+      padding: .5em 5em;
+      border-radius: 2em;
+      color: #ffff;
+      font-size: 1.2rem;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+
+  .therapyForm3Container {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    padding: 2rem;
+    margin-top: 2rem;
+    // outline: 3px solid blueviolet;
+    width: 80%;
+  }
+
+  .therapyNotesContainer {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+
+    margin-top: 2rem;
+    padding: 2rem;
+
+    .therapyButton02 {
+      // outline: 3px solid green;
+      // padding: 3em;
+      width: 60%;
+      display: flex;
+      gap: 2rem;
+      margin: auto;
+      margin-top: 5rem;
+
+      button {
+       width: 50%;
+       background-color: #0e0b8b;
+       padding: .5rem 1rem;
+       border-radius: 2rem;
+       color: #ffff;
+       font-size: 1.2rem;
+       border: none;
+       outline: none;
+       cursor: pointer;
+     }
+
+    }
+
+    .therapyNotesVoicenote {
+      display: flex;
+      flex-direction: column;
+
+      h1 {
+        font-size: 1.4rem;
+        text-align: center;
+        
+      }
+
+      .therapyNotesVoicenoteMain {
+        border: 2px solid #0e0b8b;
+        height: 20em;
+        border-radius: 1em;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+        .therapyNotesVoicenoteMicrophone {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #0e0b8b;
+          padding: 1.5em;
+          // height: 74px;
+          // width: 96px;
+          // margin-bottom: 14px;
+        }
+      }
+    }
+    
+
+    .therapyNotesDivider {
+      margin-top: 2em;
+      h1 {
+        text-align: center;
+      }
+    }
+
+    .therapyNotesTextarea {
+      display: flex;
+      flex-direction: column;
+
+      h1 {
+        font-size: 1.4rem;
+        text-align: center;
+        
+      }
+
+    }
+
+    .therapyNotesTextareaPart {
+      border: 2px solid #0e0b8b;
+      // height: 319px;
+      border-radius: 1em;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1em;
+
+      textarea {
+        outline: none;
+        width: 100%;
+        height: 20em;
+        background-color: transparent;
+        border: none;
+        resize: none;
+        font-size: 1rem;
+      }
+    }
+  }
+
+
+}
+
+@media screen and (max-width: 1024px)  {
+  .therapyNotesContainer {
+    width: 80% !important; 
+  }
+
+  .therapyNotesTextarea {
+    h1 {
+      font-size: 1.15rem !important;
+    }
+
+  }
+
+  .therapyNotesVoicenote {
+    h1 {
+      font-size: 1.15rem !important;
+    }
+  }
+
+  .therapyNotesDivider {
+    h1 {
+      font-size: 1.5rem !important;
+      font-weight: 600;
+    }
+  }
+
+  .therapyButton02 {
+    button {
+     font-size: 1rem !important;
+     }
+  }
+
+  .therapyButton01 {
+    button {
+      font-size: 1rem !important;
+    }
+  }
+
+  .therapyForm1Headers {
+   h2 {
+    font-size: 1.5rem !important;
+   }
+  }
+
+  .therapyColumns {
+     h2 {
+      // color: purple;
+      font-size: 1rem !important;
+    }
+
+    input[type="radio"] {
+      width: 2em !important;
+      height: 2em !important;
+    }
+  }
+
+  .therapyButton {
+    button {
+      font-size: 1rem !important;
+    }
+  }
+
+  .formContainer1 {
+    // outline: 3px solid firebrick;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    width: 90% !important;
+    margin: auto !important;
+  }
+
+  .therapyColumns {
+    span {
+      font-size: 0.9rem !important;
+    }
+  }
+
+  .therapyForm1Container {
+    // outline: 3px solid purple;
+    width: 90% !important;
+  }
+
+  .therapyFormContainerCover {
+    height: 100vh !important;
+  }
+}

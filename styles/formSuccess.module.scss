@@ -1,0 +1,73 @@
+
+
+.topRoot {
+   background-color:  #fcfcfc;
+   height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.formSuccessContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  gap: 2em;
+  // outline: 3px solid firebrick;
+
+  h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #0e0b8b;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .formSuccessButton {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    font-size: 1rem;
+    // outline: 3px solid green;
+
+    button {
+      outline: none;
+      border: none;
+      background-color: #0e0b8b;
+      color: #ffff;
+      font-weight: 500;
+      border-radius: 2em;
+      padding: .5em 4em;
+      cursor: pointer;
+    }
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+  .formSuccessContainer {
+    h1 {
+      font-size: 1.2rem !important;
+       }
+  
+    p {
+      font-size: .8rem !important;
+      
+    }
+
+    .formSuccessButton {
+      font-size: .8rem !important;
+    }
+
+
+  }
+}

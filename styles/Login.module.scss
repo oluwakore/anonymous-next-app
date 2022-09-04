@@ -1,0 +1,240 @@
+.loginContainer {
+  display: flex;
+  flex-direction: row;
+  // height: 100vh;
+
+  .loginPic {
+    width: 50%;
+    img {
+      width: 100%;
+      height: 100vh;
+      // width: 756px;
+    }
+  }
+
+  .loginMain {
+    // margin-top: 56px !important;
+    margin: auto;
+    // outline: 3px solid sienna;
+    width: 50%;
+    padding: 1em;
+
+    .loginMainContainer {
+      display: flex;
+      flex-direction: column;
+
+      // width: 750px;
+      // outline: 3px solid purple;
+
+      .topText {
+        color: #0e0b8b;
+        font-weight: 600;
+        font-size: 2rem;
+        text-align: center;
+      }
+    }
+  }
+
+  .formGoogle {
+    margin: auto;
+    // margin-top: 67px !important;
+    // height: 60px;
+    min-width: fit-content;
+    width: 50%;
+    border: 2px solid #0e0b8b;
+    padding: 0.2rem 2rem;
+    border-radius: 3rem;
+    display: flex;
+    gap: 1em;
+    align-items: center !important;
+    justify-content: center;
+    // flex-direction: row !important;
+
+    p {
+      margin: auto;
+      font-size: 1.1rem;
+      // font-weight: 550;
+    }
+  }
+
+  .divider {
+    margin-top: 4rem;
+    h4 {
+      display: flex;
+      flex-direction: row;
+      color: black !important;
+      opacity: 50%;
+      // font-size: 24px;
+      // font-weight: 400;
+    }
+
+    h4:before,
+    h4:after {
+      content: "";
+      flex: 1 1;
+      border-bottom: 2px solid black;
+      opacity: 50%;
+      margin: auto;
+      // width: 300px;
+    }
+
+    h4:before {
+      margin-right: 20px;
+    }
+    h4:after {
+      margin-left: 20px;
+    }
+  }
+
+  .formContain {
+    // margin-top: 40px !important;
+    // // display: flex;
+    // height: 60px;
+    // width: 564px;
+    // margin: auto;
+
+    // background-color: black;
+    // padding: 10px;
+    // border: 2px solid #0e0b8b;
+    // border-radius: 50px;
+
+    input {
+      border: none;
+      // width: 500px;
+      // height: 35px;
+      outline: none;
+      // margin-left: 20px;
+    }
+  }
+
+  .forgotPasswordLink {
+    margin-top: -1.5em !important;
+    width: 55%;
+    // outline: 3px solid sandybrown;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    p {
+      font-style: italic;
+    }
+  }
+
+  .formzButton {
+    margin-top: 1.5rem !important;
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+    // outline: 3px solid crimson;
+    // width: 20%;
+    // margin: 0 auto;
+
+    .formzButtonCover {
+      padding: 0.5em 2em;
+      // outline: 3px solid greenyellow;
+      border-radius: 2em;
+      background-color: #0e0b8b;
+      cursor: pointer;
+    }
+
+    button {
+      outline: none;
+      border: none;
+      background-color: #0e0b8b;
+      color: white;
+      font-size: 1.1rem;
+
+      padding: 0.5rem 4rem;
+      font-weight: 600;
+      // height: 59px;
+      // width: 351px;
+      // width: 20%;
+      border-radius: 2rem;
+    }
+  }
+
+  .formzEnd {
+    // margin-top: 69px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+
+    .formzEndQuestion {
+      p {
+        font-weight: 400;
+        font-size: 1rem;
+      }
+    }
+
+    .formzEndLink {
+      // margin-left: 0.5rem;
+      p {
+        color: #0e0b8b;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.loginLower {
+  // outline: 3px solid springgreen;
+  // display: flex;
+  padding: 2em;
+  // justify-content: center;
+  // align-items: center;
+
+  .loginLowerMain {
+    // outline: 3px solid firebrick;
+    width: 60%;
+    margin: auto;
+    font-size: 1rem;
+  }
+}
+
+
+
+.error-holder {
+  // // margin: 1rem 0 !important;
+  // // margin: 0 auto;
+  // width: fit-content;
+  // // float: right !important;
+
+  // margin-bottom: -0.5rem !important;
+  // margin-left: 500px !important;
+
+  // text-transform: capitalize !important;
+}
+
+@media screen and (max-width: 1024px) {
+  .loginLowerMain {
+    // outline: 3px solid firebrick;
+    width: 70% !important;
+  }
+
+  .topText {
+    font-size: 1.7rem !important;
+  }
+
+  .formGoogle {
+    align-items: center !important;
+
+    p {
+      font-size: 1rem !important;
+    }
+  }
+
+  .formzEndQuestion {
+    p {
+      font-size: 0.9rem !important;
+    }
+  }
+
+  .formzEndLink {
+    p {
+      font-size: 0.9rem !important;
+    }
+  }
+}

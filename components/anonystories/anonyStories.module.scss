@@ -1,0 +1,261 @@
+.storiesContainer {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  width: 100%;
+
+  .storiesHeadliner {
+    display: flex;
+    // flex-direction: row;
+    // justify-content: center;
+    // align-items: center;
+    // outline: 3px solid green;
+    background-color: #E2DBFF;
+    // gap: 2em;
+    // height: 748px;
+    // width: 100%;
+    padding: 3rem 0;
+    font-size: 1rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+
+    .storiesNotes {
+      // display: flex;
+      // flex-direction: column;
+      // gap: 1em;
+      // padding: 92px;
+      width: 50%;
+
+      h1 {
+        color: #0e0b8b;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+      p {
+        font-size: 1rem;
+        font-weight: 400;
+        color: #5A5A5A;
+      }
+      button {
+        color: #0e0b8b;
+        background-color: transparent;
+        border: 2px solid #0e0b8b;
+        border-radius: 2em;
+        // height: 40px;
+        width: fit-content;
+        padding: .5em 1em;
+        font-size: .9rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .storiesMain {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 6rem 4em;
+    // margin-left: 50px;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    // outline: 3px solid forestgreen;
+    // background-color: coral;
+
+    .storiesMainTitle {
+      display: flex;
+      // outline: 3px solid yellow;
+      align-self: flex-start;
+      
+      h1 {
+        font-size: 2.1rem;
+        color: #0e0b8b;
+        font-weight: 600;
+      }
+    }
+  }
+
+
+
+  .storiesGrid { 
+    align-items: center;
+    justify-content: center;
+    // margin-top: 80px;
+    display: grid;
+    padding: 4em 0;
+    grid-template-columns: repeat(2, 5fr);
+    gap: 6rem;
+    width: 100%;
+    // margin-left: 60px;
+    // margin-left: 110px;
+
+    img {
+      height: auto;
+       width: 100%;
+    }
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    p {
+      color: #5A5A5A;
+      font-size: 1rem;
+      // max-width: 70em;
+      width: 100%;
+    }
+    span {
+      margin-left: 3rem;
+      color: #0e0b8b;
+      font-weight: 600;
+    }
+    
+  }
+
+  .storiesMainButtonGroup {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5rem;
+    justify-content: space-between;
+    width: 100%;
+    // outline: 3px solid pink;
+
+    .active {
+      
+     
+      color: #ffff;
+      background-color: #0e0b8b;
+      border: none;
+      outline: none;
+      font-size: 1.2rem;
+      border-radius: 50px;
+    }
+
+    button {
+     width: 33%;
+      padding: .5rem 3rem;
+      color: #ffff;
+      border: none;
+      outline: none;
+      font-size: 1.2rem;
+      background-color: lighten($color: #4745cc, $amount: 15);
+      border-radius: 50px;
+    }
+  }
+
+  .storiesHeadlinerContent {
+    // outline: 3px solid firebrick;
+    display: flex;
+    gap: 2rem;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2em;
+    margin: auto;
+  }
+
+  .storiesHeadlinerContentImages {
+    // outline: 3px solid yellow;
+    width: 50%;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .storiesGridMain {
+    // outline: 3px solid purple;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .storiesGridMainDesc {
+    
+    // outline: 3px solid blueviolet;
+    // margin-left: 1.2em;
+    // padding: .5em;
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+  .storiesHeadliner {
+    display: flex;
+    // outline: 3px solid green;
+    background-color: #E2DBFF;
+    padding: 3rem 4rem !important;
+    font-size: 1rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+
+    .storiesNotes {
+      h1 {
+        font-size: 1.2rem !important;
+      }
+      p {
+        font-size: .8rem !important;
+      }
+      button {
+        font-size: .8rem !important;
+      }
+    }
+  }
+
+ 
+  .storiesHeadlinerContent {
+    width: 95% !important;
+    padding: 0 1rem !important;
+  }
+
+  .storiesMainButtonGroup {
+    // outline: 3px solid red;
+
+    .active {
+      font-size: 1rem !important;
+    }
+
+    button {
+      font-size: 1rem !important;
+    }
+  }
+
+  .storiesGridMain {
+    // outline: 3px solid purple;
+  }
+
+  .storiesGrid { 
+   
+
+    img {
+      height: auto;
+       width: 100%;
+    }
+    h2 {
+      font-size: 1.2rem !important;
+    }
+
+    p {
+      font-size: .85rem !important;
+    }
+    span {
+      margin-left: 3.8rem !important;
+     
+    }
+    
+  }
+
+
+}

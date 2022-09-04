@@ -1,0 +1,232 @@
+.footerContainer {
+  background-color: #0e0b8b;
+  // padding: 7rem 0;
+  font-family: 'Poppins';
+  width: 100%;
+  // overflow: hidden;
+  // position: fixed;
+  bottom: 0;
+  left: 0; 
+  li {
+   list-style-type: none;
+  }
+
+  .mainContainer {
+   padding: 4em;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  //  outline: 3px solid gold;
+  }
+
+  .footerRow {
+    display: inline-flex;
+    // outline: 3px solid violet;
+    width: 70%;
+    gap: 2em;
+    justify-content: space-between;
+    padding: 3em;
+    // align-items: center;
+    // flex-wrap: wrap;
+
+    .footerColumnStoryPart {
+      width: 40%;
+      // outline: 3px solid white;
+      padding: .5em;
+      color: #ffff;
+
+      h4 {
+        color: #ffff;
+        font-size: 1.3rem;
+      }
+      ul {
+        // outline: 3px solid green;
+        font-size: 1rem;
+        // width: fit-content;
+        li {
+    
+          margin-left: -3em;
+        }
+      }
+    }
+    
+    .footerColumnAboutUsPart {
+      // width: 20%;
+      // outline: 3px solid pink;
+      padding: .5em;
+      color: #ffff;
+      
+      h4 {
+        color: #ffff;
+        font-size: 1.3rem;
+      }
+      ul {
+        // outline: 3px solid green; 
+        font-size: 1rem;
+        li {
+          margin-left: -3em;
+        }
+      }
+    }
+    
+    .footerColumnHelpCenterPart {
+      // width: 40%;
+      // outline: 3px solid yellow;
+      padding: .5em;
+      color: #ffff;
+      
+      h4 {
+        color: #ffff;
+        font-size: 1.3rem;
+      }
+      ul {
+        // outline: 3px solid green; 
+        font-size: 1rem;
+        li {
+          margin-left: -3em;
+          margin-bottom: .5em;
+        }
+
+        .helpCenterIcons {
+          // outline: 3px solid black;
+          // padding: .2em;
+          display: flex;
+          gap: .8em;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .helpCenterIcons1 {
+          // outline: 3px solid black;
+          // padding: .2em;
+          display: flex;
+          gap: .8em;
+          // justify-content: center;
+          align-items: center;
+        }
+        .helpCenterIcons2 {
+          z-index: 1;
+          // outline: 3px solid black;
+          color: #ffff !important;
+          // background: crimson;
+          // padding: .2em;
+          display: flex;
+          gap: .8em;
+          // justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+ 
+}
+
+
+@media screen and (max-width: 1024px)  {
+  .footerRow {
+    display: inline-flex;
+    // outline: 3px solid violet;
+    width: 90% !important;
+    gap: 3em !important;
+    // justify-content: space-between;
+    padding: 5em !important;
+  }
+
+  .mainContainer {
+    padding: 1rem !important;
+    // outline: 3px solid white;
+  }
+
+  .footerColumnAboutUsPart {
+    margin-top: .25rem !important;
+    padding: .2em !important; 
+    color: #ffff;
+    
+    h4 {
+      color: #ffff;
+      font-size: 1rem !important;
+    }
+    ul {
+      // outline: 3px solid green; 
+      margin-left: -1.2rem !important;
+      font-size: .9rem !important;
+      width: max-content !important;
+      li {
+        margin-left: -2em !important;
+        margin-bottom: .8rem !important;
+      }
+    }
+  }
+
+  .footerColumnHelpCenterPart {
+    // width: 40%;
+    // outline: 3px solid yellow;
+    padding: .5em;
+    color: #ffff;
+    
+    h4 {
+      color: #ffff;
+      font-size: 1rem !important;
+    }
+    ul {
+      // outline: 3px solid green; 
+      font-size: .9rem !important;
+      li {
+        margin-left: -3em;
+        margin-bottom: .5em;
+      }
+
+      .helpCenterIcons {
+        // outline: 3px solid black;
+        // padding: .2em;
+        display: flex;
+        gap: .8em;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .helpCenterIcons1 {
+        // outline: 3px solid black;
+        // padding: .2em;
+        display: flex;
+        gap: .8em;
+        // justify-content: center;
+        align-items: center;
+      }
+      .help-center-icons-2 {
+        // outline: 3px solid black;
+        // padding: .2em;
+        display: flex;
+        gap: .8em;
+        // justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  .footerColumnStoryPart {
+    width: 40%;
+    // outline: 3px solid white;
+    padding: .5em;
+    color: #ffff;
+
+    h4 {
+      color: #ffff;
+      font-size: 1rem !important;
+    }
+    ul {
+      // outline: 3px solid green;
+      font-size: .9rem !important;
+      // width: fit-content;
+      li {
+  
+        margin-left: -3em;
+      }
+    }
+  }
+  
+   
+}
+
+
+

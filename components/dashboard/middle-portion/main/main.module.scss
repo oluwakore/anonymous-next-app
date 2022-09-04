@@ -1,0 +1,229 @@
+.centralContainer {
+  margin-top: 10px;
+  
+  background-color: #fcfcfc;
+  
+  width: 90%;
+  padding: 1rem;
+
+  .centralContainerCover {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    // outline: 3px solid saddlebrown;
+  }
+
+  .centralContainerVideoHolder {
+    height: 25rem;
+    width: 90%;
+    position: relative;
+    border-radius: 5px;
+    margin-top: 2em;
+    // background-color: black;
+
+    img {
+      width: 100%;
+      height: 100%;
+      
+    }
+
+    .videoCta {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    }
+
+  }
+
+
+
+  .centralContainerServices {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8em;
+    // outline: 3px solid green;
+    width: 90%;
+    
+    
+    h1 {
+      color: #0e0b8b;
+      font-weight: 500;
+      font-size: 1.5rem;
+    }
+
+    
+    .centralContainerServicesMain {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      // display: flex;
+      // flex-direction: row;
+      // justify-content: space-between;
+      // flex-direction: row;
+      // outline: 3px solid blue;
+      // overflow-x: scroll;
+      // gap: 2em;
+      padding: 1.5rem;
+      width: 100%;
+      // justify-content: flex-start;
+      .centralContainerServicesCard {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        // outline: 3px solid orange;
+  
+        
+        img {
+          // width: 100%;
+          object-fit: cover;
+        }
+      
+        h2{
+          font-size: 1.2rem;
+         
+        }
+      }
+    }
+  }
+
+
+  .centralContainerTrending {
+    display: flex;
+    flex-direction: column;
+    margin-top: 7em;
+    // outline: 3px solid yellowgreen;
+    width: 90%;
+    padding-bottom: 7rem;
+
+    h1 {
+      color: #0e0b8b;
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      // width: 295px;
+    }
+
+    p {
+      font-size: .9rem;
+    }
+
+    button {
+      width: fit-content;
+      border-radius: 3em;
+      border: 3px solid #0e0b8b;
+      background-color: #fcfcfc;
+      padding: .5em 2em;
+      color: #0e0b8b;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .centralContainerTrendingMain {
+      display: grid;
+      grid-template-columns: repeat(2, 2fr);
+      grid-gap: 5em;
+
+      .centralContainerTrendingCard {
+        position: relative;
+        // outline: 3px solid gold;
+        width: 100%;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+
+        h2 {
+          margin-top: 1em;
+        }
+      }
+    }
+  }
+  
+
+ .centralContainerTrendingCardDesc {
+  position: absolute;
+  top: 5%;
+  left: 8%;
+  // transform: translate(-420%, -600%);
+  // -ms-transform: translate(-420%, -600%);
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  padding: .5em 1rem;
+  border-radius: 1.5em;
+  color: black;
+  background-color: darken($color: rgba(255, 255, 255, 0.486), $amount: 1);
+  p {
+    font-size: .7rem;
+    margin: auto;
+  }
+ } 
+
+}
+
+
+@media screen and (max-width: 1024px)  {
+
+.centralContainer {
+  // outline: 3px solid brown;
+  width: 65% !important;
+
+}
+
+.centralContainerServices {  
+  h1 {
+    color: #0e0b8b;
+    font-weight: 500;
+    font-size: 1.2rem !important;
+  }
+}
+
+
+
+.centralContainerTrending {
+  h1 {
+    font-size: 1.2rem !important;
+  }
+
+  h2 {
+    font-size: 1rem !important;
+  }
+
+  p {
+    font-size: .75rem !important;
+  }
+
+  button {
+    padding: .4em 1em !important;
+    font-size: .9rem !important; 
+  }
+}
+
+.centralContainerTrendingcardDesc {
+  // transform: translate(-220%, -480%) !important;
+  // -ms-transform: translate(-220%, -480%) !important;
+
+
+ 
+  p {
+    font-size: .6rem !important;
+   
+  }
+ } 
+
+ .centralContainerServicesMain {
+  overflow-x: scroll !important;
+ }
+
+}

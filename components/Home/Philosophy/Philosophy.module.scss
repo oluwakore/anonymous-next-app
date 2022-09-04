@@ -1,0 +1,56 @@
+
+.philoContainer {
+    background-repeat: no-repeat;
+    background-size: cover; 
+    padding-top: 8rem;
+    padding-bottom: 18rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+    .philoMain {
+     text-align: center;
+    //  outline: 3px solid saddlebrown;
+     width: 80%;
+     display: flex;
+     gap: 2.5rem;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+    //  margin: auto;
+
+     h1 {
+        font-size: 3rem;
+        font-weight: 600;
+        color: #FFFFFF;
+     }
+      p {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: #FFFFFF;
+        width: 50%;
+      }
+    }
+}
+
+@media screen and (max-width: 1024px)  {
+    .philoMain { 
+        
+        h1 {
+            font-size: 2rem !important;
+            font-weight: 600;
+            color: #FFFFFF;
+         }
+          p {
+            font-size: .9rem !important;
+            font-weight: 500;
+            color: #FFFFFF;
+            width: 60% !important;
+          }
+    }
+
+}
+
+
+
