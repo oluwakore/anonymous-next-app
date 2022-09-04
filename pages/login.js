@@ -179,7 +179,7 @@ const onFinish = async (values) => {
             </div>
             <div className={styles.formzEnd}>
               <div className={styles.formzEndQuestion}>
-                <p>Don't yet have an account?</p>
+                <p>Don&apos;t yet have an account?</p>
               </div>
               <div className={styles.formzEndLink}>
                 <Link style={{ textDecoration: "none" }} href="/register">
