@@ -11,7 +11,7 @@ const TherapyFormComp = () => {
     <div className={styles.therapyFormContainer}>
       <div className={styles.therapyFormContainerTitle}>
         <h1>GET MATCHED WITH OUR THERAPIST</h1>
-        <p>To get matched with a  therapist, you'll need to kindly answer these questions. </p>
+        <p>To get matched with a  therapist, you&apos;ll need to kindly answer these questions. </p>
       </div>
       <form>
       {
