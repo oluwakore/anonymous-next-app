@@ -310,8 +310,8 @@ function ProfileTabs({ userToken }) {
                 You haven&apos;t created any stories yet.
               </span>
             }
-            /> : user?.data?.activeSessions.map((item) => (
-              <div> {item.title} </div>
+            /> : user?.data?.activeSessions.map((item, index) => (
+              <div key={index}> {item.title} </div>
             ))
           }
         </div>
