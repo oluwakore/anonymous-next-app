@@ -294,8 +294,8 @@ function ProfileTabs({ userToken }) {
                 You don&apos;t have any sessions yet.
               </span>
             }
-            /> : user?.data?.activeSessions.map((item) => (
-              <div> {item.title} </div>
+            /> : user?.data?.activeSessions.map((item, index) => (
+              <div key={index}> {item.title} </div>
             ))
           }
         </div>
