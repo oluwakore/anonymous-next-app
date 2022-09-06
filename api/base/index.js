@@ -20,3 +20,12 @@ export const login = (data) => {
 export const getDetails = (id, token) => {
   return http.get(`/patients/me?=${id}`, setAuthToken(token))
 }
+
+export const updateProfile = (id, data, token) => {
+  return http.patch(`/patients/me?=${id}`, data ,setAuthToken(token))
+}
+
+
+export const updatePasword = (id, data, token) => {
+  return http.patch(`/patients/update-password?=${id}`, data,setAuthToken(token))
+}

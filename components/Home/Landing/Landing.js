@@ -15,30 +15,26 @@ const menu = (
   <Menu
     items={[
       {
-        label:  <Link   style={{ textDecoration: "none" }}  href="/dashboard">Dashboard</Link>,
-        key: "0",
-      },
-      {
         label:  <Link   style={{ textDecoration: "none" }} href="/therapy-form">Therapy Form</Link>,
-        key: "1",
+        key: "0",
       }, {
         label:  <Link   style={{ textDecoration: "none" }} href="/form-success">Form Success</Link>,
-        key: "2",
+        key: "1",
       }, {
         label:  <Link   style={{ textDecoration: "none" }} href="/share-story">Share Story</Link>,
-        key: "3",
+        key: "2",
       }, {
         label:  <Link   style={{ textDecoration: "none" }} href="/stories">Stories</Link>,
-        key: "4",
+        key: "3",
       }, {
         label:  <Link   style={{ textDecoration: "none" }} href="/stories/1000">Story Details</Link>,
-        key: "5",
+        key: "4",
       }, {
         label:  <Link   style={{ textDecoration: "none" }} href="/chat-session">Chat Session</Link>,
-        key: "6",
+        key: "5",
       },{
         label:  <Link   style={{ textDecoration: "none" }} href="/news-feed">News Feed</Link>,
-        key: "7",
+        key: "6",
       },
     ]}
   />

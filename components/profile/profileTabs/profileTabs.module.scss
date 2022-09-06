@@ -1,5 +1,6 @@
 .topContainer {
   display: flex;
+  overflow: hidden;
 
   .coverMain {
     // outline: 3px solid red;
@@ -29,16 +30,17 @@
     }
 
     .avatarName {
-      background: #0e0b8b;
+      background: #2BAB56;
       width: fit-content;
-      padding: 1rem 1.5rem;
-      border: 5px solid #ffff;
+      padding: 8px 20px;
+      // border: 5px solid #ffff;
       border-radius: 50%;
       margin: auto;
       h1 {
         color: #ffff;
         margin: auto;
-        font-size: 3.5rem;
+        font-size: 3rem;
+        font-weight: 800;
       }
     }
 
@@ -62,7 +64,7 @@
   .sidebar {
     flex: 1;
     background: #dfdfdf;
-    // height: 100vh;
+    height: 100vh;
     // padding: 2rem;
   }
 
@@ -144,6 +146,8 @@
   }
 
   .logoutPart {
+    position: absolute;
+    bottom: 5rem;
     margin-top: 8rem;
     padding: 1rem 2rem;
     h2 {
@@ -156,6 +160,49 @@
       background: #c1bfff;
       h2 {
         color: #0e0b8b;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .topContainer { 
+    .sidebar {
+      height: 100vh !important;
+    }
+
+    .card {
+      font-size: 1rem !important;
+    }
+
+    .logoutPart {
+      h2 {
+        font-size: 1rem !important;
+      }
+    }
+
+    .compsCover {
+      gap: 3rem !important;
+    }
+
+    .detailsCover {
+      h1 {
+        font-size: 1.2rem !important;
+      }
+    }
+
+    .formCover {
+      width: 20rem !important;
+      padding: 2.5rem 2rem !important;
+
+      label {
+        font-size: .8rem !important ;
+      }
+
+      .formCover1Button {
+        button {
+          font-size: .8rem !important;
+        }
       }
     }
   }

@@ -2,37 +2,56 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import moment from 'moment'
 import styles from "./profileTabs.module.scss";
+import { Empty, notification, Alert, message } from "antd";
+import  {Bars} from 'react-loader-spinner'
 import {
   ProfileOutlined,
   ScheduleOutlined,
   BookOutlined,
   LogoutOutlined,
 } from "@ant-design/icons";
+import { updateDetails, updatePasword } from "../../../api/base";
+import { updateUserProfile, logoutUser } from "../../../core/actions/useractions/useractions";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
-function ProfileTabs() {
+
+
+const openNotificationWithIcon = (type, msg, desc) => {
+  notification[type]({
+    message: msg,
+    description: desc,
+  });
+};
+
+function ProfileTabs({ userToken }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [oldPassword, setOldPassword] = useState("");
+  const [oldpassword, setOldPassword] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setComfirmPassword] = useState("");
+  const [showPassError, setShowPassError] = useState(false)
+  const [showPassLoading, setShowPassLoading] = useState(false)
+
+  const router = useRouter()
 
   const [addTypes, setAddTypes] = useState([
     {
       id: "in-1",
       title: "My Profile",
-      icon: <ProfileOutlined style={{ fontSize: "2rem" }} />,
+      icon: <ProfileOutlined style={{ fontSize: "1.8rem" }} />,
       active: true,
     },
     {
       id: "in-2",
       title: "My Sessions",
-      icon: <ScheduleOutlined style={{ fontSize: "2rem" }} />,
+      icon: <ScheduleOutlined style={{ fontSize: "1.8rem" }} />,
       active: false,
     },
     {
       id: "in-3",
       title: "My Stories",
-      icon: <BookOutlined style={{ fontSize: "2rem" }} />,
+      icon: <BookOutlined style={{ fontSize: "1.8rem" }} />,
       active: false,
     },
   ]);
@@ -54,35 +73,82 @@ function ProfileTabs() {
 
   const { loading, error, user } = userDetails
 
-  const { data } = user
+  
+  const userUpdateProfile = useSelector((state) => state.userUpdateProfile)
+
+  const { loading: updateLoading, userInfo} = userUpdateProfile
+
+  const logoutHandler = () => {
+    router.push('/')
+    dispatch(logoutUser())
+    openNotificationWithIcon('success', 'Sign Out', 'Logout was succesful.')
+    console.log('Logged Out')
+  }
+   
 
   useEffect(() => {
     if (user) {
-      setName(data.name);
-      setEmail(data.email);
+      setName( userInfo ? userInfo?.data?.name : user?.data?.name );
+      setEmail( userInfo ? userInfo?.data?.email :  user?.data?.email);
     }
   }, [dispatch, user]);
 
   const getInitials = (nameString) => {
-    const fullName = nameString.split(" ")
-    const initials = fullName.shift().charAt(0) + fullName.pop().charAt(0);
-    const result = initials.toUpperCase();
-
-    return result
+    if (nameString === undefined){
+      return null
+    } else {
+      const fullName = nameString.split(" ")
+      const initials = fullName.shift().charAt(0) + fullName.pop().charAt(0);
+      const result = initials.toUpperCase();
+  
+      return result
+    }
   }
+
+  const handleUpdateDetails = (e) => {
+    e.preventDefault()
+    dispatch(updateUserProfile(user?.data?.id, {name, email}, userToken))
+    message.success(`Update details ${user.status}`)
+  }
+
+  const handleUpdatePassword = async(e) => {
+    e.preventDefault()
+    if (password !== confirmPassword) {
+      setShowPassError(true)
+    }
+    try{
+ 
+      setShowPassLoading(true)
+     const res = await updatePasword(user?.data?.id, {oldpassword, password}, userToken)
+
+    //  console.log(res.data)
+     setShowPassLoading(false)
+     message.success(`${res.data.message}`)
+     setOldPassword('')
+     setPassword('')
+     setComfirmPassword('')
+    } catch(error) {
+      setShowPassLoading(false)
+      // console.error(error)
+    }
+  }
+  
 
   return (
       <>
-    { loading ? <h1>Loading...</h1> :
+      {/* {
+        user === undefined && <h1>Unable to load resource</h1>
+      } */}
+    { loading ? <h1>Loading.....</h1> : user === undefined ? <> <h1>Unable to load resource</h1> <Link href="/login"> Go to Login Page</Link></>  :
     <div className={styles.topContainer}>
       <div className={styles.sidebar}>
         <div className={styles.coverMain}>
           <div className={styles.avatarName}>
-            <h1> {getInitials(data.name)} </h1>
+            <h1> {getInitials( userInfo ? userInfo?.data?.name : user?.data?.name )} </h1>
           </div>
           <div className={styles.avatarNameDetails}>
-            <h2> {data.name} </h2>
-            <p> Joined {moment(data.createdAt).format("LL")} </p>
+            <h2> { userInfo ? userInfo?.data?.name : user?.data?.name } </h2>
+            <p> Joined {moment(user?.data?.createdAt).format("LL")} </p>
           </div>
           <div className={styles.menuList}>
             {addTypes.map((item, index) => (
@@ -100,7 +166,7 @@ function ProfileTabs() {
               </h1>
             ))}
           </div>
-          <div className={styles.logoutPart}>
+          <div className={styles.logoutPart} onClick={logoutHandler}>
             <h2>
               {" "}
               <span>
@@ -118,8 +184,13 @@ function ProfileTabs() {
         <div className={styles.comps}>
           <div className={styles.compsCover}>
           <div className={styles.detailsCover}>
-            <h1>Personal Details</h1>
-            <form className={styles.formCover}>
+            {updateLoading ? <div style={{ margin: "auto", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}> <Bars 
+            height="100"
+            width="100"
+            color="#0e0b8b"
+            /> <p> Updating details... </p> </div>: <>
+                    <h1>Personal Details</h1>
+            <form className={styles.formCover} onSubmit={handleUpdateDetails} >
               <div>
                 <div className={styles.fillPart}>
                   <label>Your Name</label>
@@ -145,22 +216,35 @@ function ProfileTabs() {
               </div>
 
               <div className={styles.formCover1Button}>
-                <button>Update Details</button>
+                <button type="submit">Update Details</button>
               </div>
             </form>
+            </>}
           </div>
 
           <div  className={styles.detailsCover}>
-            <h1>Update Your Password</h1>
-
-            <form className={styles.formCover}>
+          { showPassError &&   <Alert
+          message="Passwords do not match!"
+          type="error"
+          closable
+          onClose={()=> setShowPassError(false)}
+    /> }
+    {
+      showPassLoading ? <div style={{ margin: "auto", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}> <Bars 
+      height="100"
+      width="100"
+      color="#0e0b8b"
+      /> <p> Updating password... </p> </div>: <>
+                 <h1>Update Your Password</h1>
+            <form className={styles.formCover} onSubmit={handleUpdatePassword}>
               <div>
+                
                 <div className={styles.fillPart}>
                   <label>Enter old password</label>
                   <input
                     type="password"
                     required
-                    value={oldPassword}
+                    value={oldpassword}
                     onChange={(e) => setOldPassword(e.target.value)}
                   />
                 </div>
@@ -191,9 +275,11 @@ function ProfileTabs() {
               </div>
 
               <div className={styles.formCover1Button}>
-                <button>Update password</button>
+                <button type="submit">Update password</button>
               </div>
             </form>
+      </>
+    }
           </div>
           </div>
         </div>
@@ -201,15 +287,33 @@ function ProfileTabs() {
 
       {addTypes[1].active && (
         <div className={styles.comps}>
-          {" "}
-          <h1>Sessions Tab</h1>
+          {
+            user?.data?.activeSessions.length === 0 ? <Empty
+            description={
+              <span>
+                You don&apos;t have any sessions yet.
+              </span>
+            }
+            /> : user?.data?.activeSessions.map((item) => (
+              <div> {item.title} </div>
+            ))
+          }
         </div>
       )}
 
       {addTypes[2].active && (
         <div className={styles.comps}>
-          {" "}
-          <h1>Stories Tab</h1>
+            {
+            user?.data?.stories.length === 0 ? <Empty
+            description={
+              <span>
+                You haven&apos;t created any stories yet.
+              </span>
+            }
+            /> : user?.data?.activeSessions.map((item) => (
+              <div> {item.title} </div>
+            ))
+          }
         </div>
       )}
     </div>

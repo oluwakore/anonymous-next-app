@@ -8,7 +8,7 @@ import {
   notification,
 } from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import { logoutUser } from "../../../core/actions/useractions/useractions";
+import { logoutUser, getUserDetails } from "../../../core/actions/useractions/useractions";
 
 const openNotificationWithIcon = (type, msg, desc) => {
   notification[type]({
@@ -28,7 +28,14 @@ function DashboardNav() {
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
 
+  const userDetails = useSelector((state) => state.userDetails)
+  const { user }  = userDetails
  
+  // console.log(userInfo?.token)
+  // console.log(userInfo?.user.id)
+ 
+ 
+
 
 
 
@@ -44,7 +51,7 @@ const logoutHandler = () => {
     <Menu
       items={[
         {
-          label:  <Link style={{ textDecoration: "none" }} href="#">
+          label:  <Link style={{ textDecoration: "none" }} href="/profile">
          <h4 className="label-font" > <UserOutlined/>  Your Info</h4>
         </Link>,
           key: "0",
@@ -66,11 +73,13 @@ const logoutHandler = () => {
   );
 
   const getInitials = (nameString) => {
+  
     const fullName = nameString.split(" ")
     const initials = fullName.shift().charAt(0) + fullName.pop().charAt(0);
     const result = initials.toUpperCase();
 
     return result
+    
   }
 
   return (
@@ -103,7 +112,7 @@ const logoutHandler = () => {
       <Dropdown overlay={menu} >
             <Space>
               <div className={styles.avatarHolder}>
-              { userInfo ? <h2>{getInitials(userInfo.user.name)}</h2> : " "}
+              { userInfo ? <h2>{getInitials( user?.data?.name || userInfo?.user?.name)}</h2> : " "}
               </div>
               <DownOutlined />
             </Space>
