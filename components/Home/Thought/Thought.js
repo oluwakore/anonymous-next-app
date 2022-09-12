@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link';
 import styles from "./Thought.module.scss";
 
 
@@ -20,7 +21,9 @@ export default function Thought() {
         </div>
          {/* <img src='/images/Home/circle.png' alt='' /> */}
          </div>
+         <Link href="/register" style={{ cursor: 'pointer' }}>
          <span>GET STARTED <img src='/images/Home/arrow-1.png' /> </span>
+         </Link>
          </div> 
          <div className={styles.thoughtImg}>
             <img src='/images/Home/About-3.png' alt=''  className={styles.imageMain}/>

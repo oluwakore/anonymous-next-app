@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link';
 import styles from "./Share.module.scss";
 
 
@@ -17,7 +18,9 @@ export default function Share() {
          <p>
          We have the best room provided for ranting. Some problems get resolved naturally by just making them known. Our ranting room can be interactive and rigid based on your discretion and you are promised to be welcomed with loving human all around the world.
          </p>
+         <Link href="/register" style={{ cursor: 'pointer' }}>
          <span>GET STARTED <img src='/images/Home/arrow-1.png' /> </span>
+         </Link>
          </div> 
         </div>  
         </div>

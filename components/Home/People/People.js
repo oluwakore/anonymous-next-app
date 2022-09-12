@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 import styles from  "./People.module.scss";
 
 export default function People() {
@@ -13,9 +14,11 @@ export default function People() {
             blessing for my life as I am healed from the pain of emotional
             stress
           </p>
+          <Link href="/register" style={{ cursor: 'pointer' }} >
           <span>
             GET STARTED <img src="/images/Home/arrow-1.png" />{" "}
           </span>
+          </Link>
         </div>
        <div className={styles.peopleImageSliderCover}>
         {step === 0 && (

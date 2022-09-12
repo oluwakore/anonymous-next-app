@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useRef} from "react";
 import  Link from "next/link";
 import { useRouter } from "next/router";
 import { Dropdown, Menu, Space } from "antd";
@@ -20,6 +20,11 @@ const openNotificationWithIcon = (type, msg, desc) => {
 
 
 function DashboardNav() {
+
+  const ref = useRef()
+
+  
+
  
   const router = useRouter()
 
@@ -108,10 +113,12 @@ const logoutHandler = () => {
       </div>
 
 
-    <div className={ userInfo ? styles.avatarMain : styles.inactive}>
+    <div className={ userInfo ? styles.avatarMain : styles.inactive}
+    ref={ref}
+    >
       <Dropdown overlay={menu} >
             <Space>
-              <div className={styles.avatarHolder}>
+              <div className={styles.avatarHolder} >
               { userInfo ? <h2>{getInitials( user?.data?.name || userInfo?.user?.name)}</h2> : " "}
               </div>
               <DownOutlined />

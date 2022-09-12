@@ -47,22 +47,22 @@ export default function Landing() {
     <div className={styles.landingImg}>
     <img src="/logo.svg" alt="logo" style={logo} />
     </div>
-    <div className={styles.landingNavItems1}>
-      <ul>
+    
+      <ul className={styles.landingNavItems1}>
       <li>Home</li>
       <li>Community</li>
       <li>Counselling</li>
       <li>About Us</li>
-      <li>
+      {/* <li>
     <Dropdown overlay={menu}>
       <Space>
         Pages List
         <DownOutlined />
       </Space>
   </Dropdown>
-    </li>
+    </li> */}
       </ul>
-    </div>
+    
     <div className={styles.landingButtons}>
       <Link  style={{ textDecoration: "none" }} href="/login">
       <button className={styles.button1}>Login</button>

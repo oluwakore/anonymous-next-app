@@ -58,27 +58,22 @@
       display: flex;
       align-items: center;
       justify-content: center;
-
-      ul {
-
-        display: flex;
-        flex-direction: row;
-        gap: 3rem;
-        // padding: 0 2rem;
-        margin: auto;
+      gap: 2.5rem;
+      // padding: 0 2rem;
+      margin: auto;
         li {
           list-style-type: none;
           color: #ffff;
-          font-size: 1.2rem;
+          font-size: 1.05rem;
           cursor: pointer;
         }
-      }
+      
     }
 
     .landingButtons {
       display: flex;
       // outline: 2px solid white;
-      gap: 2em;
+      gap: 1.5rem;
 
       .button1 {
       background: transparent;
@@ -229,75 +224,3 @@
 
 
 
-
-
-// .logo-css {
-//   float: left;
-//   padding-top: 70px;
-// }
-
-// nav {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-
-// nav ul {
-//   display: flex;
-//   align-items: center;
-//   gap: 60px;
-//   list-style: none;
-//   margin: 0;
-//   padding-top: 65px;
-// }
-
-// nav ul li a {
-//   font-family: "Poppins", sans-serif;
-//   font-weight: 600;
-//   font-size: 16px;
-//   color: #FFFFFF;
-//   text-decoration: none;
-// }
-
-// nav ul li a:hover {
-//   color: #0A66C2;
-// }
-
-// .landing-container {
-//     display: flex;
-//     height: 100vh;
-//     width: 100%;
-//     align-items: center;
-// }
-
-// .landing-container .landing-parent h1 {
-//     font-family: 'Poppins', sans-serif;
-//     font-weight: 700;
-//     font-size: 45px;
-//     line-height: 60px;
-//     color: #fff;
-//     margin-top: -50px;
-//     margin-bottom: 20px;
-//   }
-
-// .landing-container .landing-parent p {
-//     font-family: 'Poppins', sans-serif;
-//     font-weight: 500;
-//     font-size: 18px;
-//     line-height: 30px;
-//     color: #fff;
-//     margin-bottom: 30px;
-//   }
-
-// .landing-container .landing-parent {
-//     width: 650px;
-//   }
-
-// .AC {
-//   color: #00BCD7;
-// }
-// .primary-btn:hover {
-//   color: aliceblue;
-//   border: 2px solid #fff;
-//   background-color: #0A66C2;
-// }
