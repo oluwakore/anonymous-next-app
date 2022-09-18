@@ -17,7 +17,7 @@
     margin: auto;
     // outline: 3px solid sienna;
     width: 50%;
-    padding: 1em;
+    padding: 1rem;
 
     .loginMainContainer {
       display: flex;
@@ -128,13 +128,6 @@
     // width: 20%;
     // margin: 0 auto;
 
-    .formzButtonCover {
-      padding: 0.5em 2em;
-      // outline: 3px solid greenyellow;
-      border-radius: 2em;
-      background-color: #0e0b8b;
-      cursor: pointer;
-    }
 
     button {
       outline: none;
@@ -182,7 +175,7 @@
 .loginLower {
   // outline: 3px solid springgreen;
   // display: flex;
-  padding: 2em;
+  padding: 2rem;
   // justify-content: center;
   // align-items: center;
 
@@ -211,7 +204,7 @@
 @media screen and (max-width: 1024px) {
   .loginLowerMain {
     // outline: 3px solid firebrick;
-    width: 70% !important;
+    width: 100% !important;
   }
 
   .topText {
@@ -219,7 +212,7 @@
   }
 
   .formGoogle {
-    align-items: center !important;
+    align-items: center !important;   
 
     p {
       font-size: 1rem !important;
@@ -228,13 +221,114 @@
 
   .formzEndQuestion {
     p {
-      font-size: 0.9rem !important;
+      font-size: 0.8rem !important;
     }
   }
 
   .formzEndLink {
     p {
-      font-size: 0.9rem !important;
+      font-size: 0.75rem !important;
     }
   }
+  .formzEnd {
+    // outline: 3px solid pink;
+    gap: .5rem !important;
+  }
 }
+
+@media screen and (max-width: 600px) {
+
+  .loginContainer {
+  //  outline: 3px solid slateblue;
+   height: 100vh;
+  }
+
+  .loginPic { 
+    display: none;
+  }
+
+  .loginMain {
+    // outline: 3px solid sienna;
+    width: 90% !important;
+  }
+
+  .loginMainContainer {
+    // outline: 3px solid purple;
+
+    .topText {
+      font-size: 1.2rem !important;
+    }
+  }
+
+  .formGoogle {
+    width: 80% !important;
+    padding: .2rem .5rem !important;
+    align-items: center !important;
+
+    p {
+      font-size: .85rem !important;
+    }
+  }
+
+  .loginLower {
+    // outline: 3px solid springgreen;
+    padding: 1rem !important;
+  
+    .loginLowerMain {
+      // outline: 3px solid firebrick;
+      width: 90% !important;
+      margin: auto;
+      font-size: .85rem !important;
+    }
+  }
+
+  .divider {
+    margin-top: 2rem !important;
+  }
+
+  .forgotPasswordLink {
+    // outline: 3px solid sandybrown;
+    margin-right: 1.6rem !important;
+    p {
+      font-size: .8rem;
+    }
+  }
+
+  .formzButton {
+    margin-top: 1.5rem !important;
+    justify-content: center !important;
+    align-items: center !important;
+    // outline: 3px solid crimson;
+    
+
+
+    button {
+      margin-top: -1.5rem;
+      font-size: .9rem !important;
+      padding: 0.3rem 2rem !important;
+    }
+  }
+
+  .formzEndQuestion {
+    p {
+      font-weight: 400;
+      font-size: .6rem !important;
+    }
+  }
+
+  .formzEndLink {
+    // margin-left: 0.5rem;
+    p {
+      font-size: .6rem  !important;
+    }
+  }
+  .formzEnd {
+    // outline: 3px solid pink;
+    gap: .5rem !important;
+  }
+}
+
+  
+
+
+

@@ -1,10 +1,6 @@
 .footerContainer {
   background-color: #0e0b8b;
-  // padding: 7rem 0;
-  font-family: 'Poppins';
   width: 100%;
-  // overflow: hidden;
-  // position: fixed;
   bottom: 0;
   left: 0; 
   li {
@@ -12,7 +8,7 @@
   }
 
   .mainContainer {
-   padding: 4em;
+   padding: 4rem;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -23,9 +19,9 @@
     display: inline-flex;
     // outline: 3px solid violet;
     width: 70%;
-    gap: 2em;
+    gap: 2rem;
     justify-content: space-between;
-    padding: 3em;
+    padding: 3rem;
     // align-items: center;
     // flex-wrap: wrap;
 
@@ -226,6 +222,115 @@
   }
   
    
+}
+
+@media screen and (max-width: 600px) {
+  .mainContainer {
+    padding: 0rem !important;
+   }
+
+   .footerRow {
+    // display: inline-flex;
+    // outline: 3px solid violet;
+    flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    width: 90% !important;
+    gap: 1rem !important;
+    justify-content: space-between;
+    padding: 2rem !important;
+    // align-items: center;
+    // flex-wrap: wrap;
+
+    .footerColumnStoryPart {
+      width: 100% !important;
+      // outline: 3px solid white;
+      padding: 1rem !important;
+      color: #ffff;
+      // text-align: center;
+
+      h4 {
+        font-size: 1rem !important;
+      }
+      ul {
+        // outline: 3px solid green;
+        font-size: .8rem !important;
+        li {
+    
+          margin-left: -3em;
+        }
+      }
+    }
+    
+    .footerColumnAboutUsPart {
+      // width: 20%;
+      // outline: 3px solid pink;
+      padding: .5em;
+      color: #ffff;
+      margin-left: .5rem;
+      
+      h4 {
+        font-size: 1rem !important;
+      }
+      ul {
+        // outline: 3px solid green; 
+        font-size: .8rem !important;
+        li {
+          margin-left: -1rem !important;
+        }
+      }
+    }
+    
+    .footerColumnHelpCenterPart {
+      // width: 40%;
+      // outline: 3px solid yellow;
+      padding: .5em;
+      color: #ffff;
+      
+      h4 {
+        color: #ffff;
+        font-size: 1rem !important;
+        // text-align: center;
+      }
+      ul {
+        // outline: 3px solid green; 
+        font-size: .8rem !important;
+        li {
+          margin-left: -3em;
+          margin-bottom: .5em;
+        }
+
+        .helpCenterIcons {
+          // outline: 3px solid black;
+          // padding: .2em;
+          display: flex;
+          gap: .8em;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .helpCenterIcons1 {
+          // outline: 3px solid black;
+          // padding: .2em;
+          display: flex;
+          gap: .8em;
+          // justify-content: center;
+          align-items: center;
+        }
+        .helpCenterIcons2 {
+          z-index: 1;
+          // outline: 3px solid black;
+          color: #ffff !important;
+          // background: crimson;
+          // padding: .2em;
+          display: flex;
+          gap: .8em;
+          // justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
 }
 
 

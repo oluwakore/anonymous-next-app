@@ -49,15 +49,33 @@
                 font-size: 2rem !important;
                 font-weight: 600;
             }
-
-            .counsel-cards {
-              
-            }
-
     
     }
 }
 
+}
+
+@media screen and (max-width: 600px)  {
+    .counselContainer {
+        // outline: 3px solid magenta;
+        padding: 2rem 0;
+
+        .counselMain {
+            // outline: 3px solid green;
+            width: 90% !important;
+
+            
+        h1 {
+            font-size: 1.5rem !important;
+        }
+
+        .counselCards {
+            padding: 0 5rem 1rem 5rem; 
+            grid-template-columns: repeat(1, 1fr);    
+            
+        }
+        }
+    }
 }
 
 

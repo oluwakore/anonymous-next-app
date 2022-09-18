@@ -34,6 +34,7 @@ function Right() {
         </div>
         <div className={styles.rightAppointment}>
           <h2>Up Coming Appointment</h2>
+          <div className={styles.rightMenuCover} >
           <div className={styles.rightMenu1}>
             <h3>Today</h3>
             <p>Family Counselling</p>
@@ -45,6 +46,13 @@ function Right() {
             <p>Family Counselling</p>
             <p>09:00am - 09:50am</p>
             <p>Dr. Olakunle Johnson</p>
+          </div>
+          <div className={styles.rightMenu1}>
+            <h3>22/10/2022</h3>
+            <p>Family Counselling</p>
+            <p>09:00am - 09:50am</p>
+            <p>Dr. Olakunle Johnson</p>
+          </div>
           </div>
         </div>
       </div>

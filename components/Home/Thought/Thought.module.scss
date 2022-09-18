@@ -1,206 +1,216 @@
-
 .thoughtContainer {
-    padding-top: 5rem;
-    // outline: 10px solid rgb(255, 254, 254) !important;
+  // outline: 10px solid rgb(255, 254, 254) !important;
+  // outline: 3px solid firebrick;
+  padding-top: 8rem;
+  // padding-bottom: 1rem;
+  // z-index: 1000;
+
+  .thoughtMainpart {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: 80%;
     // outline: 3px solid firebrick;
-    padding-top: 8rem;
-    // padding-bottom: 1rem;
-    // z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
 
-    .thoughtMainpart {
-        display: flex;
-        flex-direction: row;
-        margin: auto;
+    .thoughtDesc {
+      // outline: 3px solid salmon;
+      width: 50%;
+      height: fit-content;
+      // margin: auto;
+
+      h1 {
+        color: #0e0b8b;
+        font-weight: 600;
+        font-size: 3rem;
+      }
+
+      p {
+        // outline: 3px solid #0e0b8b;
+        font-size: 1.1rem;
+        line-height: 2.2rem;
+        font-weight: 410;
         width: 80%;
-        // outline: 3px solid firebrick;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
+      }
 
-        .thoughtDesc {
-            // outline: 3px solid salmon;
-            width: 50%;
-            height: fit-content;
+      .thoughtList {
+        display: flex;
+        flex-direction: column;
+        // outline: 3px solid red;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+
+        .thoughtListItems {
+          // outline: 3px solid magenta;
+          display: inline-flex;
+          // justify-content: center;
+          // align-items: center;
+          gap: 2rem;
+
+          img {
             // margin: auto;
-
-            h1 {
-                color: #0e0b8b;
-                font-weight: 600;
-                font-size: 3rem;
-            }
-
-            p {
-                // outline: 3px solid #0e0b8b;
-                font-size: 1.1rem;
-                line-height: 2.2rem;
-                font-weight: 410;
-                width: 80%;
-            }
-
-            .thoughtList {
-                display: flex;
-                flex-direction: column;
-                // outline: 3px solid red;
-                gap: 1.5rem;
-                margin-bottom: 2rem;
-
-
-                .thoughtListItems {
-                    // outline: 3px solid magenta;
-                    display: inline-flex;
-                    // justify-content: center;
-                    // align-items: center;
-                    gap: 2rem;
-
-                    img {
-
-                        // margin: auto;
-                        width: 1.5rem;
-                        height: 1.5rem;
-                        align-self: center;
-                        // object-fit: cover;
-                    }
-                    span {
-                        // margin: auto;
-                        align-self: center;
-                    }
-                }
-                
-            
-            }
-
-           
-
-            span {
-                // margin-top: 3rem;
-                font-weight: 600;
-                color: #0e0b8b;
-                font-size: 1.1rem;
-                
-                img {
-                   margin-left: 1rem;
-                }
-                
-            }
+            width: 1.5rem;
+            height: 1.5rem;
+            align-self: center;
+            // object-fit: cover;
+          }
+          span {
+            // margin: auto;
+            align-self: center;
+          }
         }
+      }
 
-        .thoughtImg {
-           width: 50%;
-            transform: scale(0.8);
-            display: flex;
-            flex-direction: column;
+      span {
+        // margin-top: 3rem;
+        font-weight: 600;
+        color: #0e0b8b;
+        font-size: 1.1rem;
 
-            .imageBase {
-                // top: 2.5rem;
-                left: 2.8rem;
-                position: relative;
-                width: 100%;
-                object-fit: cover;
-
-            }
-            .imageMain {
-                position: absolute;
-                z-index: 1;
-                width: 100%;
-                object-fit: cover;
-            }
+        img {
+          margin-left: 1rem;
         }
-
+      }
     }
+
+    .thoughtImg {
+      width: 50%;
+      transform: scale(0.8);
+      display: flex;
+      flex-direction: column;
+
+      .imageBase {
+        // top: 2.5rem;
+        left: 2.8rem;
+        position: relative;
+        width: 100%;
+        object-fit: cover;
+      }
+      .imageMain {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
 }
 
+@media screen and (max-width: 1024px) {
+  .thoughtMainpart {
+    // outline: 3px solid firebrick;
 
-@media screen and (max-width: 1024px)  {
+    .thoughtDesc {
+      // margin-top: -5rem !important;
+      // outline: 3px solid firebrick;
+      h1 {
+        font-size: 2rem !important;
+      }
+
+      p {
+        // outline: 3px solid yellow;
+        font-size: 1rem !important;
+        width: 100% !important;
+        line-height: 1.5rem !important;
+      }
+
+      span {
+        font-size: 0.9rem !important;
+      }
+
+      .thoughtList {
+        // outline: 3px solid yellow;
+        gap: 1rem !important;
+        margin-bottom: 1rem !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .thoughtContainer {
+    padding-top: 2rem;
+
     .thoughtMainpart {
-        // outline: 3px solid firebrick;
+      flex-direction: column;
+      width: 90%;
 
-        .thoughtDesc {
-
-        // margin-top: -5rem !important;
-            // outline: 3px solid firebrick;
-            h1 {
-                font-size: 2rem !important;
-            }
-
-            p {
-                // outline: 3px solid yellow;
-                font-size: 1rem !important;
-                width: 100% !important;
-                line-height: 1.5rem !important;
-            }
-
-            span {
-                        
-                font-size: 0.9rem !important;
-                
-             
-            }
-
-            .thoughtList {
-                // outline: 3px solid yellow;
-                gap: 1rem !important;
-                margin-bottom: 1rem !important;
+      .thoughtDesc {
+        // outline: 3px solid salmon;
+        width: 100%;
+        h1 {
+            font-size: 1.5rem !important;
+            text-align: center;
+          }
+    
+          p {
+            // outline: 3px solid #0e0b8b;
+            font-size: .9rem !important;
+          }
+    
+          .thoughtList {
+            .thoughtListItems {
+              span {
+                font-size: .85rem !important; 
+                margin-left: -1rem;
+              }
             }
         }
+
+        span {
+            font-size: .9rem !important;
+        }
+      }
+
+      .thoughtImg {
+        width: 80%;
+        .imageBase {
+          left: 2rem;
+        }
+      }
     }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.thought-session {
-    display: flex;
-    height: 90vh;
-    margin-top: 7rem;
-}
-.thought {
-    width: 700px;
-}
-.thought h2 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 50px;
-    margin-bottom: 50px;
-    color: var(--blue-color);
   }
-.thought p {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: #000000;
-    margin: 12px 0;
 }
-.thought-img {
-    margin-top: -200px;
-    margin-left: 20px;
-    transform: scale(0.8);
-    display: flex;
-    flex-direction: column;
-  }
-.thought-img .issue-1 {
-    position: absolute;
-    z-index: 1;
-}
-.thought-img .issue-11 {
-    top: 10px;
-    left: 70px;
-    position: relative;
-}
+
+// .thought-session {
+//     display: flex;
+//     height: 90vh;
+//     margin-top: 7rem;
+// }
+// .thought {
+//     width: 700px;
+// }
+// .thought h2 {
+//     font-family: 'Poppins', sans-serif;
+//     font-weight: 700;
+//     font-size: 40px;
+//     line-height: 50px;
+//     margin-bottom: 50px;
+//     color: var(--blue-color);
+//   }
+// .thought p {
+//     font-family: 'Poppins', sans-serif;
+//     font-weight: 400;
+//     font-size: 16px;
+//     line-height: 24px;
+//     color: #000000;
+//     margin: 12px 0;
+// }
+// .thought-img {
+//     margin-top: -200px;
+//     margin-left: 20px;
+//     transform: scale(0.8);
+//     display: flex;
+//     flex-direction: column;
+//   }
+// .thought-img .issue-1 {
+//     position: absolute;
+//     z-index: 1;
+// }
+// .thought-img .issue-11 {
+//     top: 10px;
+//     left: 70px;
+//     position: relative;
+// }

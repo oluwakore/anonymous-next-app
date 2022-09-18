@@ -18,7 +18,7 @@
     height: 25rem;
     width: 90%;
     position: relative;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-top: 2em;
     // background-color: black;
 
@@ -43,7 +43,7 @@
   .centralContainerServices {
     display: flex;
     flex-direction: column;
-    margin-top: 8em;
+    margin-top: 8rem;
     // outline: 3px solid green;
     width: 90%;
     
@@ -93,7 +93,7 @@
   .centralContainerTrending {
     display: flex;
     flex-direction: column;
-    margin-top: 7em;
+    margin-top: 7rem;
     // outline: 3px solid yellowgreen;
     width: 90%;
     padding-bottom: 7rem;
@@ -116,10 +116,10 @@
 
     button {
       width: fit-content;
-      border-radius: 3em;
+      border-radius: 3rem;
       border: 3px solid #0e0b8b;
       background-color: #fcfcfc;
-      padding: .5em 2em;
+      padding: .5rem 2rem;
       color: #0e0b8b;
       outline: none;
       cursor: pointer;
@@ -128,7 +128,7 @@
     .centralContainerTrendingMain {
       display: grid;
       grid-template-columns: repeat(2, 2fr);
-      grid-gap: 5em;
+      grid-gap: 5rem;
 
       .centralContainerTrendingCard {
         position: relative;
@@ -141,7 +141,7 @@
         }
 
         h2 {
-          margin-top: 1em;
+          margin-top: 1rem;
         }
       }
     }
@@ -226,4 +226,79 @@
   overflow-x: scroll !important;
  }
 
+}
+
+@media screen and (max-width: 600px) {
+  .centralContainer {
+    margin-top: 6px;
+    // outline: 3px solid slateblue;
+    width: 100% !important;
+
+    .centralContainerVideoHolder { 
+      //  outline: 3px solid green;
+      height: 15rem;
+
+      .videoCta {
+        font-size: 4rem !important;
+      }
+      
+    }
+
+    .centralContainerServices{
+      margin-top: 4rem;
+      // outline: 3px solid green;
+      width: 90%;
+      
+      
+      h1 {
+        text-align: center;
+        font-size: 1.1rem !important;
+      }
+
+      .centralContainerServicesMain {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+
+        .centralContainerServicesCard {
+          h2 {
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 1rem !important;
+          }
+        }
+      }
+    }
+
+    .centralContainerTrending {
+      margin-top: 1rem;
+      // outline: 3px solid yellowgreen;
+      width: 90%;
+      padding-bottom: 4rem;
+
+      h1 {
+        font-size: 1.2rem !important;
+        text-align: center;
+      }
+  
+      h2 {
+        font-size: 1rem !important;
+        font-weight: 500;
+      }
+  
+      p {
+        font-size: .9rem;
+      }
+  
+      button {
+        font-size: .85rem  !important;
+      }
+  
+      .centralContainerTrendingMain {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 2rem;
+      }
+    }
+  }
 }

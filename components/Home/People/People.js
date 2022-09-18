@@ -8,7 +8,7 @@ export default function People() {
     <div className={styles.peopleContainer}>
       <div className={styles.peopleMain}>
         <div className={styles.peopleDesc}>
-          <h1>What People Say About US</h1>
+          <h1>What People Say About Us</h1>
           <p>
             The decision to go through this process has proven to be full of
             blessing for my life as I am healed from the pain of emotional

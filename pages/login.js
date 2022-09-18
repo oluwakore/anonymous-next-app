@@ -26,7 +26,7 @@ const openNotificationWithIcon = (type, msg, desc) => {
 export default function Login() {
   const [form] = Form.useForm()
    
-  const router = useRouter()
+  const router = useRouter() 
 
   // const [loading, setLoading] = useState(false)
   // const [error, setError] = useState(null)

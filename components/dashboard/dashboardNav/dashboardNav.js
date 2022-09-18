@@ -1,8 +1,8 @@
-import React , {useRef} from "react";
+import React , {useRef, useState} from "react";
 import  Link from "next/link";
 import { useRouter } from "next/router";
 import { Dropdown, Menu, Space } from "antd";
-import { DownOutlined, LogoutOutlined, InfoCircleOutlined , UserOutlined} from "@ant-design/icons";
+import { DownOutlined, LogoutOutlined, InfoCircleOutlined , UserOutlined, MenuOutlined, CloseOutlined} from "@ant-design/icons";
 import styles from "./dashboardNav.module.scss";
 import {
   notification,
@@ -21,8 +21,12 @@ const openNotificationWithIcon = (type, msg, desc) => {
 
 function DashboardNav() {
 
+  const [menuOpen, setMenuOpen] = useState(false)
+
+
   const ref = useRef()
 
+  const dropdownRef = ref.current
   
 
  
@@ -89,11 +93,30 @@ const logoutHandler = () => {
 
   return (
     <div className={styles.dashboardContainer}>
+          {
+      menuOpen && (
+        <div className={styles.openMenuPart}>
+          <CloseOutlined style={{fontSize: "2rem" }} className={styles.close} onClick={() => setMenuOpen(false)}  />
+          <ul className={styles.openMenuList} >
+          <li
+          className={styles.openListItem}
+          >Home</li>
+          <li className={styles.openListItem}>Community</li>
+         <li className={styles.openListItem}>Counselling</li>
+         <li className={styles.openListItem}>About Us</li>
+        
+          </ul>
+        </div> 
+      )
+    }
       <div className={styles.dashboardContainerMain}>
       <div className={styles.dashboardLogo}>
         <img src="images/dashboard/logo.png" alt="" />
       </div>
-      <div className={styles.dashboardMenuTop}>
+      
+
+      <MenuOutlined   style={{fontSize: "2rem", color: "#0e0b8b" }} onClick={() => setMenuOpen(true)}/>
+
 
       
       <ul className={styles.dashboardMenu}>
@@ -110,13 +133,10 @@ const logoutHandler = () => {
           About Us
         </Link></li>
       </ul>
-      </div>
-
 
     <div className={ userInfo ? styles.avatarMain : styles.inactive}
-    ref={ref}
     >
-      <Dropdown overlay={menu} >
+      <Dropdown overlay={menu}  >
             <Space>
               <div className={styles.avatarHolder} >
               { userInfo ? <h2>{getInitials( user?.data?.name || userInfo?.user?.name)}</h2> : " "}

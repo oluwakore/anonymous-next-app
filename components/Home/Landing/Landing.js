@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from 'next/link';
 import { Dropdown, Menu, Space } from "antd";
-import { DownOutlined } from "@ant-design/icons";
+import { DownOutlined, MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import  styles from "./Landing.module.scss";
 
 const logo = {
@@ -10,7 +10,7 @@ const logo = {
 };
 
 const menu = (
-
+   
   
   <Menu
     items={[
@@ -41,8 +41,44 @@ const menu = (
 );
 
 export default function Landing() {
+
+
+  const [menuOpen, setMenuOpen] = useState(false)
+
+
   return (
-   <div className={styles.landingContainer}  style={{ backgroundImage: "url(/images/Home/landing-pic.jpg)",  }}>
+   <div className={styles.landingContainer} /* style={{   backgroundImage: "url(/images/Home/landing-pic.jpg)"}} */>
+    {
+      menuOpen && (
+        <div className={styles.openMenuPart}>
+          <CloseOutlined style={{fontSize: "2rem" }} className={styles.close} onClick={() => setMenuOpen(false)}  />
+          <ul className={styles.openMenuList} >
+          <li
+          className={styles.openListItem}
+          >Home</li>
+          <li className={styles.openListItem}>Community</li>
+         <li className={styles.openListItem}>Counselling</li>
+         <li className={styles.openListItem}>About Us</li>
+         <li >
+          <Link href="/login" style={{ textDecoration: "none" }}>
+          <button
+          type="button"
+          className={styles.openBtn1}
+          >Login</button>
+          </Link>
+         </li>
+         <li>
+          <Link href="/register" style={{ textDecoration: "none" }}>
+          <button
+           type="button"
+          className={styles.openBtn2}
+          >Sign up</button>
+          </Link>
+         </li>
+          </ul>
+        </div> 
+      )
+    }
     <nav className={styles.landingNav}>
     <div className={styles.landingImg}>
     <img src="/logo.svg" alt="logo" style={logo} />
@@ -71,20 +107,28 @@ export default function Landing() {
       <button className={styles.button2}>Sign Up</button>
       </Link>
     </div>
+    <div className={styles.menuOpen} >
+    <MenuOutlined style={{ color: "#ffff", fontSize: "2rem" }} onClick={() => setMenuOpen(true)} />
+    </div>
     </nav>
 
     <div className={styles.landingDesc}>
     <h1>
-      CAPTURE THE WHOLE <br /> WORLD WITH YOU WITH <br />{" "}
-       <div style={{color: "#2BAB56"}}>ANONYMOUS CONFIDANT </div>
+      CAPTURE THE WHOLE  <br/> WORLD WITH YOU WITH {" "}
+       <span style={{color: "#2BAB56", fontWeight: "bold"}}>ANONYMOUS CONFIDANT </span>
     </h1>
-    <p className="">
-    Giving priority href your identity with best emotional needs service. Keep on with us and learn more on how href navigate life, work, relationships, abuse and many more…
+    <div className={styles.contentDescCover}>
+
+   
+    <p className={styles.contentDesc}>
+    Giving priority to your identity with best emotional needs service. Keep on with us and learn more on how href navigate life, work, relationships, abuse and many more…
     </p>
+
+    </div>
     <div>
       
         <Link style={{ textDecoration: "none" }} href="/register">
-          <button className="">GET STARTED NOW</button>
+          <button className={styles.buttonDesc}>GET STARTED NOW</button>
         </Link>
       
     </div>

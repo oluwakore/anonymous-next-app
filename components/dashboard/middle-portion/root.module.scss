@@ -3,3 +3,9 @@
   flex-direction: row;
   background-color: #fcfcfc;
 }
+
+@media screen and (max-width: 600px) {
+  .maincontentContainer {
+    flex-direction: column;
+  }
+}

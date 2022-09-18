@@ -208,7 +208,6 @@ function Register() {
                 </div>
                 <Form.Item>
                   <div className={styles.formzButton}>
-                    
                     <Button
                       htmlType="submit"
                       loading={loading}

@@ -308,3 +308,25 @@ content: "" !important;
   text-shadow: none !important;
   box-shadow: none !important;
 }
+
+@media screen and (max-width: 600px)  {
+  .ant-input {
+    padding: 8px 10px !important;
+    font-size: .85rem !important;
+    }
+
+    .ant-input-affix-wrapper {
+      padding: 8px 10px !important;
+      font-size: .85rem !important;
+    }
+
+    .ant-checkbox+span {
+      padding-left: 15px !important;
+      }
+      
+      .ant-form label {
+      // outline: 3px solid salmon;
+      font-size: .8rem !important;
+      }
+
+}

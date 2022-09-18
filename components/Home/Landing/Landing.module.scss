@@ -1,5 +1,85 @@
 
 
+.openMenuPart {
+  background: #ffff;
+  z-index: 1000;
+  width: 95%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 1rem;
+  transition: 3s ease;
+
+  .close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+
+  .openMenuList {
+    // outline: 3px solid crimson;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    color: #0e0b8b;
+    font-weight: bold;
+    padding: 1rem;
+    padding-bottom: 8rem;
+
+    li {
+      width: 80%;
+      list-style: none;
+      text-align: center;
+    }
+
+    .openListItem{
+
+      &:hover {
+        background: #0e0b8b;
+        color: #ffff;
+        padding: .2rem;
+        border-radius: .5rem;
+      }
+    }
+
+    .openBtn1 {
+     outline: none;
+     background: transparent;
+     color: #0e0b8b;
+     border: 2px solid #0e0b8b;
+     padding: .2rem 1.5rem;
+     font-size: 1rem;
+     font-weight: bold;
+     border-radius: 1rem;
+     &:hover {
+      background: #0e0b8b;
+      color: #ffff;
+     }
+      }
+
+      .openBtn2 {
+        outline: none;
+        background: #0e0b8b;
+        color: #ffff;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 1rem;
+        border: none;
+        padding: .2rem 1.5rem;
+        &:hover {
+          background: transparent;
+          border: 2px solid #0e0b8b;
+          color: #0e0b8b;
+        }
+      }
+  }
+}
+
 .landingContainer {
   // overflow: hidden;
   display: flex;
@@ -11,7 +91,7 @@
   // padding-bottom: 10rem;
   background-repeat: no-repeat;
   background-size: cover;
-  // background-image: url('./images/Home/landing-pic.jpg');
+  background-image: url('../../../public/images/Home/landing-image.png');
   width: 100%;
   overflow: hidden;
   font-family: 'Poppins';
@@ -46,6 +126,10 @@
     width: 90%;
     justify-content: space-between;
     align-items: center;
+
+    .menuOpen { 
+      display: none;
+    }
 
     .landingImg {
        img {
@@ -117,20 +201,22 @@
     margin-top: 10rem;
     
     h1 {
+      width: 44%;
+      // outline: 3px solid crimson;
       font-size: 3rem;
       line-height: 5rem;
       font-weight: 700;
       color: #ffff;
     }
 
-    p {
+    .contentDesc {
       width: 45%;
       // outline: 3px solid white;
       color: #ffff;
       font-size: 1.5rem;
     }
 
-    button {
+    .buttonDesc {
       background-color: #ffff;
       color: #0e0b8b;
       outline: none;
@@ -203,6 +289,73 @@
 }
 }
 
+
+@media screen and (max-width: 600px) {
+
+  .landingContainer { 
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-image: url('../../../public/images/Home/mobile-landing.png') !important;
+
+    
+
+  .landingDesc {
+    // outline: 3px solid green;
+    margin-top: 6rem !important;
+    width: 90% !important;
+
+    .buttonDesc {
+      font-size: .9rem !important;
+      padding: 0.3rem 1rem !important;
+    } 
+
+    .contentDescCover {
+      // outline: 3px solid crimson;
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+
+      p {
+
+      }
+    }
+      
+      h1 {
+        width: 100% !important;
+        // outline: 3px solid green;
+        // outline: 3px solid pink;
+        font-size: 1.7rem !important;
+        line-height: 3.2rem !important;
+      }
+
+      .contentDesc {
+        width: 100% !important;
+        // outline: 3px solid white;
+        font-size: 1rem !important;
+      }
+    
+  }
+  }
+
+  .landingNavItems1 {
+    display: none !important;
+  }
+
+  .landingButtons{
+    display: none !important;
+  }
+
+  .landingNav {
+    margin-top: 1.5rem !important;
+    //  outline: 3px solid firebrick;
+     width: 85% !important;
+  }
+  .menuOpen {
+    // outline: 3px solid green;
+    display: block !important;
+    cursor: pointer;
+  }
+}
 
 
 

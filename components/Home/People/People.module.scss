@@ -10,7 +10,6 @@
         // outline: 3px solid green;
         display: flex;
         gap: 3rem;
-        justify-content: space-between;
         align-items: center;
         width: 90%;
 
@@ -61,7 +60,7 @@
             // display: none !important;
             // outline: 3px solid red;
             padding: 2rem;
-            transition: 5s all ease;
+            // transition: 5s all ease;
             user-select: none !important;
 
             
@@ -160,14 +159,14 @@
 
             .peopleSliderArrowCoverGroup {
                 display: flex;
-                gap: 1em;
+                gap: 1rem;
                 justify-self: flex-end;
                 transition: 5s all ease;
             }
 
             .actionSliderGroup {
                 display: flex;
-                gap: 1em;
+                gap: 1rem;
                 margin: auto;
                 transition: 5s ease;
 
@@ -264,6 +263,158 @@
                }
 
         }
+
+    }
+
+
+    @media screen and (max-width: 600px)  {
+        .peopleContainer {
+        //    outline: 3px solid firebrick;
+           padding: 3rem 1rem;
+            
+           .peopleMain {
+            // outline: 3px solid green;
+            flex-direction: column;
+            gap: 2rem !important;
+            align-items: center;
+            width: 90%;
+
+            .peopleDesc {
+                width: 100%;
+                // outline: 3px solid purple;
+                margin-bottom: .5rem;
+                
+                    h1 {
+                        width: 100% !important;
+                        font-size: 1.3rem !important;
+                        line-height: 2rem !important;
+                    }
+        
+                    p {
+                        // outline: 3px solid #0e0b8b;
+                        font-size: .9rem !important;
+                        line-height: 1.8rem !important;
+                        width: 100% !important;
+                    }
+        
+                    span {
+                        font-size: .9rem !important;
+                    }
+                
+            }
+           }
+
+
+           .peopleImageSliderCover {
+            transition: none !important;
+            width: 100% !important;
+            // outline: 3px solid green;
+
+            .peopleImageSlider {
+                // display: none !important;
+                // outline: 3px solid red;
+                padding: 0rem;
+                // transition: 5s all ease;
+                user-select: none !important;
+
+                .peopleCardUmbrella {
+                    //  outline: 3px solid purple;
+                    //  display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: .8rem;
+                }
+
+                .peopleCard {
+                    // width: 50%;
+                    // outline: 3px solid orangered;
+                    // transition: 5s all ease ;
+        
+                    .img1 {
+                        width: 100%;
+                        height: 8rem;
+                        object-fit: cover;
+                    }
+                    .peopleCardItem1 {
+                     height: 1.2rem;
+        
+                     .apostCover {
+                     margin-left: 1.5rem;
+                     background: #ffff;
+                     padding: 1rem;
+                     width: 2rem;
+                     height: 2rem;
+        
+                     img {
+                        width: 1rem;
+                        height: 1rem;
+                     }
+                     }
+                    }
+        
+                    .peopleCardItemDesc {
+                        background-color: #0E0B8B;
+                        padding: .5rem 0 .25rem .5rem !important;
+                        color: #ffff;
+        
+                        p {
+                            // outline: 3px solid yellow;
+                            width: 95%;
+                            font-size: .7rem !important;
+                            line-height: 1.2rem !important;
+                        }
+        
+                        .peopleCardItemDescLover {
+                            margin-top: 1rem !important;
+                            h2 {
+                            font-size: .8rem !important;
+                            }
+        
+                            h3 {
+                                font-size: .65rem !important;
+                            }
+                        }
+        
+        
+                       }
+                    }
+            }
+        }
+
+
+
+        .peopleSliderArrow {
+            // outline: 3px solid green;
+            flex-direction: column;
+            width: 100%;
+            gap: 1rem;
+            margin-top: 2.5rem;
+
+            .actionSliderGroup {
+                .actionSlider {
+                    background: #7170A6;
+                    height: .8em;
+                    width: .8rem;
+                }
+
+                .active {
+                    background-color: #0E0B8B;
+                    height: .8rem;
+                    width: 3.5rem;
+                }
+            }
+            .peopleSliderArrowCover {
+                background-color: #0905E0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 2.2rem;
+                width: 2.2rem;
+                cursor: pointer;
+            }
+        }
+       
+     
+    }
 
     }
 
