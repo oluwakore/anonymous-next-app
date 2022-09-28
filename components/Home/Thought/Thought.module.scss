@@ -44,10 +44,13 @@
 
         .thoughtListItems {
           // outline: 3px solid magenta;
-          display: inline-flex;
+          display: flex;
+          flex-direction: row;
           // justify-content: center;
           // align-items: center;
-          gap: 2rem;
+          // gap: 2rem;
+          row-gap: 2rem !important;
+          column-gap: 2rem !important;
 
           img {
             // margin: auto;
