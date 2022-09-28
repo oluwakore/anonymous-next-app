@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import Head from "next/head";
 import { useRouter } from 'next/router'
 import { Icon } from "@iconify/react";
 import {
@@ -77,6 +78,12 @@ const onFinish = async (values) => {
 
   return (
     <div className={styles.loginContainer}>
+      <Head>
+        <title>Login to Anonymous Confidant</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="icon" href="/blue-logo.png" />
+      </Head>
+
       <div className={styles.loginPic}>
         <img src="images/register/hero-image.jpg" alt=" " />
       </div>
@@ -179,7 +186,7 @@ const onFinish = async (values) => {
             </div>
             <div className={styles.formzEnd}>
               <div className={styles.formzEndQuestion}>
-                <p>Don&apos;t yet have an account?</p>
+                <p>No account yet?</p>
               </div>
               <div className={styles.formzEndLink}>
                 <Link style={{ textDecoration: "none" }} href="/register">

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Head from "next/head";
 import { useRouter } from 'next/router'
 import {
   Button,
@@ -90,6 +91,12 @@ function Register() {
   };
   return (
     <div className={styles.registerContainer}>
+         <Head>
+        <title>Register for Anonymous Confidant</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="icon" href="/blue-logo.png" />
+      </Head>
+
       <div className={styles.registerImg}>
         <img src="images/register/hero-image.jpg" alt="" />
       </div>

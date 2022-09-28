@@ -11,7 +11,7 @@
 
     img {
       width: 100%;
-      height: auto;
+      aspect-ratio: 2/1;
     }
 
    
@@ -40,14 +40,14 @@
   }
 
   .storyDetailsBottom {
-    // margin-top: 500px;
+    
     display: flex;
     flex-direction: row;
-    gap: 2em;
+    gap: 2rem;
     // justify-content: space-between;
     align-items: center;
     // outline: 3px solid green;
-    padding: 6em 1em;
+    padding: 6rem 1rem;
     // padding-top: 40px;
     // padding-bottom: 100px;
     // background-color: coral;
@@ -71,6 +71,7 @@
         text-align: center;
         font-size: 1.5rem;
         font-weight: 550;
+        text-transform: capitalize;
       }
       p {
         line-height: 1.6em;
@@ -105,7 +106,7 @@
         // background-color: purple;
         overflow-y: scroll;
         overflow-x: hidden;
-        height: 40.2em;
+        height: 40.2rem;
         // width: fit-content;
       }
      
@@ -123,12 +124,19 @@
       .commentActions {
         // background-color: pink;
         // width: 100px;
+        // outline: 3px solid crimson;
         padding: 0 1em;
         display: flex;
         flex-direction: row;
-        gap: 1em;
+        gap: 1.5rem;
+        align-items: center;
         // justify-content: space-between;
         align-items: center;
+
+        .repliesListCover {
+         margin: auto;
+         cursor: pointer;
+        }
       }
       
 
@@ -144,6 +152,55 @@
         width: 100%;
         // padding: 10px;
         // background-color: rgb(218, 92, 92);
+
+        .replyPart {
+          background: rgba($color: #000000, $alpha: 0.1);
+
+          .replyPartForm {
+           
+
+            .replyPartCover {
+              display: flex;
+              padding: .3rem;
+              justify-content: space-between;
+
+              button {
+                background: #0e0b8b;
+                color: #ffff;
+                outline: none;
+                border: none; 
+              }
+            }
+            .replyPart1 {
+              // outline: 3px solid green;
+              display: flex;
+              align-items: center;
+              width: 80%;
+              // flex-direction: column;
+              gap: .5rem;
+
+              label {
+                font-weight: bold;
+              }
+              input {
+                background: transparent;
+                outline: none;
+                border: 3px solid #0e0b8b;
+                border-radius: 1rem;
+                padding: .5rem;
+                width: 100%;
+                color: #000000;
+              }
+            }
+            
+            .replyClose {
+            // outline: 3px solid pink;
+            padding: .5rem;
+            display: flex;
+            justify-content: flex-end;
+            }
+          }
+        }
       }
 
       .commentContainerComments {
@@ -194,12 +251,35 @@
             // background-color: chocolate;
             // width: 222px;
 
+            .avatarContainer {
+              background: #0e0b8b;
+              height: 3rem;
+              width: 3rem;
+              border-radius: 50%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              h2 {
+                color: #ffff;
+                font-size: 1.4rem;
+                font-weight: 600;
+                margin: auto;
+              }
+            }
+
             img {
               width: 100%;
               height: auto;
             }
             h1 {
               font-size: 1rem;
+
+              span {
+                font-size: .7rem;
+                font-weight: lighter;
+                margin-left: .5rem;
+              }
             }
           }
         }
@@ -309,4 +389,196 @@
   }
 }
 
+}
+
+
+@media screen and (max-width: 600px) {
+  .storyDetailsTop {
+    img {
+      width: 100%;
+      aspect-ratio: 2/2 !important;
+    }
+  }
+
+  .storyDetailsBottom {
+    flex-direction: column !important;
+    // outline: 3px solid green;
+    padding: 3rem .5rem !important;
+    width: 90%;
+
+    .storyDetailsMain {
+ 
+      width: 100% !important;
+
+
+     
+      // outline: 3px solid purple;
+
+
+      h1 {
+        font-size: 1rem !important;
+      }
+      p {
+        font-size: .7rem !important;
+        width: 100% !important;
+        // outline: 3px solid purple;
+        height: auto !important;
+      }
+
+    }
+    .storyCommentSection {
+      
+    
+      width: 100% !important;
+      border: 3px solid #0e0b8b;
+
+      .storyCommentMainCover {
+        // outline: 3px solid purple;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 45rem;
+      }
+     
+
+      .commentActions {
+        // background-color: pink;
+        // width: 100px;
+        // outline: 3px solid crimson;
+        padding: 0 1em;
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+        align-items: center;
+        // justify-content: space-between;
+        align-items: center;
+
+        .repliesListCover {
+         margin: auto;
+         cursor: pointer;
+        }
+      }
+      
+
+      .commentContainer {
+      
+        width: 100%;
+        .replyPart {
+          background: rgba($color: #000000, $alpha: 0.1);
+
+          .replyPartForm {
+           
+
+            .replyPartCover {
+              display: flex;
+              padding: .3rem;
+              justify-content: space-between;
+
+              button {
+                background: #0e0b8b;
+                color: #ffff;
+                outline: none;
+                border: none; 
+              }
+            }
+            .replyPart1 {
+              // outline: 3px solid green;
+              display: flex;
+              align-items: center;
+              width: 80%;
+              // flex-direction: column;
+              gap: .5rem;
+
+              label {
+                font-weight: bold;
+              }
+              input {
+                background: transparent;
+                outline: none;
+                border: 3px solid #0e0b8b;
+                border-radius: 1rem;
+                padding: .5rem;
+                width: 100%;
+                color: #000000;
+              }
+            }
+            
+            .replyClose {
+            // outline: 3px solid pink;
+            padding: .5rem;
+            display: flex;
+            justify-content: flex-end;
+            }
+          }
+        }
+      }
+
+      .commentContainerComments {
+        // outline: 3px solid crimson;
+          p {
+            font-size: .7rem !important;
+            letter-spacing: .1rem !important;
+          }
+      }
+
+      .storyCommentMain {
+        padding: .5rem !important;
+        // outline: 3px solid orangered;
+        h1 {
+          font-size: 1.2rem !important;
+        }
+
+        .commentContainerTopPart {
+
+          .commentContainerTopAvatar {
+           
+            gap: .3rem !important;
+            // background-color: chocolate;
+           
+
+            .avatarContainer {
+              height: 2.5rem !important;
+              width: 2.5rem !important;
+            
+
+              h2 {
+                font-size: 1.2rem !important;
+              }
+            }
+
+            img {
+              width: 100%;
+              height: auto;
+            }
+            h1 {
+              // background-color: chocolate;
+              font-size: .85rem !important;
+
+              span {
+                font-size: .5rem !important;
+              }
+            }
+          }
+        }
+      }
+
+      .storyCommentBottom {
+        padding: 2rem !important;
+        margin-top: .5rem !important;
+
+      
+        .storyCommentBottomMain {
+       
+
+          .storyCommentBottomInput {
+      
+            input {
+              font-size: .8rem !important;
+              padding: .2rem !important;
+            }
+          }
+        }
+      }
+
+    }
+  }
 }

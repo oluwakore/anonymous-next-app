@@ -14,7 +14,7 @@ export const register = (data) => {
 }
 
 export const login = (data) => {
-  return http.post('/auth/login', data)
+  return http.post('/auth/login/', data)
 }
 
 export const getDetails = (id, token) => {
@@ -31,6 +31,44 @@ export const updatePasword = (id, data, token) => {
 }
 
 export const shareStory = (id, data, token) => {
-  return http.post(`/patients/stories?=${id}`, data,setAuthToken(token))
+  return http.post(`/patients/stories?=${id}`, data, setAuthToken(token))
 }
+
+
+// export const myStory = (id, token) => {
+//   return http.get(`/patients/stories?=${id}`,setAuthToken(token))
+// }
+
+export const allStories = () => {
+  return http.get(`/stories`)
+}
+
+export const allStoriesFuncs = (pageNo, limit) => {
+  return http.get(`/stories?page=${pageNo}&limit=${limit}`)
+}
+
+export const getStory = (id) => {
+  return http.get(`/stories/${id}`)
+}
+
+export const getStoryComments = (id) => {
+  return http.get(`/stories/${id}/comments`)
+}
+
+export const postComments = (id, data, token) => {
+  return http.post(`/stories/${id}/comments`, data, setAuthToken(token))
+}
+
+export const likeComments = (id, data, token) => {
+  return http.post(`/comments/${id}/like`, data, setAuthToken(token))
+}
+
+export const unlikeComments = (id, data, token) => {
+  return http.delete(`/comments/${id}/like`, setAuthToken(token))
+}
+
+
+
+
+
 

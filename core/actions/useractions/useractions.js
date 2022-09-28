@@ -18,7 +18,7 @@ import axios from "axios";
 /**
  * Logins the user
  * @param  payload object
- * @returns dispacth
+ * @returns dispatch
  */
 export const loginUser = (email, password) => async (dispatch) => {
   try {

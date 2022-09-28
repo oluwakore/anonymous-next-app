@@ -9,9 +9,9 @@ import styles from './shareStory.module.scss'
 
 function ShareStoryComp() {
 
-  const [preview, setPreview] = useState("")
+  const [title, setTitle] = useState("")
   const [coverImg, setCoverImg] = useState("") 
-  const [body, setBody] = useState("")
+  const [content, setContent] = useState("")
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -37,17 +37,21 @@ function ShareStoryComp() {
 
   const loggedUserId = userInfo?.user?.id
 
+  const authorID = userInfo?.user?.id
+
+  // const tags = ['Family', 'Earth']
+
   const loggedUserToken = userInfo?.token
 
   const shareStoryHandler = async(e) => {
     e.preventDefault()
     try {
       setLoading(true);
-      const res = await shareStory(loggedUserId, {preview, body, coverImg}, loggedUserToken)
+      const res = await shareStory(loggedUserId, {title, content, coverImg, authorID}, loggedUserToken)
       console.log(res.data)
       setLoading(false)
-      setBody("")
-      setPreview("")
+      setTitle("")
+      setContent("")
       setCoverImg("")
       setIsModalOpen(false);
       if(res.data.status === "success") {
@@ -74,9 +78,9 @@ function ShareStoryComp() {
           <div className={styles.shareStoryInputCover} >
             <label>Title of Story:</label>
             <input className={styles.shareStoryInput} type="text" 
-            value={preview}
+            value={title}
             required
-            onChange={(e) => setPreview(e.target.value)}
+            onChange={(e) => setTitle(e.target.value)}
             placeholder="Give your story a title" />
           </div>
           <div className={styles.shareStoryInputCover}>
@@ -89,7 +93,7 @@ function ShareStoryComp() {
         <div className={styles.shareStoryTextarea}>
           <div className={styles.textareaCover}>
           <textarea placeholder='Tell your story...'
-          value={body}  onChange={(e) => setBody(e.target.value)}
+          value={content}  onChange={(e) => setContent(e.target.value)}
           ></textarea>
           </div>
           <div className={styles.shareStoryMicCover}>
@@ -110,10 +114,10 @@ function ShareStoryComp() {
             <img src={`${coverImg === "" ?  "./images/no-image.png" : coverImg }`}  alt="story image" /> 
             <div className={styles.prevTitle}>
             <h3>
-            {preview}  
+            {title}  
             </h3>
             </div> 
-            <p>{body}</p> 
+            <p>{content}</p> 
             <button onClick={shareStoryHandler} type="submit" className={styles.button2} >{ loading ? "Sharing Your Story..." : "Share Your Story"}</button>         
           </div>
          </div>

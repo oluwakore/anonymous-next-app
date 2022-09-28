@@ -1,5 +1,6 @@
 import React , {useRef, useState} from "react";
 import  Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { Dropdown, Menu, Space } from "antd";
 import { DownOutlined, LogoutOutlined, InfoCircleOutlined , UserOutlined, MenuOutlined, CloseOutlined} from "@ant-design/icons";
@@ -26,7 +27,7 @@ function DashboardNav() {
 
   const ref = useRef()
 
-  const dropdownRef = ref.current
+  // const dropdownRef = ref.current
   
 
  
@@ -50,7 +51,7 @@ function DashboardNav() {
 
 const logoutHandler = () => {
   router.push('/')
-  dispatch(logoutUser())
+  // dispatch(logoutUser())
   openNotificationWithIcon('success', 'Sign Out', 'Logout was succesful.')
   console.log('Logged Out')
 }
@@ -98,9 +99,9 @@ const logoutHandler = () => {
         <div className={styles.openMenuPart}>
           <CloseOutlined style={{fontSize: "2rem" }} className={styles.close} onClick={() => setMenuOpen(false)}  />
           <ul className={styles.openMenuList} >
-          <li
+          {/* <li
           className={styles.openListItem}
-          >Home</li>
+          >Home</li> */}
           <li className={styles.openListItem}>Community</li>
          <li className={styles.openListItem}>Counselling</li>
          <li className={styles.openListItem}>About Us</li>
@@ -111,12 +112,19 @@ const logoutHandler = () => {
     }
       <div className={styles.dashboardContainerMain}>
       <div className={styles.dashboardLogo}>
-        <img src="images/dashboard/logo.png" alt="" />
+       <Image 
+       src={"/blue-logo.png"}
+       alt="logo"
+       height={70}
+       width={70}
+       className={styles.dashboardLogoImg}
+       />
+
       </div>
       
-
-      <MenuOutlined   style={{fontSize: "2rem", color: "#0e0b8b" }} onClick={() => setMenuOpen(true)}/>
-
+    <div className={styles.dashboardMenuBar}>
+    <MenuOutlined   style={{fontSize: "2rem", color: "#0e0b8b" }} onClick={() => setMenuOpen(true)}/>
+    </div>
 
       
       <ul className={styles.dashboardMenu}>
@@ -136,7 +144,7 @@ const logoutHandler = () => {
 
     <div className={ userInfo ? styles.avatarMain : styles.inactive}
     >
-      <Dropdown overlay={menu}  >
+      <Dropdown overlay={menu} trigger={['click']}  >
             <Space>
               <div className={styles.avatarHolder} >
               { userInfo ? <h2>{getInitials( user?.data?.name || userInfo?.user?.name)}</h2> : " "}

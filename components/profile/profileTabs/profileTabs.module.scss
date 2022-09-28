@@ -334,8 +334,7 @@ img {
       // outline: 3px solid blueviolet;
       font-size: 0.9rem;
       width: 90%;
-      overflow: auto;
-      height: 10rem;
+     
     }
 
   
@@ -419,4 +418,215 @@ img {
   }
   
   }
+}
+
+
+@media screen and (max-width: 600px) {
+  .coverMain {
+    // outline: 3px solid red;
+    margin: 3rem 0 !important;
+
+    .menuList {
+      display: flex;
+      flex-direction: column;
+      margin-top: 2rem;
+
+      .menuListTitle {
+        // outline: 3px solid yellowgreen;
+        display: none;
+      }
+
+      .card {
+        //  outline: 3px solid yellowgreen;
+       
+
+        justify-content: center;
+        gap: 0rem !important;
+      
+      }
+    }
+
+    .avatarName {
+      h1 {
+        font-size: 1.5rem !important;
+      }
+    }
+
+    .avatarNameDetails {
+      display: none !important;
+      margin-top: .5rem !important;
+      h2 {
+        font-size: .8rem !important;
+      }
+
+      p {
+        font-size: 0.65rem !important;
+        line-height: normal !important;
+      }
+    }
+  }
+
+  .backToMain {
+   
+    h4 {
+   
+
+      .backToMainTitle {
+        display: none;
+      }
+    }
+  }
+
+
+  .logoutPart {
+    margin-top: 10rem !important;
+    padding: 1rem 2rem;
+    h2 {
+     
+      .logoutPartTitle {
+        display: none;
+      }
+    }
+
+  }
+
+
+  .compsCover {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+
+
+    margin: auto;
+    // outline: 3px solid red;
+    width: fit-content;
+    padding: 2rem;
+
+    .detailsCover {
+      display: flex;
+      flex-direction: column;
+
+      h1 {
+        font-size: 1rem !important;
+      }
+
+      .formCover {
+        padding: 4rem 1rem !important;
+        width: 100% !important;
+
+        .formCover1Button {
+
+         margin: auto;
+
+         button {
+          font-size: .7rem !important;
+          border-radius: .2rem;
+         }
+        }
+
+        .fillPart {
+          // outline: 3px solid green;
+
+          label {
+            font-size: .8rem !important;
+          }
+
+          input {
+            font-size: .75rem !important;
+          }
+
+        }
+      }
+    }
+  }
+
+  .arrayContainerMain {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    // outline: 3px solid crimson;
+    height: 80% !important;
+    width: 100%;
+    justify-content: space-between;
+    margin: auto !important;
+  
+    
+  
+    .storiesCta2 {
+      margin: 0 auto;
+      // display: flex;
+      // align-self: flex-end !important;
+      button {
+        font-size: .85rem !important;
+      }
+    }
+  
+  }
+
+  .arrayContainer {
+    //  outline: 3px solid red;
+     grid-template-columns: repeat(2, 1fr) !important; 
+     gap: 1rem !important;
+
+     .storiesCard {
+     
+      // background: #0e0b8b;
+      box-shadow: 7px 10px 5px 1px rgba(227,220,220,0.75);
+    .storiesDesc {
+      padding: .2rem 1rem !important;
+      h1 {
+        font-size: .7rem !important;
+      }
+    }
+    
+    
+    img {
+      object-fit: cover;
+      height: 100% !important;
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    }
+    
+    }
+
+    .modalContainer{
+      // outline: 3px solid red;
+      
+    
+      .modalContent {
+      h1 {
+        font-size: 1rem !important;
+      }
+    
+        .prevTitle {
+          // outline: 3px solid blue;
+          width: 100% !important;
+          h3 {
+            font-size: .85rem !important;
+          }
+        }
+    
+        h1 {
+          font-size: 1rem !important;
+          text-align: center;
+        }
+    
+        img {
+          width: 60% !important;
+        }
+    
+       
+    
+        p {
+          // outline: 3px solid blueviolet;
+          font-size: 0.75rem !important;
+          width: 100% !important;
+        }
+    
+      
+      }
+    }
+
 }

@@ -20,7 +20,7 @@
     // justify-content: center;
     background-color: #ffff;
     height: 90rem;
-    overflow-y: scroll;
+   
 
     .rightMainSvg {
       // outline: 3px solid black;
@@ -85,6 +85,17 @@
     font-weight: 520;
     color: #0e0b8b;
     text-align: center;
+  }
+
+  .rightMenuCover {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 20rem;
+    overflow: auto;
+    // outline: 3px solid magenta;
+    padding: .5rem;
+    width: 100%;
   }
 
 

@@ -207,7 +207,7 @@ function ProfileTabs({ userToken }) {
                       switchTabs(index);
                     }}
                   >
-                    <span>{item.icon}</span> {item.title}
+                    <span>{item.icon}</span> <span  className={styles.menuListTitle}> {item.title} </span>
                   </h1>
                 ))}
               </div>
@@ -217,9 +217,12 @@ function ProfileTabs({ userToken }) {
                   {" "}
                   <span>
                     {" "}
-                    <ArrowLeftOutlined style={{ marginRight: "1rem" }} />
+                    <ArrowLeftOutlined style={{ marginRight: "1rem", fontSize: "1.5rem" }} />
                   </span>{" "}
+                  <span className={styles.backToMainTitle}>
                   Back to Main
+                  </span>
+            
                 </h4>
                 </Link>
               </div>
@@ -228,9 +231,12 @@ function ProfileTabs({ userToken }) {
                   {" "}
                   <span>
                     {" "}
-                    <LogoutOutlined />
+                    <LogoutOutlined style={{fontSize: "1.5rem" }} />
                   </span>{" "}
+                  <span className={styles.logoutPartTitle}>
                   Log Out
+                  </span>
+                 
                 </h2>
               </div>
               `{" "}
@@ -241,10 +247,12 @@ function ProfileTabs({ userToken }) {
             {addTypes[0].active && (
               <div
                 style={{
-                  height: "100%",
+                  height: "100vh",
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
+                  overflow: "auto"
+                  
                 }}
               >
                 <div className={styles.compsCover}>
@@ -394,7 +402,7 @@ function ProfileTabs({ userToken }) {
                   {user?.data?.activeSessions.length === 0 ? (
                     <Empty
                       description={
-                        <span>You don&apos;t have any sessions yet.</span>
+                        <span style={{ fontSize: ".75rem" }}>You don&apos;t have any sessions yet.</span>
                       }
                     />
                   ) : (
@@ -415,17 +423,19 @@ function ProfileTabs({ userToken }) {
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
+                      flexDirection: "column",
+                      gap: "2rem"
                     }}
                   >
                     <Empty
                       description={
-                        <span>You haven&apos;t created any stories yet.</span>
+                        <span style={{ fontSize: ".75rem" }}>You haven&apos;t created any stories yet.</span>
                       }
                     />
                     <div className={styles.storiesCta}>
                       <Link href="/share-story">
                         <button type="button">
-                          <span>Create Story</span>{" "}
+                          <span style={{ fontSize: ".75rem" }}>Create Story</span>{" "}
                           <PlusOutlined
                             style={{ color: "#ffff", fontSize: "1.1rem" }}
                           />
@@ -444,10 +454,10 @@ function ProfileTabs({ userToken }) {
                                 ? "./images/no-image.png"
                                 : item.coverImg
                             }
-                            alt={item.preview}
+                            alt={item.title}
                           />
                           <div className={styles.storiesDesc}>
-                            <h1> {item.preview} </h1>
+                            <h1> {item.title} </h1>
                             <>
                               <MoreOutlined
                                 onClick={() => 
@@ -479,10 +489,10 @@ function ProfileTabs({ userToken }) {
                                       alt="story image"
                                     />
                                     <div className={styles.prevTitle}>
-                                      <h3>{currentModal.preview}</h3>
+                                      <h3>{currentModal.title}</h3>
                                       <small>Created on {moment(currentModal.createdAt).format("LL")} </small>
                                     </div>
-                                    <p>{currentModal.body}</p>
+                                    <p>{currentModal.content}</p>
                                   </div>
                                 </div>
                               </Modal>

@@ -1,4 +1,5 @@
 .storiesContainer {
+  margin-top: .8rem;
   display: flex;
   flex-direction: column;
   // justify-content: center;
@@ -87,20 +88,23 @@
     justify-content: center;
     // margin-top: 80px;
     display: grid;
-    padding: 4em 0;
-    grid-template-columns: repeat(2, 5fr);
+    padding: 4rem 0;
+    grid-template-columns: repeat(2, 1fr);
     gap: 6rem;
     width: 100%;
     // margin-left: 60px;
     // margin-left: 110px;
+   
 
     img {
-      height: auto;
+      aspect-ratio: 4/2.5;
        width: 100%;
+       border-radius: 1.5rem;
     }
     h2 {
       font-size: 1.5rem;
       font-weight: 600;
+      text-transform: capitalize;
     }
 
     p {
@@ -110,9 +114,11 @@
       width: 100%;
     }
     span {
-      margin-left: 3rem;
+      margin-left: 1rem;
       color: #0e0b8b;
       font-weight: 600;
+      cursor: pointer;
+      user-select: none;
     }
     
   }
@@ -156,7 +162,7 @@
     width: 80%;
     justify-content: center;
     align-items: center;
-    padding: 0 2em;
+    padding: 0 2rem;
     margin: auto;
   }
 
@@ -257,5 +263,100 @@
     
   }
 
+
+}
+
+
+@media screen and (max-width: 600px) {
+  .storiesHeadliner {
+    display: flex;
+    
+    padding: 2rem 0 !important;
+    font-size: 1rem;
+
+    .storiesHeadlinerContentImages {
+      // outline: 3px solid yellow;
+      width: 80% !important;
+  
+    }
+
+    .storiesHeadlinerContent {
+      // outline: 3px solid firebrick;
+      flex-direction: column;
+      width: 90% !important;
+      padding: 0 .5rem !important;
+    }
+
+
+
+    .storiesNotes {
+     
+      width: 90% !important;
+
+      h1 {
+        font-size: 1rem !important;
+        text-align: center !important;
+      }
+      p {
+        font-size: .8rem !important;
+      }
+      button {
+        padding: .35rem .5rem !important;
+        font-size: .8rem !important;
+       
+      }
+    }
+  }
+
+  .storiesMain {
+    padding: 3rem 1rem !important;
+    // outline: 3px solid forestgreen;
+
+    .storiesMainTitle {
+      display: flex;
+      align-items: center !important;
+      justify-content: center !important;
+      // outline: 3px solid yellow;
+      align-self: center !important;
+      
+      h1 {
+        font-size: 1.5rem !important;
+      }
+    }
+  }
+
+  .storiesMainButtonGroup {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    // outline: 3px solid pink;
+
+    .active {
+      font-size: .9rem !important;
+    }
+
+    button {
+     width: 80% !important;
+      padding: .5rem 3rem;
+      font-size: .9rem !important;
+    }
+  }
+
+  .storiesGrid { 
+    padding: 1rem 0 !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+   
+    h2 {
+      font-size: 1rem !important;
+    }
+
+    p {
+      font-size: .8rem !important;
+    }
+    span {
+      margin-left: .2rem !important;
+    }
+    
+  }
 
 }

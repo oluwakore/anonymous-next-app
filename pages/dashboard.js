@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import Head from 'next/head';
 import { useDispatch, useSelector } from "react-redux";
 import DashboardNav from '../components/dashboard/dashboardNav/dashboardNav'
 import MainContent from '../components/dashboard/middle-portion/root'
@@ -7,6 +8,8 @@ import MainContent from '../components/dashboard/middle-portion/root'
 import Newsletter from '../components/dashboard/newsletter/newsletter'
 import  Footer from '../components/Footer/Footer'
 import styles from  '../styles/dashboard.module.scss'
+import Link from 'next/link';
+import { myStory } from '../api/base';
 
 function Dashboard() {
 
@@ -21,8 +24,28 @@ function Dashboard() {
     router.push('/login')
   }
 
+  // const getStory = async() => {
+  //   try {
+  //     const  res =  await myStory(userInfo.user.id, userInfo.token)
+
+  //     console.log(res.data)
+  //   } catch (err) {
+  //     console.log(err)
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   getStory()
+  // })
+
   return (
     <div  style={{ overflow: "hidden"}}>
+        <Head>
+        <title>Welcome to Anonymous Confidant, {userInfo?.user?.name} </title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="icon" href="/blue-logo.png" />
+      </Head>
+
         {
       userInfo ? (
         <div className={styles.dashContainer}>
@@ -33,8 +56,22 @@ function Dashboard() {
         </div>
       ) : handlePush()
     }
+
+    {/* {
+      !userInfo && 
+      (
+  <div>
+    <h2>Requested page could not be displayed</h2>
+    <Link href="/">
+    Go to Homepage
+    </Link>
+  </div> 
+)
+    } */}
     </div>
   )
 }
 
 export default Dashboard
+
+

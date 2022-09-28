@@ -5,8 +5,8 @@ import { DownOutlined, MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import  styles from "./Landing.module.scss";
 
 const logo = {
-  width: "2.5rem",
-  height: "2.5rem",
+  width: "3.5rem",
+  height: "3.5rem",
 };
 
 const menu = (
@@ -81,7 +81,7 @@ export default function Landing() {
     }
     <nav className={styles.landingNav}>
     <div className={styles.landingImg}>
-    <img src="/logo.svg" alt="logo" style={logo} />
+    <img src="/ac-logo.png" alt="logo" style={logo} />
     </div>
     
       <ul className={styles.landingNavItems1}>
@@ -121,7 +121,7 @@ export default function Landing() {
 
    
     <p className={styles.contentDesc}>
-    Giving priority to your identity with best emotional needs service. Keep on with us and learn more on how href navigate life, work, relationships, abuse and many more…
+    Giving priority to your identity with best emotional needs service. Keep on with us and learn more on how to navigate life, work, relationships, abuse and many more…
     </p>
 
     </div>

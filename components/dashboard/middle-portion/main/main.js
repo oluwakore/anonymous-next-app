@@ -17,19 +17,19 @@ function CentralPortion() {
         <div className={styles.centralContainerServicesMain} >
         <Link style={{ textDecoration: "none" }} href="/therapy-form">
           <div className={styles.centralContainerServicesCard}>
-            <img src="images/dashboard/therapy.svg" alt='' style={{ borderRadius: "2.5em", backgroundColor: "#FFDBE1",  height: "15rem", width: "17rem" , padding: "2em" }} />
+            <img src="images/dashboard/therapy.svg" alt='' style={{ backgroundColor: "#FFDBE1" }} />
             <h2> Therapy Session </h2>
           </div>
         </Link>
           <Link style={{ textDecoration: "none" }} href="/share-story">
           <div className={styles.centralContainerServicesCard}>
-            <img  src="images/dashboard/share.svg" alt='' style={{ borderRadius: "2.5em", backgroundColor: "#DBFFE3", height: "15rem", width: "17rem" , padding: "2em" }}/>
+            <img  src="images/dashboard/share.svg" alt='' style={{  backgroundColor: "#DBFFE3"  }}/>
             <h2> Share Your Story </h2>
           </div>
         </Link>
           <Link style={{ textDecoration: "none" }} href="/stories">
           <div className={styles.centralContainerServicesCard}>
-            <img src="images/dashboard/thoughts.svg" alt=''  style={{ borderRadius: "2.5em", backgroundColor: "#DBDCFF" , height: "15rem", width: "17rem" , padding: "2em" }} />
+            <img src="images/dashboard/thoughts.svg" alt=''  style={{  backgroundColor: "#DBDCFF" , }} />
             <h2> Thoughts on Issues </h2>
           </div>
         </Link>

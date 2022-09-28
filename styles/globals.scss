@@ -27,9 +27,52 @@ a {
 }
 
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(237, 237, 237);
+  border-radius: 40px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
 
 .ant-carousel .slick-dots-bottom {
   // bottom: -80px !important;
+}
+
+
+.ant-pagination-next .ant-pagination-item-link, .ant-pagination-prev .ant-pagination-item-link {
+  border-radius: 10px !important;
+  &:hover {
+    color: #0e0b8b !important;
+    border-color: #0e0b8b !important;
+  }
+}
+
+.ant-pagination-item{
+  &:hover {
+    color: #0e0b8b !important;
+    border-color: #0e0b8b !important;
+  }
+}
+
+
+
+.ant-pagination-item a {
+  color: #0e0b8b !important;
+}
+
+.ant-pagination-item-active a {
+  color: #0e0b8b !important;
+}
+
+.ant-pagination-item-active {
+  border-color: #0e0b8b !important;
 }
 
 .ant-carousel .slick-dots li button {
