@@ -9,7 +9,7 @@
     .peopleMain {
         // outline: 3px solid green;
         display: flex;
-        gap: 3rem;
+        // gap: 3rem;
         align-items: center;
         width: 90%;
 
@@ -54,6 +54,7 @@
             transition: 5s all ease !important;
             width: 70%;
             // outline: 3px solid green;
+            // margin-top: 1.5rem;
         }
 
         .peopleImageSlider {
@@ -151,7 +152,7 @@
             // outline: 3px solid green;
             display: flex;
             width: 100%;
-            gap: 1rem;
+            // gap: 1rem;
             // justify-content: flex-end;
             justify-content: space-between;
             align-items: center;
@@ -159,16 +160,22 @@
 
             .peopleSliderArrowCoverGroup {
                 display: flex;
-                gap: 1rem;
+                // gap: 1rem;
                 justify-self: flex-end;
-                transition: 5s all ease;
+                // outline: 3px solid purple;
+                width: 11%;
+                justify-content: space-between;
+                // transition: 5s all ease;
             }
 
             .actionSliderGroup {
+                // outline:  3px solid orange;
+                width: 18%;
                 display: flex;
-                gap: 1rem;
+                justify-content: space-between;
+                // gap: 1rem;
                 margin: auto;
-                transition: 5s ease;
+                // transition: 5s ease;
 
                 .actionSlider {
                     background: #7170A6;
@@ -200,7 +207,7 @@
         
         .peopleMain {
             // outline: 3px solid green;
-            gap: 1.5rem !important;
+            // gap: 1.5rem !important;
 
             .peopleDesc {
                 width: 30%;
@@ -275,7 +282,7 @@
            .peopleMain {
             // outline: 3px solid green;
             flex-direction: column;
-            gap: 2rem !important;
+            // gap: 2rem !important;
             align-items: center;
             width: 90%;
 
@@ -308,6 +315,7 @@
            .peopleImageSliderCover {
             transition: none !important;
             width: 100% !important;
+            margin-top: 1.5rem;
             // outline: 3px solid green;
 
             .peopleImageSlider {
@@ -386,20 +394,22 @@
             // outline: 3px solid green;
             flex-direction: column;
             width: 100%;
-            gap: 1rem;
+            // gap: 1rem;
             margin-top: 2.5rem;
 
             .actionSliderGroup {
+                //  outline:  3px solid orange;
+                 width: 40% !important;
                 .actionSlider {
                     background: #7170A6;
-                    height: .8em;
-                    width: .8rem;
+                    height: .8em !important;
+                    width: .8rem !important;
                 }
 
                 .active {
                     background-color: #0E0B8B;
-                    height: .8rem;
-                    width: 3.5rem;
+                    height: .8rem !important;
+                    width: 3.5rem !important;
                 }
             }
             .peopleSliderArrowCover {
@@ -414,6 +424,12 @@
         }
        
      
+    }
+
+    .peopleSliderArrowCoverGroup {
+       margin-top: .8rem;
+        // outline: 3px solid purple;
+        width: 25% !important;
     }
 
     }

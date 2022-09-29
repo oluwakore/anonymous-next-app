@@ -73,8 +73,7 @@ function ShareStoryComp() {
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam</p>
       </div> 
       
-        <form className={styles.shareStoryTop}  onSubmit={shareStoryHandler}>
-        <div className={styles.shareStoryForm}>
+        <form className={styles.shareStoryForm}  onSubmit={shareStoryHandler}>
           <div className={styles.shareStoryInputCover} >
             <label>Title of Story:</label>
             <input className={styles.shareStoryInput} type="text" 
@@ -122,7 +121,7 @@ function ShareStoryComp() {
           </div>
          </div>
         </Modal>
-        </div>
+        
         </form>
     </div>
   )

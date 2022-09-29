@@ -32,9 +32,9 @@ export default function Footer() {
                 <li>
                     <div className={styles.helpCenterIcons1}><PhoneOutlined style={{ color: "white", transform: "scaleX(-1)", fontSize:"25px" }} /> <span>+234-9025024319</span></div>
                     </li>
-                <li style={{}}>
+                <li>
                     <div className={styles.helpCenterIcons2} >
-                    <TwitterOutlined style={{ fontSize:"25px",}} /> <LinkedinFilled style={{ fontSize:"25px"}} /> <InstagramOutlined style={{ fontSize:"25px"}} /> 
+                    <TwitterOutlined style={{ fontSize:"25px", marginLeft: ".5rem"}} /> <LinkedinFilled style={{ fontSize:"25px", marginLeft: ".5rem"}} /> <InstagramOutlined style={{ fontSize:"25px", marginLeft: ".5rem"}} /> 
                     </div>
                    </li>
                 </ul>

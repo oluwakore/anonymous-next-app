@@ -111,7 +111,9 @@ function Comments({
             </div>
             <div>
               <h1>
+
                 {" "}
+                
                 {item?.authorID?.name === authorName
                   ? "ME"
                   : item?.authorID?.name}{" "}
@@ -130,13 +132,13 @@ function Comments({
           <p> {item?.content} </p>
         </div>
         <div className={styles.commentActions}>
-          {/* <div>
-          <LikeFilled onClick={handleUnlikes} />
+          <div style={{display: "flex"}}>
+          {/* <LikeFilled onClick={handleUnlikes} /> */}
         { !likes ? <LikeOutlined onClick={handleLikes} /> : <LikeFilled onClick={handleUnlikes} />} 
-        <span> {
-            claps.length === 0 ? "" : claps.length
+        <span style={{marginLeft: "-.5rem"}}> {
+            claps?.length === 0 ? "" : claps?.length
             } </span>
-          </div>  */}
+          </div> 
           <span
             style={{ cursor: "pointer" }}
             onClick={() => setShowReplyInput(true)}
@@ -191,7 +193,7 @@ function Comments({
 {
       showReplyList &&
         repliesArray.map((rep) => (
-          <Replies item={rep} authorName={authorName}   key={rep.id} storyID={storyID} parentID={rep.id} authorID={authorID} userToken={userToken} onSubmitReply={onSubmitReply} repliesArray={rep.replies}  />
+          <Replies item={rep} authorName={authorName}   key={rep?.id} storyID={storyID} parentID={rep?.id} authorID={authorID} userToken={userToken} onSubmitReply={onSubmitReply} repliesArray={rep?.replies} claps={rep?.claps} />
         ))
         }
         </div>

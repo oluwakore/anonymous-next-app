@@ -45,12 +45,13 @@
     padding: 0.2rem 2rem;
     border-radius: 3rem;
     display: flex;
-    gap: 1em;
+    // gap: 1em;
     align-items: center !important;
     justify-content: center;
     // flex-direction: row !important;
 
     p {
+      margin-left: 1rem !important;
       margin: auto;
       font-size: 1.1rem;
       // font-weight: 550;
@@ -146,12 +147,15 @@
   }
 
   .formzEnd {
+    // outline: 3px solid pink;
+    width: fit-content;
+    margin: auto;
     // margin-top: 69px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    // justify-content: space-between;
     align-items: center;
-    gap: 0.5em;
+    // gap: 0.5em;
 
     .formzEndQuestion {
       p {
@@ -161,7 +165,7 @@
     }
 
     .formzEndLink {
-      // margin-left: 0.5rem;
+      margin-left: 0.5rem;
       p {
         color: #0e0b8b;
         font-weight: 600;
@@ -232,7 +236,7 @@
   }
   .formzEnd {
     // outline: 3px solid pink;
-    gap: .5rem !important;
+    // gap: .5rem !important;
   }
 }
 
@@ -324,7 +328,7 @@
   }
   .formzEnd {
     // outline: 3px solid pink;
-    gap: .5rem !important;
+    // gap: .5rem !important; 
   }
 }
 

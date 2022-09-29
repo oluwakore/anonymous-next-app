@@ -35,12 +35,7 @@ function StoryDetailsComp({storyInfoId, authorID, userToken, authorName}) {
     }
   }
 
- 
-//   const contentx = "test reply"
-//   const authorIDx = "6316bfb2709a993620aafdbf"
-//   // const storyInfoIdx = "63306e06592c80f16d88116d"
 
-//  const  parentIdx = "6330e6875d33a084964a719c"
 
   const handleSendReply = async() => {
     
@@ -80,7 +75,7 @@ function StoryDetailsComp({storyInfoId, authorID, userToken, authorName}) {
 
         const {data} = res
 
-        // console.log(data?.data)
+        console.log(data?.data)
 
       setCommentBody(data?.data.filter((comments) => comments.parentID === null))
 

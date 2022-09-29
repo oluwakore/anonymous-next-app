@@ -215,13 +215,13 @@
     justify-content: center;
     flex-direction: row !important;
     padding: .2rem 0;
-    gap: 1em;
+    // gap: 1em;
 
     p {
       margin: auto;
       font-size: 1rem;
       // font-weight: 500;
-      // margin-left: 1.4rem !important;
+      margin-left: 1rem !important;
     }
   }
 
@@ -231,7 +231,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: .5em;
+    // gap: .5em;
 
     .formzEndQuestion {
       p {
@@ -241,7 +241,7 @@
     }
 
     .formzEndLink {
-      // margin-left: 0.5rem;
+      margin-left: 0.5rem;
       p {
         color: #0e0b8b;
         font-weight: 600;
@@ -338,7 +338,7 @@
     justify-content: center;
     flex-direction: row !important;
     padding: .2rem .5rem !important;
-    gap: 1rem;
+    // gap: 1rem;
 
     p {
       margin: auto;
@@ -349,7 +349,7 @@
 
   .formzEnd {
     margin-top: 1rem !important;
-    gap: .5em;
+    // gap: .5em;
 
     .formzEndQuestion {
       p {

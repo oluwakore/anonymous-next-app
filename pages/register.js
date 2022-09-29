@@ -133,7 +133,7 @@ function Register() {
                     },
                   ]}
                 >
-                  <Input placeholder="ENTER YOUR NAME" />
+                  <Input placeholder="ENTER YOUR FIRST &amp; LAST NAME" />
                 </Form.Item>
 
                 <Form.Item

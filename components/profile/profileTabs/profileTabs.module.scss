@@ -19,7 +19,7 @@
         display: flex;
         // justify-content: center;
         align-items: center;
-        gap: 1rem;
+        // gap: 1rem;
         cursor: pointer;
       }
 
@@ -122,7 +122,7 @@
           padding: 5rem 2rem;
           display: flex;
           flex-direction: column;
-          gap: 2rem;
+          // gap: 2rem;
           width: 30rem;
           border-radius: 1rem;
 
@@ -145,12 +145,14 @@
           .fillPart {
             display: flex;
             flex-direction: column;
-            gap: .2rem;
+            // gap: .2rem;
             // outline: 3px solid green;
+            margin-bottom: 2rem;
 
             label {
               color: #000000;
               font-size: 1rem;
+              margin-bottom: .2rem;
             }
 
             input {
@@ -158,6 +160,7 @@
               border: 2px solid #0e0b8b;
               background: transparent;
               padding: .5rem 1rem;
+              margin-bottom: .2rem;
             }
 
           }
@@ -479,7 +482,7 @@ img {
 
 
   .logoutPart {
-    margin-top: 10rem !important;
+    margin-top: 7rem !important;
     padding: 1rem 2rem;
     h2 {
      
@@ -511,8 +514,8 @@ img {
       }
 
       .formCover {
-        padding: 4rem 1rem !important;
-        width: 100% !important;
+        padding: 4rem .5rem !important;
+        width: 90% !important;
 
         .formCover1Button {
 
@@ -573,9 +576,9 @@ img {
       // background: #0e0b8b;
       box-shadow: 7px 10px 5px 1px rgba(227,220,220,0.75);
     .storiesDesc {
-      padding: .2rem 1rem !important;
+      padding: .2rem .6rem !important;
       h1 {
-        font-size: .7rem !important;
+        font-size: .55rem !important;
       }
     }
     

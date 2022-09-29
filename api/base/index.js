@@ -64,7 +64,7 @@ export const likeComments = (id, data, token) => {
 }
 
 export const unlikeComments = (id, data, token) => {
-  return http.delete(`/comments/${id}/like`, setAuthToken(token))
+  return http.delete(`/comments/${id}/like`, data, setAuthToken(token))
 }
 
 

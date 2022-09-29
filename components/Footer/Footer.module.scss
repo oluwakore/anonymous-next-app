@@ -19,7 +19,7 @@
     display: inline-flex;
     // outline: 3px solid violet;
     width: 70%;
-    gap: 2rem;
+    // gap: 2rem;
     justify-content: space-between;
     padding: 3rem;
     // align-items: center;
@@ -85,20 +85,29 @@
 
         .helpCenterIcons {
           // outline: 3px solid black;
+          width: 100%;
           // padding: .2em;
           display: flex;
-          gap: .8em;
+          // gap: .8em;
           justify-content: center;
           align-items: center;
+
+          span{
+            margin-left: .5rem;
+          }
         }
 
         .helpCenterIcons1 {
           // outline: 3px solid black;
           // padding: .2em;
           display: flex;
-          gap: .8em;
+          // gap: .8em;
           // justify-content: center;
           align-items: center;
+          
+          span{
+            margin-left: .5rem;
+          }
         }
         .helpCenterIcons2 {
           z-index: 1;
@@ -107,7 +116,7 @@
           // background: crimson;
           // padding: .2em;
           display: flex;
-          gap: .8em;
+          // gap: .8em;
           // justify-content: center;
           align-items: center;
         }
@@ -123,7 +132,7 @@
     display: inline-flex;
     // outline: 3px solid violet;
     width: 90% !important;
-    gap: 3em !important;
+    // gap: 3em !important;
     // justify-content: space-between;
     padding: 5em !important;
   }
@@ -236,13 +245,14 @@
     // justify-content: center;
     // align-items: center;
     width: 90% !important;
-    gap: 1rem !important;
+    // gap: 1rem !important;
     justify-content: space-between;
     padding: 2rem !important;
     // align-items: center;
     // flex-wrap: wrap;
 
     .footerColumnStoryPart {
+      margin-bottom: 1.5rem;
       width: 100% !important;
       // outline: 3px solid white;
       padding: 1rem !important;
@@ -263,6 +273,7 @@
     }
     
     .footerColumnAboutUsPart {
+      margin-bottom: 1.5rem;
       // width: 20%;
       // outline: 3px solid pink;
       padding: .5em;
@@ -282,6 +293,7 @@
     }
     
     .footerColumnHelpCenterPart {
+      // margin-bottom: 1.5rem;
       // width: 40%;
       // outline: 3px solid yellow;
       padding: .5em;
@@ -304,7 +316,7 @@
           // outline: 3px solid black;
           // padding: .2em;
           display: flex;
-          gap: .8em;
+          // gap: .8em;
           justify-content: center;
           align-items: center;
         }
@@ -313,7 +325,7 @@
           // outline: 3px solid black;
           // padding: .2em;
           display: flex;
-          gap: .8em;
+          // gap: .8em;
           // justify-content: center;
           align-items: center;
         }
@@ -324,7 +336,7 @@
           // background: crimson;
           // padding: .2em;
           display: flex;
-          gap: .8em;
+          // gap: .8em;
           // justify-content: center;
           align-items: center;
         }

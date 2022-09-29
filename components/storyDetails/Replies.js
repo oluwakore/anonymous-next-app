@@ -3,7 +3,8 @@ import moment from 'moment'
 import { DislikeFilled, DislikeOutlined, LikeFilled, LikeOutlined, SendOutlined, CloseOutlined, DownOutlined, UpOutlined } from '@ant-design/icons'
 import {Divider, message} from 'antd'
 import  styles from './storyDetails.module.scss'
-import { postComments } from '../../api/base'
+
+import { likeComments, postComments, unlikeComments } from "../../api/base";
 
 
 function Replies({item, authorName,storyID,
@@ -11,16 +12,45 @@ function Replies({item, authorName,storyID,
   authorID,
   parentID,
   onSubmitReply,
-  repliesArray }) {  
+  repliesArray, 
+  claps
+}) {  
 
 
     const [content, setContent] = useState("");
     const [showReplyInput, setShowReplyInput] = useState(false);
     const [showReplyList, setShowReplyList] = useState(false);
-
+    const [likes, setLikes] = useState(false);
     // console.log(content);
 
   // console.log(repliesArray);
+
+
+  const handleLikes = async() => {
+    try{
+      const res = await likeComments(parentID, {authorID}, userToken)
+
+      console.log(res.data);
+      setLikes(true)
+      onSubmitReply()
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  const handleUnlikes = async() => {
+    console.log('I was clicked!')
+    try{
+      const res = await unlikeComments(parentID, {authorID}, userToken)
+
+      console.log(res.data);
+      setLikes(false)
+      onSubmitReply()
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
 
   const handleSendReply = async (e) => {
     e.preventDefault();
@@ -58,7 +88,7 @@ function Replies({item, authorName,storyID,
   }
 
   return (
-    <div>
+    <div style={{ marginTop: "1rem" }}>
              <div /*key={item.id} */ className={styles.commentContainer} >
                     <div className={styles.contentUmbrella}>
                   <div className={styles.commentContainerTopPart} >
@@ -81,6 +111,13 @@ function Replies({item, authorName,storyID,
                   </div>
                   <div className={styles.commentActions} >
                     {/* <LikeOutlined/> */}
+                    <div style={{display: "flex"}}>
+              {/* <LikeFilled onClick={handleUnlikes} /> */}
+            { !likes ? <LikeOutlined onClick={handleLikes} /> : <LikeFilled onClick={handleUnlikes} />} 
+            <span style={{marginLeft: "-.5rem"}}> {
+                claps?.length === 0 ? "" : claps?.length
+                } </span>
+              </div> 
                     <span style={{ cursor: 'pointer' }} onClick={() => setShowReplyInput(true)}
                    
                     >Reply</span>

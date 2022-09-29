@@ -11,7 +11,7 @@
 
     img {
       width: 100%;
-      aspect-ratio: 2/1;
+      aspect-ratio: 2/.75;
     }
 
    
@@ -43,7 +43,7 @@
     
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    // gap: 2rem;
     // justify-content: space-between;
     align-items: center;
     // outline: 3px solid green;
@@ -93,6 +93,7 @@
       // justify-content: center;
       // align-items: center;
       width: 50%;
+      margin-left: 2rem;
       // height: 45em;
       // padding: 1.5em;
       // background-color: green;
@@ -128,11 +129,14 @@
         padding: 0 1em;
         display: flex;
         flex-direction: row;
-        gap: 1.5rem;
+        // gap: 1.5rem;
         align-items: center;
         // justify-content: space-between;
         align-items: center;
 
+        span {
+          margin-right: 1.1rem;
+        }
         .repliesListCover {
          margin: auto;
          cursor: pointer;
@@ -259,6 +263,7 @@
               display: flex;
               justify-content: center;
               align-items: center;
+              margin-right: .4rem;
 
               h2 {
                 color: #ffff;
@@ -274,6 +279,8 @@
             }
             h1 {
               font-size: 1rem;
+
+            
 
               span {
                 font-size: .7rem;
@@ -427,8 +434,8 @@
 
     }
     .storyCommentSection {
-      
-    
+      margin-left: 0 !important;
+      margin-top: 2rem;
       width: 100% !important;
       border: 3px solid #0e0b8b;
 
@@ -447,7 +454,7 @@
         padding: 0 1em;
         display: flex;
         flex-direction: row;
-        gap: 1.5rem;
+        // gap: 1.5rem;
         align-items: center;
         // justify-content: space-between;
         align-items: center;
@@ -525,6 +532,7 @@
         // outline: 3px solid orangered;
         h1 {
           font-size: 1.2rem !important;
+          margin-top: .5rem;
         }
 
         .commentContainerTopPart {

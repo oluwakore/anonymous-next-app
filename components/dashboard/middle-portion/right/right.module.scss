@@ -51,13 +51,14 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      gap: 1.3rem;
+      // gap: 1.3rem;
       // justify-content: space-between;
       // width: 220px;
        p{
         color: #ffff;
         font-size: 1rem;
         margin: auto;
+        margin-left: 1.2rem;
        }
       
     }
@@ -71,13 +72,13 @@
 }
 
 .rightAppointment {
-  margin-top: 14rem;
+  margin-top: 16rem;
   display: flex;
   flex-direction: column;
   // align-items: center;
   // justify-content: center;
   width: 75%;
-  gap: 1.5rem;
+  // gap: 1.5rem;
   // outline:  3px solid magenta;
 
   h2 {
@@ -88,9 +89,10 @@
   }
 
   .rightMenuCover {
+    margin-top: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    // gap: 1.5rem;
     height: 20rem;
     overflow: auto;
     // outline: 3px solid magenta;
@@ -109,7 +111,7 @@
     padding: .5em 2em;
     border-radius: 1em;
     background-color: #00BCD7;
-    // margin-top: 20px;
+    margin-bottom: 1.5rem;
 
     h3 {
       color: #ffff;
@@ -130,6 +132,7 @@
     padding: .5em 2em;
     border-radius: 1em;
     background-color: #FFC107;
+    margin-bottom: 1.5rem;
     h3 {
       color: #ffff;
       font-size: 1rem;
@@ -239,7 +242,7 @@ left: 2rem;
       }
 
       .rightAppointment {
-        margin-top: 10rem;
+        margin-top: 12rem;
         // outline: 3px solid goldenrod;
         padding-bottom: 4rem;
 
@@ -251,7 +254,7 @@ left: 2rem;
         .rightMenuCover {
           display: flex;
           flex-direction: column;
-          gap: 1.5rem;
+          // gap: 1.5rem;
           height: 20rem;
           overflow: auto;
           // outline: 3px solid magenta;
