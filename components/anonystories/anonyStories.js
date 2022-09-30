@@ -21,7 +21,7 @@ function AnonyStoriesComp({
   getStoryCatPage
 }) {
 
- console.log(storiesLength)
+//  console.log(storiesLength)
   // console.log(storyList);
 
   // console.log(loading)
@@ -120,7 +120,7 @@ function AnonyStoriesComp({
               }}
             >
               {" "}
-              <Bars height="60" width="60" color="#0e0b8b" />{" "}
+              <Bars height="40" width="40" color="#0e0b8b" />{" "}
             </div>
           </div>
         ) : (
@@ -187,7 +187,7 @@ function AnonyStoriesComp({
               }}
             >
               {" "}
-              <Bars height="60" width="60" color="#0e0b8b" />{" "}
+              <Bars height="40" width="40" color="#0e0b8b" />{" "}
             </div>
           </div>
         ) : storyList.length === 0 ? (

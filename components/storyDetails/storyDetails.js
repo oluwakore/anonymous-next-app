@@ -145,16 +145,14 @@ function StoryDetailsComp({storyInfoId, authorID, userToken, authorName}) {
            }}
          >
            {" "}
-           <Bars height="60" width="60" color="#0e0b8b" />{" "}
+           <Bars height="40" width="40" color="#0e0b8b" />{" "}
          </div>
          </div> : (
     <>
     <div className={styles.storyDetailsContainer}>
       <div className={styles.storyDetailsTop} >
         <img src={`${currentStory?.coverImg === "" ? "../images/no-image.png" : currentStory?.coverImg}`} alt="image" />
-        {/* <div className={styles.storyDetailsSection}>
-          <h2>SEX</h2>
-        </div>  */}
+          <small> {currentStory?.tags} </small>
       </div>
       <div className={styles.storyDetailsBottom}>
         <div className={styles.storyDetailsMain}>

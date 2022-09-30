@@ -16,7 +16,6 @@ function ShareStory() {
       <>
       <DashboardNav />
       <ShareStoryComp/>
-      <Footer />
       </>
     </div>
   )

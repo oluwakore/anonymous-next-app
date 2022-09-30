@@ -85,11 +85,11 @@
 
         .helpCenterIcons {
           // outline: 3px solid black;
-          width: 100%;
+          // width: 100%;
           // padding: .2em;
           display: flex;
           // gap: .8em;
-          justify-content: center;
+          // justify-content: center;
           align-items: center;
 
           span{
@@ -176,16 +176,16 @@
     ul {
       // outline: 3px solid green; 
       font-size: .9rem !important;
-      li {
-        margin-left: -3em;
-        margin-bottom: .5em;
-      }
+      // li {
+      //   margin-left: -3em;
+      //   margin-bottom: .5em;
+      // }
 
       .helpCenterIcons {
         // outline: 3px solid black;
         // padding: .2em;
         display: flex;
-        gap: .8em;
+        // gap: .8em;
         justify-content: center;
         align-items: center;
       }
@@ -194,15 +194,16 @@
         // outline: 3px solid black;
         // padding: .2em;
         display: flex;
-        gap: .8em;
+        // gap: .8em;
         // justify-content: center;
         align-items: center;
+
       }
       .help-center-icons-2 {
         // outline: 3px solid black;
         // padding: .2em;
         display: flex;
-        gap: .8em;
+        // gap: .8em;
         // justify-content: center;
         align-items: center;
       }
@@ -293,66 +294,70 @@
     }
     
     .footerColumnHelpCenterPart {
+
+      .smallerFont {
+        font-size: .75rem;
+      }
       // margin-bottom: 1.5rem;
       // width: 40%;
       // outline: 3px solid yellow;
-      padding: .5em;
-      color: #ffff;
+      // padding: .5em;
+      // color: #ffff;
       
-      h4 {
-        color: #ffff;
-        font-size: 1rem !important;
-        // text-align: center;
-      }
-    .ulHelpCenter {
-        // outline: 3px solid green; 
-        font-size: .8rem !important;
-        width: fit-content !important;
-        li {
-            // outline: 3px solid green; 
-          margin-left: -3rem;
-          margin-bottom: .5rem;
-        }
+      // h4 {
+      //   color: #ffff;
+      //   font-size: 1rem !important;
+      //   // text-align: center;
+      // }
+    // .ulHelpCenter {
+    //     // outline: 3px solid green; 
+    //     font-size: .8rem !important;
+    //     width: fit-content !important;
+    //     li {
+    //         // outline: 3px solid green; 
+    //       margin-left: -3rem;
+    //       margin-bottom: .5rem;
+    //     }
 
-        .helpCenterIcons {
-          // outline: 3px solid black;
-          // padding: .2em;
-          display: flex;
-          // gap: .8em;
-          // justify-content: center;
-          align-items: center;
+    //     .helpCenterIcons {
+    //       // outline: 3px solid black;
+    //       // padding: .2em;
+    //       display: flex;
+    //       // gap: .8em;
+    //       // justify-content: center;
+    //       align-items: center;
 
-          // .helpCenterIconsMail {
-          //   font-size: 1.5rem !important;
-          //   // margin-right: 1rem;
-          // }
+    //       // .helpCenterIconsMail {
+    //       //   font-size: 1.5rem !important;
+    //       //   // margin-right: 1rem;
+    //       // }
 
-          span {
-            // font-size: .8rem !important;
-            margin-left: 0rem !important;
-          }
-        }
+    //       span {
+    //         // font-size: .8rem !important;
+    //         margin-left: 0rem !important;
+    //       }
+    //     }
 
-        .helpCenterIcons1 {
-          // outline: 3px solid black;
-          // padding: .2em;
-          display: flex;
-          // gap: .8em;
-          // justify-content: center;
-          align-items: center;
-        }
-        .helpCenterIcons2 {
-          z-index: 1;
-          // outline: 3px solid black;
-          color: #ffff !important;
-          // background: crimson;
-          // padding: .2em;
-          display: flex;
-          // gap: .8em;
-          // justify-content: center;
-          align-items: center;
-        }
-      }
+    //     .helpCenterIcons1 {
+    //       // outline: 3px solid black;
+    //       // padding: .2em;
+    //       display: flex;
+    //       // gap: .8em;
+    //       // justify-content: center;
+    //       align-items: center;
+    //     }
+    //     .helpCenterIcons2 {
+    //       z-index: 1;
+    //       // outline: 3px solid black;
+    //       color: #ffff !important;
+    //       // background: crimson;
+    //       // padding: .2em;
+    //       display: flex;
+    //       // gap: .8em;
+    //       // justify-content: center;
+    //       align-items: center;
+    //     }
+    //   }
     }
   }
 }

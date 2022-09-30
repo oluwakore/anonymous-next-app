@@ -25,12 +25,12 @@ function Stories() {
         const res = await allStoriesLen();
       // console.log(res.data.data[0])
       setStoriesSum(res.data?.data?.length)
-      console.log(storiesSum)
+      // console.log(storiesSum)
       } else {
         const res = await allStoriesCatLen(section);
       // console.log(res.data.data[0])
       setStoriesSum(res.data?.data?.length)
-      console.log(storiesSum)
+      // console.log(storiesSum)
       } 
       
       setCatLoading(false);

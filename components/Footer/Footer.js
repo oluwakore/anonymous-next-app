@@ -25,12 +25,12 @@ export default function Footer() {
                 </div>
                 <div className={styles.footerColumnHelpCenterPart}>
                     <h4>Help Center</h4>
-                <ul className={styles.ulHelpCenter}>
+                <ul>
                 <li>
-                    <div className={styles.helpCenterIcons}><MailOutlined style={{ color: "white",  fontSize:"1.5rem" }} className={styles.helpCenterIconsMail} /> <span>anonymousconfidant@gmail.com</span></div>
+                <div className={styles.helpCenterIcons1}><MailOutlined style={{ color: "white", fontSize:"1.5rem" }} /> <span className={styles.smallerFont}>anonymousconfidant@gmail.com</span></div>
                     </li>
                 <li>
-                    <div className={styles.helpCenterIcons1}><PhoneOutlined style={{ color: "white", transform: "scaleX(-1)", fontSize:"1.5rem" }} /> <span>+234-9025024319</span></div>
+                    <div className={styles.helpCenterIcons1}><PhoneOutlined style={{ color: "white", transform: "scaleX(-1)", fontSize:"1.5rem" }} /> <span className={styles.smallerFont}>+234-9025024319</span></div>
                     </li>
                 <li>
                     <div className={styles.helpCenterIcons2} >

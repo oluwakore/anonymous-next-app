@@ -126,12 +126,14 @@
       justify-content: center;
       height: 4.5rem;
       width: 4.5rem;
-      padding: 2.5rem;
+      padding: 1.5rem;
       // margin: auto !important;
 
       img {
-        width: 3.5rem;
-        height: 3.5rem;
+        
+        object-fit: cover;
+        width: 100%;
+        height: auto;
       }
     }
 
