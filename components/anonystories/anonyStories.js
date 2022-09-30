@@ -7,6 +7,8 @@ import Link from "next/link";
 import { Bars } from "react-loader-spinner";
 import { saveStoryId } from "../../core/actions/storyactions/storyactions";
 
+
+
 function AnonyStoriesComp({
   storyList,
   storiesLength,
@@ -14,9 +16,15 @@ function AnonyStoriesComp({
   pageSize,
   loading,
   firstStory,
+  getStoryCat,
+  catLoading,
+  getStoryCatPage
 }) {
+
+ console.log(storiesLength)
   // console.log(storyList);
 
+  // console.log(loading)
   //  const firstStory = (list) => {
   //   const story = list[list.length - 1];
   //   return story
@@ -24,11 +32,69 @@ function AnonyStoriesComp({
 
   //  console.log(firstStory(storyList))
 
+  const [cate, setCate] = useState("All")
+  // console.log(cate)
+
+  const [addTypes, setAddTypes] = useState([
+    {
+      title: "All",
+      active: true
+    }, 
+    {
+      title: "Relationship",
+      active: false
+    }, 
+    {
+      title: "Family",
+      active: false
+    },
+    {
+      title: "Financial",
+      active: false
+    },
+    {
+      title: "Education",
+      active: false
+    },
+    {
+      title: "Sexuality",
+      active: false
+    },
+    {
+      title: "Personality",
+      active: false
+    },
+    {
+      title: "Others",
+      active: false
+    },
+  ]
+  )
+
+
+
+
+  const switchTabs = (valueIndex) => {
+    const newTabs = [...addTypes];
+    newTabs.forEach((item, index) => {
+      item.active = false;
+      if (valueIndex === index) {
+        item.active = true;
+        getStoryCat(item.title)
+        setCate(item.title)
+      }
+    });
+    setAddTypes(newTabs);
+  };
+ 
+
   const dispatch = useDispatch();
 
   const handleStoryClick = (id) => {
     dispatch(saveStoryId(id));
   };
+
+ 
 
   return (
     <div className={styles.storiesContainer}>
@@ -61,6 +127,7 @@ function AnonyStoriesComp({
           <div className={styles.storiesHeadlinerContent}>
             <div className={styles.storiesHeadlinerContentImages}>
               <img src={firstStory?.coverImg} alt={firstStory?.title} />
+              <small> {firstStory.tags} </small>
             </div>
             <div className={styles.storiesNotes}>
               <h1>{firstStory?.title}</h1>
@@ -99,7 +166,7 @@ function AnonyStoriesComp({
           <button className="">Trending</button>
           <button className="">Recommended</button>
         </div>
-        {loading ? (
+        {catLoading ? (
           <div
             style={{
               width: "100%",
@@ -151,6 +218,7 @@ function AnonyStoriesComp({
             <div className={styles.storiesGrid}>
               {storyList?.map((item, index) => (
                 <div key={index} className={styles.storiesGridMain}>
+                  <div className={styles.storiesGridMainImages}>
                   <img
                     src={`${
                       item?.coverImg === ""
@@ -159,6 +227,8 @@ function AnonyStoriesComp({
                     }`}
                     alt=""
                   />
+                  <small>{item.tags[0]}</small>
+                  </div>
                   <div className={styles.storiesGridMainDesc}>
                     <h2>{item?.title}</h2>
                     <p>
@@ -179,11 +249,43 @@ function AnonyStoriesComp({
               defaultCurrent={1}
               defaultPageSize={pageSize}
               total={storiesLength}
-              onChange={(page) => setPageNo(page)}
+              onChange={(page) => {
+                // getStoryCatPage(cate, page)
+                // setPageNo(page)
+                // console.log(page)
+                getStoryCatPage(cate, page)
+                // getStoryCat(cate)
+              }
+              }
             />
           </>
         )}
       </div>
+      <div>
+       
+        <div className={styles.tagsCover}>
+        <h1>TAGS</h1>
+        <div style={{display: "flex", flexWrap: "wrap"}}>
+        {addTypes.map((item, index) => (
+                  <h1
+                    className={[
+                      styles.tags,
+                      item.active ? styles.tagsActive : "",
+                    ].join(" ")}
+                    key={index}
+                    onClick={() => {
+                      switchTabs(index);
+                      // setCat(item.title)
+                      // getStoryCat()
+                      // console.log(item.title)
+                    }}
+                  >
+                    <span> {item.title} </span>
+                  </h1>
+                   ))}
+         </div>
+        </div>
+      </div> 
     </div>
   );
 }

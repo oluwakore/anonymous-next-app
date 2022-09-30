@@ -54,26 +54,6 @@ const onFinish = async (values) => {
   const {email, password} = values
   dispatch(loginUser(email, password))
  
-  // setError(null)
-  // setLoading(true)
-  // try {
-  //   const res = await login({
-  //     ...values
-  //   })
-  //   // setLoading(false)
-  //   if (res.data.message === "success") {
-  //     openNotificationWithIcon('success', 'Sign In', 'Login was succesful.')
-  //     navigate('/dashboard')
-  //   }
-  // } catch (error) {
-  //   // setLoading(false)
-  //   console.log(error)
-  //   if (error?.response?.data) {
-  //     console.log(error.response.data)
-  //     const errors = error.response.data.msg
-  //     // setError(errors)
-  //   }
-  // }
 }
 
   return (

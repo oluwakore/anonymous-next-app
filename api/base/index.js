@@ -39,13 +39,24 @@ export const shareStory = (id, data, token) => {
 //   return http.get(`/patients/stories?=${id}`,setAuthToken(token))
 // }
 
-export const allStories = () => {
-  return http.get(`/stories`)
-}
+
 
 export const allStoriesFuncs = (pageNo, limit) => {
   return http.get(`/stories?page=${pageNo}&limit=${limit}`)
 }
+
+export const allStoriesCategoriesFuncs = (pageNo, limit, tag) => {
+  return http.get(`/stories?page=${pageNo}&limit=${limit}&tags=${tag}`)
+}
+
+export const  allStoriesCatLen = (tag) => {
+  return http.get(`/stories?tags=${tag}`)
+}
+
+export const  allStoriesLen = () => {
+  return http.get(`/stories`)
+}
+
 
 export const getStory = (id) => {
   return http.get(`/stories/${id}`)
@@ -66,6 +77,9 @@ export const likeComments = (id, data, token) => {
 export const unlikeComments = (id, data, token) => {
   return http.delete(`/comments/${id}/like`, data, setAuthToken(token))
 }
+
+
+
 
 
 

@@ -260,16 +260,18 @@ function ProfileTabs({ userToken }) {
                     {updateLoading ? (
                       <div
                         style={{
+                          // outline: "3px solid green",
                           margin: "auto",
                           display: "flex",
                           flexDirection: "column",
                           justifyContent: "center",
                           alignItems: "center",
+                          height: "20rem"
                         }}
                       >
                         {" "}
-                        <Bars height="100" width="100" color="#0e0b8b" />{" "}
-                        <p> Updating details... </p>{" "}
+                        <Bars height="20" width="20" color="#0e0b8b" />{" "}
+                        <p style={{fontSize: ".8rem"}}> Updating details... </p>{" "}
                       </div>
                     ) : (
                       <>
@@ -327,11 +329,12 @@ function ProfileTabs({ userToken }) {
                           flexDirection: "column",
                           justifyContent: "center",
                           alignItems: "center",
+                          height: "20rem"
                         }}
                       >
                         {" "}
-                        <Bars height="100" width="100" color="#0e0b8b" />{" "}
-                        <p> Updating password... </p>{" "}
+                        <Bars height="20" width="20" color="#0e0b8b" />{" "}
+                        <p style={{fontSize: ".8rem"}}> Updating password... </p>{" "}
                       </div>
                     ) : (
                       <>
@@ -457,7 +460,7 @@ function ProfileTabs({ userToken }) {
                             alt={item.title}
                           />
                           <div className={styles.storiesDesc}>
-                            <h1> {item.title} </h1>
+                            <h1> {item.title.split(" ").slice(0, 2).join(" ")}... </h1>
                             <>
                               <MoreOutlined
                                 onClick={() => 

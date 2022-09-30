@@ -112,11 +112,10 @@ const logoutHandler = () => {
     }
       <div className={styles.dashboardContainerMain}>
       <div className={styles.dashboardLogo}>
-       <Image 
+       <img 
        src={"/blue-logo.png"}
        alt="logo"
-       height={70}
-       width={70}
+       style={{ width: "4.2rem", height: "4.2rem"}}
        className={styles.dashboardLogoImg}
        />
 

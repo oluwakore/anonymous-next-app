@@ -75,7 +75,7 @@ function StoryDetailsComp({storyInfoId, authorID, userToken, authorName}) {
 
         const {data} = res
 
-        console.log(data?.data)
+        // console.log(data?.data)
 
       setCommentBody(data?.data.filter((comments) => comments.parentID === null))
 

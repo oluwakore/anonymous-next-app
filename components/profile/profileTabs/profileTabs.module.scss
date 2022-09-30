@@ -12,6 +12,11 @@
       flex-direction: column;
       margin-top: 2rem;
 
+      .menuListTitle {
+        // outline: 3px solid yellowgreen;
+        margin-left: 1rem;
+      }
+
       .card {
         font-size: 1.2rem;
         color: rgba($color: #000000, $alpha: 0.5);
@@ -632,4 +637,10 @@ img {
       }
     }
 
+}
+
+@media screen and (max-width: 600px) {
+  .compsCover {
+    padding: 3rem .1rem 3rem .1rem !important;
+  }
 }

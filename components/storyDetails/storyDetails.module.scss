@@ -459,7 +459,11 @@
         // justify-content: space-between;
         align-items: center;
 
+        span {
+          font-size: .7rem !important;
+        }
         .repliesListCover {
+        font-size: .7rem !important;
          margin: auto;
          cursor: pointer;
         }

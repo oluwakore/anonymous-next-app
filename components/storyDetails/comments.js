@@ -42,7 +42,7 @@ function Comments({
     try{
       const res = await likeComments(parentID, {authorID}, userToken)
 
-      console.log(res.data);
+      // console.log(res.data);
       setLikes(true)
       onSubmitReply()
     } catch (err) {
@@ -55,7 +55,7 @@ function Comments({
     try{
       const res = await unlikeComments(parentID, {authorID}, userToken)
 
-      console.log(res.data);
+      // console.log(res.data);
       setLikes(false)
       onSubmitReply()
     } catch (err) {
@@ -189,7 +189,7 @@ function Comments({
       {/* <div style={{ outline: "3px solid green" }}> */}
 
       {
-      <div style={{ /*outline: "3px solid green", */ marginLeft: "2.5rem" , marginTop: "1rem"}}>
+      <div style={{ /*outline: "3px solid green", */  marginTop: "1rem"}}>
 {
       showReplyList &&
         repliesArray.map((rep) => (

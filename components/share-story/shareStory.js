@@ -6,14 +6,49 @@ import { shareStory } from '../../api/base'
 import styles from './shareStory.module.scss'
 
 
+const topics = [
+  {
+    id: 1,
+    title: "Relationship"
+  }, 
+  {
+    id: 2,
+    title: "Family"
+  },
+  {
+    id: 3,
+    title: "Financial"
+  },
+  {
+    id: 4,
+    title: "Education"
+  },
+  {
+    id: 5,
+    title: "Sexuality"
+  },
+  {
+    id: 6,
+    title: "Personality"
+  },
+  {
+    id: 7,
+    title: "Others"
+  },
+]
+
+
 
 function ShareStoryComp() {
 
   const [title, setTitle] = useState("")
   const [coverImg, setCoverImg] = useState("") 
   const [content, setContent] = useState("")
+  const [tags, setTags] = useState([])
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  // console.log(tags)
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -47,8 +82,8 @@ function ShareStoryComp() {
     e.preventDefault()
     try {
       setLoading(true);
-      const res = await shareStory(loggedUserId, {title, content, coverImg, authorID}, loggedUserToken)
-      console.log(res.data)
+      const res = await shareStory(loggedUserId, {title, content, coverImg, tags, authorID}, loggedUserToken)
+      // console.log(res.data)
       setLoading(false)
       setTitle("")
       setContent("")
@@ -89,6 +124,34 @@ function ShareStoryComp() {
             onChange={(e) => setCoverImg(e.target.value)}
             type="text" placeholder="Enter a image URL" />
           </div>
+          <div className={styles.shareStorySelect}>
+            <div className={styles.shareStorySelectMain}>
+          <label>
+              Tag:
+            </label>
+            <select
+            required
+            defaultValue="none"
+            onChange={(e) => {
+              setTags(e.target.value)
+            }}
+            >
+            {
+              topics.map((topic, index)=> (
+                <>
+                <option  value="none" disabled >Select a tag</option>
+                <option 
+                key={index}
+                value={topic.title}
+                >
+                  {topic.title}
+                </option>
+                </>
+              ))
+            }
+            </select>
+            </div>
+          </div>
         <div className={styles.shareStoryTextarea}>
           <div className={styles.textareaCover}>
           <textarea placeholder='Tell your story...'
@@ -117,6 +180,7 @@ function ShareStoryComp() {
             </h3>
             </div> 
             <p>{content}</p> 
+            <small>Tags: <span>{tags}</span></small>
             <button onClick={shareStoryHandler} type="submit" className={styles.button2} >{ loading ? "Sharing Your Story..." : "Share Your Story"}</button>         
           </div>
          </div>

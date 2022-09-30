@@ -6,6 +6,37 @@
   // align-items: center;
   width: 100%;
 
+  .tagsCover {
+    padding: 2rem;
+    // outline: 3px solid yellowgreen;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      font-size: 1.4rem;
+      margin-left: 2rem;
+      color: #0e0b8b;
+    }
+
+    .tagsActive {
+      background: #0e0b8b;
+      color: #ffff !important;
+    }
+
+    .tags {
+      width: fit-content;
+      border: 2px solid #0e0b8b;
+      color: #0e0b8b;
+      font-size: 1rem;
+      font-weight: 500;
+      border-radius: 2rem;
+      padding: 1rem 2rem;
+      margin-left: 2rem;
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+
   .storiesHeadliner {
     display: flex;
     // flex-direction: row;
@@ -170,12 +201,27 @@
   }
 
   .storiesHeadlinerContentImages {
+    position: relative;
     // outline: 3px solid yellow;
     width: 50%;
+
+    small {
+    position: absolute;
+    //  transform: translate(5%, 5%);
+    top: 3%;
+    left: 3%; 
+    background: #BDB0FF;
+    padding: .5rem;
+    border-radius: 1rem;
+    color: #0e0b8b;
+    font-size: .8rem;
+    font-weight: 500;
+    }
 
     img {
       width: 100%;
       height: auto;
+      border-radius: 1rem;
     }
   }
 
@@ -185,6 +231,27 @@
     flex-direction: column;
     // gap: 1.5rem;
     padding: 1rem;
+
+    .storiesGridMainImages {
+    // outline: 3px solid purple;
+
+    position: relative;
+    // outline: 3px solid yellow;
+
+    small {
+    position: absolute;
+    top: 7%;
+    left: 5%; 
+    background: #BDB0FF;
+    padding: .5rem;
+    border-radius: 1rem;
+    color: #0e0b8b;
+    font-size: .8rem;
+    font-weight: 500;
+    }
+       
+    }
+
   }
 
   .storiesGridMainDesc {
@@ -266,6 +333,25 @@
     
   }
 
+  .tagsCover {
+    
+    // outline: 3px solid yellowgreen;
+    
+    h1 {
+      font-size: 1.2rem !important;
+      margin-left: 2rem;
+    }
+
+    .tagsActive {
+      color: #ffff !important;
+    }
+
+    .tags {
+      font-size: .9rem !important;
+      padding: .8rem 1.5rem !important;
+    }
+  }
+
 
 }
 
@@ -280,6 +366,10 @@
     .storiesHeadlinerContentImages {
       // outline: 3px solid yellow;
       width: 80% !important;
+
+      small {
+        font-size: .65rem !important;
+        }
   
     }
 
@@ -361,7 +451,35 @@
     span {
       margin-left: .2rem !important;
     }
+
+    .storiesGridMainImages {
+      // outline: 3px solid purple;
+  
+      small {
+      font-size: .65rem !important;
+      }
+         
+      }
     
+  }
+
+  .tagsCover {
+    // width: 90%;
+    // outline: 3px solid yellowgreen;
+    
+    h1 {
+      font-size: 1rem !important;
+      margin-left: 1rem !important;
+    }
+
+    .tagsActive {
+      color: #ffff !important;
+    }
+
+    .tags {
+      font-size: .75rem !important;
+      padding: .6rem 1.2rem !important;
+    }
   }
 
 }
