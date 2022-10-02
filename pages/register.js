@@ -44,9 +44,15 @@ function Register() {
  
   const onFinish = async (values) => {
     const { name, username, email, password } = values;
-
-    setError(null);
     setLoading(true);
+
+    if (name.split(" ").length < 2) {
+     setError("Please provide first and last name!")
+     setLoading(false)
+     console.log("not greater than 2")
+    } else if (name.split(" ").length >= 2) {
+           setError(null);
+   
     const newErrors = { ...errors };
     if (Object.values(newErrors).every((item) => item === "")) {
       try {
@@ -77,10 +83,47 @@ function Register() {
           message.error("Something went wrong.");
         }
       }
-    } else {
-      setLoading(false);
+    } 
     }
-  };
+  }
+  //   } else {
+  //   setError(null);
+   
+  //   const newErrors = { ...errors };
+  //   if (Object.values(newErrors).every((item) => item === "")) {
+  //     try {
+  //       const res = await register({
+  //         name,
+  //         email,
+  //         password,
+  //       });
+  //       console.log(res.data);
+  //       setLoading(false);
+  //       if (res.data.status === "success") {
+  //         openNotificationWithIcon(
+  //           "success",
+  //           "Register",
+  //           "Registration was successful, login to continue."
+  //         );
+  //         router.push('/login')
+  //       } else {
+  //         const errors = res.data.message;
+  //         setError(errors);
+  //       }
+  //     } catch (error) {
+  //       setLoading(false);
+  //       console.log(error);
+  //       if (error?.response?.data) {
+  //         console.log(error.response.data);
+  //       } else {
+  //         message.error("Something went wrong.");
+  //       }
+  //     }
+  //   } else {
+  //     setLoading(false);
+  //   }
+  // }
+  // };
 
   /**
    * Checks validation error for pasword field

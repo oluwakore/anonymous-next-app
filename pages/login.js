@@ -146,7 +146,7 @@ const onFinish = async (values) => {
                     <Input.Password placeholder="PASSWORD (MIN. 8 CHARACTER)" />
                   </Form.Item>
                   </div>
-                  <div className={styles.forgotPasswordLink}>
+                  <div className={styles.forgotPasswordLink} >
                     <p>Forgot Password</p>
                   </div>
                   <Form.Item>

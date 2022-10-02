@@ -1,247 +1,457 @@
-import React, { useState } from 'react'
-import { SearchOutlined } from '@ant-design/icons' 
-import styles from './therapy-form.module.scss'
+import React, { useState } from "react";
+import { SearchOutlined, DownOutlined } from "@ant-design/icons";
+import { Select } from "antd";
+const { Option } = Select;
+import styles from "./therapy-form.module.scss";
+import Radio from "./Radio";
+import { countiresRawData } from "./countriesData";
 
 const TherapyFormComp = () => {
 
+
+  const [step, setStep] = useState(0);
+
+  const [age, setAge] = useState("");
+  const [gender, setGender] = useState("");
+  const [country, setCountry] = useState("");
+  const [state, setState] = useState("");
+  const [stateList, setStateList] = useState([]);
+  const [status, setStatus] = useState("");
+  const [religion, setReligion] = useState("");
+  const [medication, setMedication] = useState("");
+  const  [suicide, setSuicide] = useState("");
+  const  [health, setHealth] = useState("");
+  const  [sleeping, setSleeping] = useState("");
+  const  [finance, setFinance] = useState("");
   
-  const [step, setStep] = useState(0)
+
+  // console.log(stateList[0]?.states);
+  console.log(state);
+
+  const filterStates = (county) => {
+    const result = countiresRawData.filter(
+      (item) => item.name === county
+
+      // setStateList(item.states)
+      // console.log(stateList)
+      // console.log(item.states)
+    );
+
+    return result;
+    // console.log(result)
+  };
+
+  const handleChange = (value) => {
+    setCountry(value);
+    const result = countiresRawData.filter((item) => item.name === value);
+
+
+    const rel = filterStates(value);
+
+    setStateList(rel);
+  };
+
+  const handleStateChange = (value) => {
+    setState(value);
+    console.log(state);
+  };
+
+  // console.log(age)
   return (
     <div className={styles.therapyFormContainerCover}>
-    <div className={styles.therapyFormContainer}>
-      <div className={styles.therapyFormContainerTitle}>
-        <h1>GET MATCHED WITH OUR THERAPIST</h1>
-        <p>To get matched with a  therapist, you&apos;ll need to kindly answer these questions. </p>
+      <div className={styles.therapyFormContainer}>
+        <div className={styles.therapyFormContainerTitle}>
+          <h1>GET MATCHED WITH OUR THERAPIST</h1>
+          <p>
+            To get matched with a therapist, you&apos;ll need to kindly answer
+            these questions.{" "}
+          </p>
+        </div>
+        <form>
+
+
+          {step === 0 && (
+            <div className={styles.therapyForm1Container}>
+              <div className={styles.therapyForm1Cover}>
+                <div className={styles.therapyForm1Fields}>
+                  <h2>
+                    All fields marked as important{" "}
+                    <span style={{ color: "red" }}>*</span>
+                  </h2>
+                  <div className={styles.therapyForm1Field}>
+                    <h4>
+                      <span style={{ color: "red" }}>*</span>Age
+                    </h4>
+                    <Radio
+                      value="12"
+                      selected={age}
+                      text="6-12"
+                      onChange={setAge}
+                    />
+                    <Radio
+                      value="18"
+                      selected={age}
+                      text="12-18"
+                      onChange={setAge}
+                    />
+                    <Radio
+                      value="30"
+                      selected={age}
+                      text="19-30"
+                      onChange={setAge}
+                    />
+                    <Radio
+                      value="45"
+                      selected={age}
+                      text="31-45"
+                      onChange={setAge}
+                    />
+                    <Radio
+                      value="above"
+                      selected={age}
+                      text="46-above"
+                      onChange={setAge}
+                    />
+                  </div>
+
+                  <div>
+                    <h4>
+                      {" "}
+                      <span style={{ color: "red" }}>*</span>Gender
+                    </h4>
+                    <Radio
+                      value="male"
+                      selected={gender}
+                      text="Male"
+                      onChange={setGender}
+                    />
+                    <Radio
+                      value="female"
+                      selected={gender}
+                      text="Female"
+                      onChange={setGender}
+                    />
+                    <Radio
+                      value="other"
+                      selected={gender}
+                      text="I prefer not to say"
+                      onChange={setGender}
+                    />
+                  </div>
+
+                  <div>
+                    <h4>
+                      <span style={{ color: "red" }}>*</span>Location
+                    </h4>
+                    <div className={styles.optionSelect}>
+                      <Select
+                        showSearch
+                        style={{
+                          width: 200,
+                        }}
+                        placeholder="Select Country"
+                        optionFilterProp="children"
+                        filterOption={(input, option) =>
+                          option.children.includes(input)
+                        }
+                        filterSort={(optionA, optionB) =>
+                          optionA.children
+                            .toLowerCase()
+                            .localeCompare(optionB.children.toLowerCase())
+                        }
+                        onChange={handleChange}
+                      >
+                        {countiresRawData.map((cont, index) => (
+                          <Option key={index} value={cont.name}>
+                            {cont.name}
+                          </Option>
+                        ))}
+                      </Select>
+
+                      <Select
+                        showSearch
+                        style={{
+                          width: 200,
+                        }}
+                        placeholder="Select State"
+                        optionFilterProp="children"
+                        filterOption={(input, option) =>
+                          option.children.includes(input)
+                        }
+                        filterSort={(optionA, optionB) =>
+                          optionA.children
+                            .toLowerCase()
+                            .localeCompare(optionB.children.toLowerCase())
+                        }
+                        onChange={handleStateChange}
+                      >
+                        {stateList[0]?.states?.map((sat, index) => (
+                          <Option key={index} value={sat.name}>
+                            {sat.name}
+                          </Option>
+                        ))}
+                      </Select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4>
+                      <span style={{ color: "red" }}>*</span>Status
+                    </h4>
+                    <Radio
+                      value="single"
+                      selected={status}
+                      text="Single"
+                      onChange={setStatus}
+                    />
+                    <Radio
+                      value="married"
+                      selected={status}
+                      text="Married"
+                      onChange={setStatus}
+                    />
+
+                    <Radio
+                      value="divorced"
+                      selected={status}
+                      text="Divorced"
+                      onChange={setStatus}
+                    />
+                    <Radio
+                      value="dating"
+                      selected={status}
+                      text="Dating"
+                      onChange={setStatus}
+                    />
+                    <Radio
+                      value="other"
+                      selected={status}
+                      text="Other"
+                      onChange={setStatus}
+                    />
+                  </div>
+
+                  <div>
+                    <h4>
+                      {" "}
+                      <span style={{ color: "red" }}>*</span>Religion
+                    </h4>
+
+                    <Radio
+                      value="christianity"
+                      selected={religion}
+                      text="Christianity"
+                      onChange={setReligion}
+                    />
+
+                    <Radio
+                      value="islam"
+                      selected={religion}
+                      text="Islam"
+                      onChange={setReligion}
+                    />
+
+                    <Radio
+                      value="other"
+                      selected={religion}
+                      text="Other"
+                      onChange={setReligion}
+                    />
+                  </div>
+                </div>
+                <div className={styles.therapyButton}>
+                  <button onClick={() => setStep(1)}>Next</button>
+                </div>
+              </div>
+            </div>
+          )}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          {step === 1 && (
+
+
+<div className={styles.therapyForm1Container}>
+<div className={styles.therapyForm1Cover}>
+  <div className={styles.therapyForm1Fields}>
+    <h2>
+      All fields marked as important{" "}
+      <span style={{ color: "red" }}>*</span>
+    </h2>
+    <div className={styles.therapyForm1Field}>
+      <h4>
+        <span style={{ color: "red" }}>*</span>Are you on Medication?
+      </h4>
+      <Radio
+        value="yes"
+        selected={medication}
+        text="Yes"
+        onChange={setMedication}
+      />
+      <Radio
+        value="no"
+        selected={medication}
+        text="No"
+        onChange={setMedication}
+      />
+    </div>
+
+    <div>
+      <h4>
+        {" "}
+        <span style={{ color: "red" }}>*</span>Suicide Thoughts?
+      </h4>
+      <Radio
+        value="yes"
+        selected={suicide}   
+        text="Yes"
+        onChange={setSuicide}
+      />
+      <Radio
+        value="no"
+        selected={suicide}
+        text="No"
+        onChange={setSuicide}
+      />
+    </div>
+
+ 
+
+    <div>
+      <h4>
+        <span style={{ color: "red" }}>*</span>Physical Health
+      </h4>
+      <Radio
+        value="good"
+        selected={health}
+        text="Good"
+        onChange={setHealth}
+      />
+      <Radio
+        value="fair"
+        selected={health}  
+        text="Fair"
+        onChange={setHealth}
+      />
+
+      <Radio
+        value="poor"
+        selected={health}
+        text="Poor"
+        onChange={setHealth}
+      />
+
+    </div>
+
+    <div>
+      <h4>
+        {" "}
+        <span style={{ color: "red" }}>*</span>  Sleeping Habit
+      </h4>
+
+      <Radio
+        value="good"
+        selected={sleeping} 
+        text="Good"
+        onChange={setSleeping}
+      />
+      <Radio
+        value="fair"
+        selected={sleeping}
+        text="Fair"
+        onChange={setSleeping}
+      />
+
+      <Radio
+        value="poor"
+        selected={sleeping}
+        text="Poor"
+        onChange={setSleeping}
+      />
+    </div>
+
+    <div>
+      <h4>
+        {" "}
+        <span style={{ color: "red" }}>*</span>  Financial Status
+      </h4>
+
+      <Radio
+        value="good"
+        selected={finance}  
+        text="Good"
+        onChange={setFinance}
+      />
+      <Radio
+        value="fair"
+        selected={finance}
+        text="Fair"
+        onChange={setFinance}
+      />
+
+      <Radio
+        value="poor"
+        selected={finance}
+        text="Poor"
+        onChange={setFinance}
+      />
+    </div>
+  </div>
+  <div className={styles.therapyButton01}>
+   <button onClick={() => setStep(0)}>Back</button>
+   <button onClick={() => setStep(2)}>Next</button>  </div>
+</div>
+</div>
+ )}
+
+          {step === 2 && (
+            <div className={styles.therapyForm1Container}>
+              <div className={styles.therapyNotesContainer}>
+                <div className={styles.therapyNotesTextarea}>
+                  <h1>Kindly Discuss your Issue</h1>
+                  <div className={styles.therapyNotesTextareaPart}>
+                    <textarea></textarea>
+                  </div>
+                </div>
+                <div className={styles.therapyNotesDivider}>
+                  <h1>Or</h1>
+                </div>
+                <div className={styles.therapyNotesVoicenote}>
+                  <h1>Kindly Record your Issue</h1>
+                  <div className={styles.therapyNotesVoicenoteMain}>
+                    <div className={styles.therapyNotesVoicenoteMicrophone}>
+                      <img src="images/therapyForm/microphone.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.therapyButton02}>
+                  <button onClick={() => setStep(1)}>Back</button>
+                  <button>Complete</button>
+                </div>
+              </div>
+            </div>
+          )}
+        </form>
       </div>
-      <form>
-      {
-        step === 0 && (
-          <div className={styles.formContainer1}>
-          <div className={styles.therapyForm1Container} >
-            <div className={styles.therapyForm1Headers}>
-              <h2>Age</h2>
-              <h2>Gender</h2>
-              <h2>Location</h2>
-              <h2>Status</h2>
-              <h2>Religion</h2>
-            </div>
-            <div className={styles.therapyForm1RadioGroups}>
-              <div className={styles.therapyForm1RadioGroups1} >
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <span>6-12</span>
-              </div>
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <span>12-18</span>
-              </div>
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <span>19-30</span>
-              </div>
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <span>31-45</span>
-              </div>
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <span>46-above</span>
-              </div>
-              </div>
-
-              <div className={styles.therapyForm1RadioGroups2}>
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <h2>Male</h2>
-              </div>
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <h2>Female</h2>
-              </div>
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <h2>Other</h2>
-              </div>
-              </div>
-
-              <div className={styles.therapyForm1RadioGroups3}>
-              <div className={styles.therapyFormInputText}> 
-              <input type="input" placeholder='Country' />
-              <SearchOutlined style={{ fontSize: "40px" }} />
-              </div>
-              <div className={styles.therapyFormInputText} > 
-              <input type="input" placeholder='State'  />
-              <SearchOutlined style={{ fontSize: "40px" }} />
-              </div>
-              </div>
-
-              <div className={styles.therapyForm1RadioGroups4}>
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <h2>Single</h2>
-              </div>
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <h2>Married</h2>
-              </div>
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <h2>Divorced</h2>
-              </div>
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <h2>Dating</h2>
-              </div>
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <h2>Other</h2>
-              </div>
-              </div>
-
-              <div className={styles.therapyForm1RadioGroups5}>
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <h2>Christianity</h2>
-              </div>
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <h2>Islam</h2>
-              </div>
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <h2>Other</h2>
-              </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.therapyButton}  >
-          <button  onClick={() => setStep(1)} >Next</button>
-          </div>
-          </div>
-        )
-      }
-      {
-        step === 1 &&  (
-          <div className={styles.formContainer1}>
-          <div className={styles.therapyForm3Container} >
-            <div className={styles.therapyForm1Headers}>
-              <h2>Are you on <br/> Medication?</h2>
-              <h2>Sucide <br/> thoughts?</h2>
-              <h2>Physical <br/> Health</h2>
-              <h2>Sleeping <br/> Habit</h2>
-              <h2>Financial <br/> Status</h2>
-            </div>
-            <div className={styles.therapyForm1RadioGroups02}>
-              <div className={styles.therapyForm1RadioGroups01} >
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <h2>Yes</h2>
-              </div>
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <h2>No</h2>
-              </div>
-              </div>
-
-              <div className={styles.therapyForm1RadioGroups002}>
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <h2>Yes</h2>
-              </div>
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <h2>No</h2>
-              </div>
-              </div>
-
-              <div className={styles.therapyForm1RadioGroups03}>
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <h2>Good</h2>
-              </div>
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <h2>Fair</h2>
-              </div>
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <h2>Poor</h2>
-              </div>
-              </div>
-
-              <div className={styles.therapyForm1RadioGroups04}>
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <h2>Good</h2>
-              </div>
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <h2>Fair</h2>
-              </div>
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <h2>Poor</h2>
-              </div>
-              </div>
-
-              <div className={styles.therapyForm1RadioGroups05}>
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <h2>Good</h2>
-              </div>
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <h2>Fair</h2>
-              </div>
-              <div className={styles.therapyColumns}> 
-              <input type="radio" />
-              <h2>Poor</h2>
-              </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.therapyButton01}  >
-          <button  onClick={() => setStep(0)} >Back</button>
-          <button  onClick={() => setStep(2)} >Next</button>
-          </div>
-          </div>
-        )
-      }
-
-      { step === 2 &&
-         (
-          <div className={styles.formContainer1}>
-          <div className={styles.therapyNotesContainer}>
-            <div className={styles.therapyNotesTextarea}>
-            <h1>Kindly Discuss your Issue</h1>
-            <div className={styles.therapyNotesTextareaPart}>
-              <textarea></textarea>
-            </div>
-            </div>
-            <div className={styles.therapyNotesDivider}>
-            <h1>Or</h1>
-            </div>
-            <div className={styles.therapyNotesVoicenote}>
-            <h1>Kindly Record your Issue</h1>
-            <div className={styles.therapyNotesVoicenoteMain}>
-              <div className={styles.therapyNotesVoicenoteMicrophone}>
-                <img src="images/therapyForm/microphone.svg"  alt="" />
-              </div>
-            </div>
-            </div>
-            <div className={styles.therapyButton02}>
-          <button  onClick={() => setStep(1)} >Back</button>
-          <button>Complete</button>
-          </div>
-          </div>
-          </div>
-          )
-      }
-
-      </form>
     </div>
-    </div>
-  )
-}
+  );
+};
 
-export default TherapyFormComp
+export default TherapyFormComp;

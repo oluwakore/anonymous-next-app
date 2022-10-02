@@ -1,16 +1,20 @@
 .loginContainer {
   display: flex;
   flex-direction: row;
-  // height: 100vh;
+  height: 100vh;
 
   .loginPic {
+    // outline: 3px solid firebrick;
     width: 50%;
+
     img {
+      // height: 100vh;
       width: 100%;
-      height: 100vh;
-      // width: 756px;
+      object-fit: cover;
+      height: 100%;
     }
   }
+
 
   .loginMain {
     // margin-top: 56px !important;
@@ -110,13 +114,14 @@
 
   .forgotPasswordLink {
     margin-top: -1.5em !important;
-    width: 55%;
+    width: 100%;
     // outline: 3px solid sandybrown;
     margin: auto;
     display: flex;
     justify-content: flex-end;
     p {
       font-style: italic;
+      margin-right: 1.2rem;
     }
   }
 

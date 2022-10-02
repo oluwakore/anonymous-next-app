@@ -9,7 +9,7 @@ function TherapyForm() {
 
 
   return (
-    <div>
+    <div  /*style={{ background: "#fcfcfc" }} */>
        <Head>
         <title>Connect with your therapist</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
