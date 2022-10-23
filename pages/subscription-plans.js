@@ -6,7 +6,7 @@ import { getPlans } from '../api/base';
 import SubscriptionCard from '../components/subscriptions/subscriptionCard';
 import styles from '../styles/subscriptionPlans.module.scss'
 
-function subscriptionPlansComp() {
+function SubscriptionPlansComp() {
 
   const [loading, setLoading] = useState(false)
   const [planList, setPlanList] = useState()
@@ -91,4 +91,4 @@ function subscriptionPlansComp() {
   )
 }
 
-export default subscriptionPlansComp
+export default SubscriptionPlansComp

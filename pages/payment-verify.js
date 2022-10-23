@@ -8,7 +8,7 @@ import styles from "../styles/paymentverify.module.scss";
 import { saveSessionMetadata } from "../core/actions/therapistListActions/therapistListactions";
 import Link from "next/link";
 
-function paymentVerify() {
+function PaymentVerify() {
   const [loading, setLoading] = useState(true);
 
   const dispatch = useDispatch();
@@ -105,4 +105,4 @@ function paymentVerify() {
   );
 }
 
-export default paymentVerify;
+export default PaymentVerify;

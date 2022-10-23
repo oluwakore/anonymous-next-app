@@ -5,7 +5,7 @@ import TherapistDetails from '../components/therapistDetails/TherapistDetails'
 import styles from '../styles/appointmentdetails.module.scss'
 
 
-function appointmentDetails() {
+function AppointmentDetails() {
 
   const [loading, setLoading] = useState(false)
   const [appointmentDetails, setAppointmentDetails] = useState()
@@ -55,4 +55,4 @@ function appointmentDetails() {
   )
 }
 
-export default appointmentDetails
+export default AppointmentDetails

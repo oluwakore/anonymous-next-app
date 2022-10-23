@@ -5,7 +5,7 @@ import TherapCard from '../components/therapListCard/therapCard';
 import styles from '../styles/therapistCheckout.module.scss'
 
 
-function therapistCheckout() {
+function TherapistCheckout() {
 
   const [loading, setLoading] = useState(true)
 
@@ -77,4 +77,4 @@ function therapistCheckout() {
   )
 }
 
-export default therapistCheckout
+export default TherapistCheckout
