@@ -1,0 +1,26 @@
+.mainContainer {
+  display: flex;
+
+
+  .createThep {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 3px solid crimson;
+    height: 100vh;
+
+    button {
+      background: #0e0b8b;
+      border: none;
+      outline: none;
+      color: #fff;
+      font: 1.2rem;
+      padding: 1rem 2rem;
+    }
+  }
+
+  .viewThep {
+    width: 50%;
+  }
+}

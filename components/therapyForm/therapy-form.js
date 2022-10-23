@@ -1,21 +1,32 @@
 import React, { useState } from "react";
+import { useRouter  } from 'next/router'
 import { SearchOutlined, DownOutlined } from "@ant-design/icons";
+import { useDispatch, useSelector } from "react-redux";
 import { Select } from "antd";
 const { Option } = Select;
 import styles from "./therapy-form.module.scss";
 import Radio from "./Radio";
 import { countiresRawData } from "./countriesData";
+import { getPotentialTherapist } from "../../api/base";
+import { getTherapList } from "../../core/actions/therapistListActions/therapistListactions";
 
-const TherapyFormComp = () => {
+const TherapyFormComp = ({ userToken }) => {
 
 
   const [step, setStep] = useState(0);
+  const [stateList, setStateList] = useState([]);
+
+
+  const router = useRouter()
+
+  const dispatch = useDispatch()
+
+ 
 
   const [age, setAge] = useState("");
   const [gender, setGender] = useState("");
   const [country, setCountry] = useState("");
   const [state, setState] = useState("");
-  const [stateList, setStateList] = useState([]);
   const [status, setStatus] = useState("");
   const [religion, setReligion] = useState("");
   const [medication, setMedication] = useState("");
@@ -23,10 +34,39 @@ const TherapyFormComp = () => {
   const  [health, setHealth] = useState("");
   const  [sleeping, setSleeping] = useState("");
   const  [finance, setFinance] = useState("");
+  const [story, setStory] = useState("")
+
   
+  let problem = []
 
   // console.log(stateList[0]?.states);
-  console.log(state);
+  // console.log(state);
+
+  const handleProblemStates = () => {
+
+    if(suicide === "Yes") {
+      problem.push('suicide', 'depression')
+    }
+    if (status === "married") {
+      problem.push('marriage', 'child')
+    }
+    if (status === "dating") {
+      problem.push('dating')
+    }
+    if (status === "divorced") {
+      problem.push('divorce')
+    }
+    if (health === "fair" || "poor") {
+      problem.push('exercise')
+    }
+    if (suicide === "Yes" && finance === "fair" || "poor") {
+      problem.push('depression')
+    }
+    if (sleeping === "fair" || "poor" || medication === "Yes") {
+      problem.push('personalityDisorder', 'depression')
+    }
+    return problem
+  }
 
   const filterStates = (county) => {
     const result = countiresRawData.filter(
@@ -41,6 +81,71 @@ const TherapyFormComp = () => {
     // console.log(result)
   };
 
+  const therapResults = useSelector((state) => state.therapistList)
+
+
+  const { therapArray } = therapResults
+  console.log(therapResults)
+
+  const handleSetProblemArray = async() => {
+    handleProblemStates()
+    console.log(problem)
+
+    dispatch(getTherapList({profile: {
+      age,
+      gender,
+      country,
+      state,
+      status,
+      religion,
+      medication,
+      suicide,
+      health,
+      sleeping,
+      finance,
+      story,
+      problem
+    },
+  }, userToken))
+
+
+  if (therapArray.status === 'success') {
+     router.push('/therapist-checkout')
+  }
+
+    // try {
+    //     const res = await getPotentialTherapist({profile: {
+    //       age,
+    //       gender,
+    //       country,
+    //       state,
+    //       status,
+    //       religion,
+    //       medication,
+    //       suicide,
+    //       health,
+    //       sleeping,
+    //       finance,
+    //       story,
+    //       problem
+    //     },
+    //   }, userToken)
+
+    //   const {data} = res
+
+    //   if(data.status === "success") {
+        
+    //   }
+
+    //     console.log(data.status)
+    // } catch(err) {
+    //   console.error(err)
+    // }
+
+  } 
+
+ 
+
   const handleChange = (value) => {
     setCountry(value);
     const result = countiresRawData.filter((item) => item.name === value);
@@ -53,7 +158,7 @@ const TherapyFormComp = () => {
 
   const handleStateChange = (value) => {
     setState(value);
-    console.log(state);
+    // console.log(state);
   };
 
   // console.log(age)
@@ -427,23 +532,24 @@ const TherapyFormComp = () => {
                 <div className={styles.therapyNotesTextarea}>
                   <h1>Kindly Discuss your Issue</h1>
                   <div className={styles.therapyNotesTextareaPart}>
-                    <textarea></textarea>
+                    <textarea placeholder='Tell your story...'
+              value={story}  onChange={(e) => setStory(e.target.value)} ></textarea>
                   </div>
                 </div>
-                <div className={styles.therapyNotesDivider}>
+                {/* <div className={styles.therapyNotesDivider}>
                   <h1>Or</h1>
-                </div>
-                <div className={styles.therapyNotesVoicenote}>
+                </div> */}
+                {/* <div className={styles.therapyNotesVoicenote}>
                   <h1>Kindly Record your Issue</h1>
                   <div className={styles.therapyNotesVoicenoteMain}>
                     <div className={styles.therapyNotesVoicenoteMicrophone}>
                       <img src="images/therapyForm/microphone.svg" alt="" />
                     </div>
                   </div>
-                </div>
+                </div> */}
                 <div className={styles.therapyButton02}>
                   <button onClick={() => setStep(1)}>Back</button>
-                  <button>Complete</button>
+                  <button type="button" onClick={handleSetProblemArray}>Complete</button>
                 </div>
               </div>
             </div>

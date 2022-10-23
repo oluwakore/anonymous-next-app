@@ -1,0 +1,45 @@
+.linkDesc {
+  font-size: 1rem;
+}
+
+.container {
+  width: 80%;
+  // margin: auto;
+  // outline: 3px solid blue;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.topContainer {
+  // outline: 3px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  // padding: 3rem 2rem;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .container {
+    // outline: 3px solid blue;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 100% !important;
+    // padding: 1rem !important;
+    // outline: 3px solid blue;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .linkDesc {
+    font-size: .85rem !important;
+  }
+  
+}

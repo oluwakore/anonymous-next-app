@@ -1,0 +1,110 @@
+.container {
+  border: 3px solid  #0e0b8b;
+  border-radius: 3rem;
+  height: 30rem;
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    color:  #2BAB56;
+  }
+
+  p {
+     font-size: 1.5rem;
+     font-weight: 500;
+  }
+
+
+  .lowerContainer {
+    border-top: 2px solid gray;
+    padding-top: 2rem;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h4 {
+       font-size: 1rem;
+    }
+  }
+
+  .buttonComp {
+    margin-top: 2rem;
+    // outline: 3px solid gold;
+
+    button {
+      outline: none;
+      border: none;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #fff;
+      background: #0e0b8b;
+      padding: .5rem 2rem;
+      border-radius: .5rem;
+      cursor: pointer;
+    }
+  }
+ 
+}
+
+@media screen and (max-width: 1024px) {
+ .container {
+  h1 {
+    font-size: 3.5rem;
+  }
+  p {
+    font-size: 1.2rem;
+ }
+
+ .lowerContainer {
+  
+
+  h4 {
+     font-size: .85rem;
+  }
+}
+ }
+
+ .buttonComp {
+ 
+
+  button {
+    font-size: .9rem !important;
+  }
+}
+}
+
+
+@media screen and (max-width: 600px) {
+  .container {
+   h1 {
+     font-size: 2.5rem;
+   }
+   p {
+     font-size: .9rem;
+  }
+ 
+  .lowerContainer {
+   
+ 
+   h4 {
+      font-size: .75rem;
+   }
+ }
+  }
+ 
+  .buttonComp {
+  
+ 
+   button {
+     font-size: .8rem !important;
+   }
+ }
+ }

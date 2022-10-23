@@ -2,10 +2,16 @@ import React from 'react'
 import Head from 'next/head'
 import DashboardNav from '../components/dashboard/dashboardNav/dashboardNav'
 import TherapyFormComp from '../components/therapyForm/therapy-form'
+import { useDispatch, useSelector } from "react-redux";
 
 
 function TherapyForm() {
 
+
+  const userLogin = useSelector((state) => state.userLogin)
+  const  { userInfo } = userLogin 
+
+  const loggedUserToken = userInfo?.token
 
 
   return (
@@ -17,7 +23,7 @@ function TherapyForm() {
       </Head>
 
       <DashboardNav/>
-      <TherapyFormComp /> 
+      <TherapyFormComp userToken={loggedUserToken} /> 
     </div>
   )
 }

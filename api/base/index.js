@@ -78,6 +78,44 @@ export const unlikeComments = (id, data, token) => {
   return http.delete(`/comments/${id}/like`, data, setAuthToken(token))
 }
 
+export const addTherapists = (data, token) => {
+  return http.post(`/therapists`, data, setAuthToken(token))
+}
+
+export const updateTherapist = (id, data, token) => {
+  return http.patch(`/therapists/me?=${id}`, data, setAuthToken(token))
+}
+
+export const getPotentialTherapist = (data, token) => {
+  return http.post(`/patients/get-therapy`, data, setAuthToken(token))
+}
+ 
+
+export const getPlans = () => {
+  return http.get('/subscriptions')
+}
+
+export const createReservation = (id, data, token) => {
+  return http.post(`/patients/select-therapist?=${id}`, data, setAuthToken(token))
+}
+
+export const getPaymentLink = (data, token) => {
+  return http.post(`/payments/paystack/pay`, data, setAuthToken(token))
+}
+
+export const verifyPaymentStatus = (data, token) => {
+  return http.get(`/payments/paystack/callback?reference=${data}`,setAuthToken(token))
+}
+
+export const postAppointmentDate = (id, sessionId, data, token) => {
+  return http.post(`/patients/me/sessions/${sessionId}/appointments`, data, setAuthToken(token))
+}
+
+
+
+
+
+
 
 
 
