@@ -91,12 +91,12 @@ function PaymentVerify() {
             </div>
 
             <div className={styles.cardButton}>
-              {/* <Link href="/appointment-details">
+              <Link href="/appointment-details">
                 <button>Proceed to appointment details</button>
-              </Link> */}
-              <Link href="/dashboard">
-                <button>Go to Dashboard</button>
               </Link>
+              {/* <Link href="/dashboard">
+                <button>Go to Dashboard</button>
+              </Link> */}
             </div>
           </Card>
         </div>

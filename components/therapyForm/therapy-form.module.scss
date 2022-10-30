@@ -582,6 +582,10 @@
 
 @media screen and (max-width: 600px)  {
 
+  .errorHolder {
+    font-size: .8rem !important;
+  }
+
   .therapyNotesTextareaPart {
     textarea {
       height: 25rem !important;
@@ -644,7 +648,7 @@
   .therapyButton01 {  
     button {
       padding: .5rem 1rem !important;
-      font-size: 1rem !important;
+      font-size: .8rem !important;
     
     }
   }
@@ -652,7 +656,7 @@
   .therapyButton {
     //  outline: 3px solid crimson;
       button {
-        font-size: 1rem !important;
+        font-size: .8rem !important;
       }
     }
 
@@ -684,7 +688,7 @@
        background-color: #0e0b8b;
       //  padding: .5rem 1rem;
       padding: .5rem 1rem !important;
-       font-size: 1rem !important;
+       font-size: .8rem !important;
      }
 
     }

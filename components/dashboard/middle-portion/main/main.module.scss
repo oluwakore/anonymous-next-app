@@ -79,7 +79,7 @@
   
         
         img {
-          padding: 2rem;
+          padding: 1.5rem;
           border-radius: 2rem;
           // outline: 3px solid yellow;
           width: 15rem;
@@ -263,21 +263,29 @@
       
       h1 {
         text-align: center;
-        font-size: 1.1rem !important;
+        font-size: .95rem !important;
       }
 
       .centralContainerServicesMain {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         gap: 1rem;
+        // outline: 3px solid red;
+        overflow-x: none !important;
+        padding: 0rem !important;
 
         .centralContainerServicesCard {
           // outline: 3px solid purple;
+
+          img {
+            width:  13rem !important;
+          }
+          
          
           h2 {
             margin-top: 1rem;
             text-align: center;
-            font-size: 1rem !important;
+            font-size: .85rem !important;
           }
         }
       }

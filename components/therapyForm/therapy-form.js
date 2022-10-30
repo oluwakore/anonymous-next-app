@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useRouter  } from 'next/router'
 import { SearchOutlined, DownOutlined } from "@ant-design/icons";
 import { useDispatch, useSelector } from "react-redux";
-import { Select } from "antd";
+import { Select, Alert } from "antd";
 const { Option } = Select;
 import styles from "./therapy-form.module.scss";
 import Radio from "./Radio";
@@ -10,11 +10,14 @@ import { countiresRawData } from "./countriesData";
 import { getPotentialTherapist } from "../../api/base";
 import { getTherapList } from "../../core/actions/therapistListActions/therapistListactions";
 
+
 const TherapyFormComp = ({ userToken }) => {
 
 
   const [step, setStep] = useState(0);
   const [stateList, setStateList] = useState([]);
+
+  const [error, setError] = useState(null);
 
 
   const router = useRouter()
@@ -85,33 +88,37 @@ const TherapyFormComp = ({ userToken }) => {
 
 
   const { therapArray } = therapResults
-  console.log(therapResults)
+  // console.log(therapResults)
 
-  const handleSetProblemArray = async() => {
+  const handleSetProblemArray = () => {
     handleProblemStates()
-    console.log(problem)
-
-    dispatch(getTherapList({profile: {
-      age,
-      gender,
-      country,
-      state,
-      status,
-      religion,
-      medication,
-      suicide,
-      health,
-      sleeping,
-      finance,
-      story,
-      problem
-    },
-  }, userToken))
-
-
-  if (therapArray.status === 'success') {
-     router.push('/therapist-checkout')
-  }
+    // console.log(problem)
+    if(age === "" || gender === "" || country === "" || state === "" || status === "" || religion === "" || medication === "" || suicide === "" || health === "" || sleeping === "" || finance === "" || story === "") {
+      setError("Kindly ensure that all form fields are filled")
+      
+    }  else {
+      setError(null)
+            dispatch(getTherapList({profile: {
+            age,
+            gender,
+            country,
+            state,
+            status,
+            religion,
+            medication,
+            suicide,
+            health,
+            sleeping,
+            finance,
+            story,
+            problem
+          },
+        }, userToken))
+      if (therapArray.status === 'success') {
+         router.push('/therapist-checkout')
+      }
+    }
+   
 
     // try {
     //     const res = await getPotentialTherapist({profile: {
@@ -530,6 +537,18 @@ const TherapyFormComp = ({ userToken }) => {
             <div className={styles.therapyForm1Container}>
               <div className={styles.therapyNotesContainer}>
                 <div className={styles.therapyNotesTextarea}>
+                {error !== null && (
+            <div className={styles.errorHolder}>
+              <Alert
+                message={error}
+                type="error"
+                closable
+                onClose={() => {
+                  setError(null);
+                }}
+              />
+            </div>
+          )}
                   <h1>Kindly Discuss your Issue</h1>
                   <div className={styles.therapyNotesTextareaPart}>
                     <textarea placeholder='Tell your story...'

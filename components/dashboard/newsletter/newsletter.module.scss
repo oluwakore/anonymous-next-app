@@ -118,17 +118,20 @@
 
       .newsletterContainerMainForm {
         flex-direction: column;
+        // outline: 3px solid crimson;
+        margin-left: 0 !important;
         // gap: 1rem;
     
         button {
           margin-top: 1rem !important;
           margin: auto;
-          width: 60%;
+          width: fit-content !important;
           font-size: .85rem !important;
+          padding: .8rem 2rem !important;
         }
     
         input {
-          font-size: .85rem !important;
+          font-size: .8rem !important;
         }
       }
     } 

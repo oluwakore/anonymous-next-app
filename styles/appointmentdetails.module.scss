@@ -1,0 +1,20 @@
+.linkDesc {
+  font-size: 1rem;
+}
+
+  .subContainer {
+    // outline: 3px solid crimson;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  @media screen and (max-width: 600px) {
+
+    .linkDesc {
+      font-size: .8rem !important;
+    } 
+
+  }

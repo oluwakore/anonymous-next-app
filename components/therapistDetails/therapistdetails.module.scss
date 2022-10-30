@@ -1,3 +1,5 @@
+
+
 .modalCover {
   padding: 1rem !important;
 
@@ -5,6 +7,7 @@
     margin-top: 1rem;
     font-size: .8rem;
     text-align: center !important;
+    // text-transform: capitalize;
   }
   h2 {
    
@@ -26,23 +29,81 @@
   }
 }
 
+
+
+.timeDateModal {
+  margin-top: 1rem;
+  // padding: 2rem 1rem;
+  // height: 100vh;
+}
+
 .mainCover {
-  border: 1px solid black;
+  position: fixed !important;
+  border: 2px solid black;
   border-radius: 1rem;
   width: fit-content;
-  padding: 2rem;
+  padding: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  .dateAndtime {
+  .apptTitleHeader   {
+    width: 100%;
     margin-top: 1.5rem;
-    padding-bottom: 2rem;
-    h2 {
-      font-size: 1rem;
+    // outline: 3px solid red;
+    display: flex;
+    flex-direction: column;
 
+    h4 {
+      font-size: .9rem;
     }
+
+  .apptTitle {
+    width: 100%;
+   
+    // outline: 3px solid sienna;
+    display: flex;
+    justify-content: space-between;
+
+    input {
+      width: 100%;
+      outline: none;
+      border: 2px solid gray;
+      border-radius: .5rem;
+      font-size: .8rem;
+      padding: .5rem;
+    }
+
+  }
+
+}
+
+  .dateAndtime {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.5rem;
+
+    small {
+      margin-top: 1rem;
+      font-size: .85rem;
+    }
+    button {
+      background: #0e0b8b;
+    padding: .2rem 1rem;
+    border-radius: .2rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    // padding-bottom: 2rem;
+    font-size: .9rem;
+    font-weight: normal;
+    margin: auto;
+    color: #fff;
+    outline: none;
+    border: none;
+    }
+
+    
   }
 
   .availabledays {
@@ -90,7 +151,7 @@
   }
 
   .status {
-     
+     margin-top: 1rem;
     p {
       font-size: 1rem;
       font-weight: normal;
@@ -112,7 +173,7 @@
       outline: 2px solid #0e0b8b;
       object-fit: cover;
       width: 12rem;
-      padding: 1rem;
+      // padding: 1rem;
       aspect-ratio: 1/1.2;
       height: 12rem;
       border-radius: 50%;
@@ -129,4 +190,142 @@
       color: gray;
     }
   }
+}
+
+
+@media screen and (max-width: 600px)  {
+
+  .apptTitleHeader   {
+
+    h4 {
+      font-size: .75rem !important;
+    }
+
+  .apptTitle {
+    input {
+      width: 100%;
+      outline: none;
+      border: 2px solid gray;
+      border-radius: .5rem;
+      font-size: .7rem !important;
+      padding: .5rem;
+    }
+
+  }
+
+}
+
+
+  .modalCover {
+    padding: 1rem !important;
+  
+    p {
+      font-size: .6rem;
+    }
+    h2 {
+      .modalIcon {
+        margin-right: .5rem;
+      }
+  
+     span {
+       font-size: .6rem;
+       font-weight: 500;
+     }
+    }
+  }
+  
+
+  // .displayWhite {
+  //   display: none !important;
+  // }
+
+  .timeDateModal {
+    // height: 50vh;
+    padding: 1rem 0;
+    // height: 100vh;
+    // width: 100vw;
+  } 
+  .mainCover {
+    padding:  1rem !important;
+
+    .buttonCover {
+
+      button{
+        font-size: .65rem;
+        padding: .5rem 1.2rem;
+      }
+  
+     
+    }
+
+   
+
+
+    .status {
+     
+      p {
+        font-size: .75rem;
+        span{
+          font-size: .7rem;
+        }
+      }
+    }
+
+    .dateAndtime {
+
+      
+    small {
+      font-size: .65rem;
+    }
+      button {
+        font-size: .7rem;
+      }
+    }
+
+    .availabledays {
+
+      h1 {
+       
+        font-size: .75rem;
+      }
+      .availabledaysList{
+        padding: .5rem;  
+        p {
+          font-size: .7rem;
+        }
+  
+        span{
+          font-size: .65rem;
+        }
+      }
+    }
+  
+
+
+    .imageDesc {
+      img{
+        width: 8rem;
+        height: 8rem;
+      }
+  
+      p{
+        font-size: .85rem;
+      }
+  
+      small {
+        font-size: .65rem;
+      }
+    }
+
+
+  }
+}
+
+
+@media screen and (max-width: 300px)  {
+
+  .displayWhite {
+    display: none !important;
+  }
+
 }

@@ -112,6 +112,11 @@ export const postAppointmentDate = (id, sessionId, data, token) => {
 }
 
 
+export const postAppointmentTitle = (id, sessionId, data, token) => {
+  return http.post(`/patients/me/sessions/${sessionId}/appointments`, data, setAuthToken(token))
+}
+
+
 
 
 

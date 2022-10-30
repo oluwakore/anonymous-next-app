@@ -108,17 +108,19 @@
     align-items: center;
     color: #ffff;
     width: 100%;
-    padding: .5em 2em;
-    border-radius: 1em;
+    padding: .5rem 2rem;
+    border-radius: 1rem;
     background-color: #00BCD7;
     margin-bottom: 1.5rem;
 
     h3 {
       color: #ffff;
       font-size: 1rem;
+      text-align: center;
     }
 
     p {
+      text-align: center;
       font-size: .8rem;
     }
   }
@@ -242,10 +244,10 @@ left: 2rem;
       }
 
       .rightAppointment {
-        margin-top: 12rem;
+        margin-top: 15rem;
         // outline: 3px solid goldenrod;
         padding-bottom: 4rem;
-
+        width: 100% !important;
         h2 {
           font-size: 1rem !important;
         }
@@ -259,6 +261,7 @@ left: 2rem;
           overflow: auto;
           // outline: 3px solid magenta;
           padding: .5rem;
+          width: 100% !important;
         }
       }
   }

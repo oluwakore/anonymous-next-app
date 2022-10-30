@@ -7,7 +7,11 @@ import styles from  "./right.module.scss";
 import moment from "moment";
 import Calender from "./calendar";
 
-function Right() {
+function Right({ sessionsData }) {
+
+  // console.log(sessionsData)
+
+  // const filteredSessions = sessionsData.filter((item) =>   )
   return (
     <div className={styles.rightMainCover}>
       <div className={styles.rightMainContainer}>
@@ -22,7 +26,7 @@ function Right() {
         </div>
         <div style={{ width: "100%", position: "relative" }} >
           <div className={styles.rightCalendar}>
-            <Calender />
+            <Calender  calendarSessions={sessionsData} />
           </div>
           <div className={styles.calendarImg}>
             <img
@@ -34,25 +38,21 @@ function Right() {
         </div>
         <div className={styles.rightAppointment}>
           <h2>Up Coming Appointment</h2>
-          <div className={styles.rightMenuCover} >
-          <div className={styles.rightMenu1}>
-            <h3>Today</h3>
-            <p>Family Counselling</p>
-            <p>09:00am - 09:50am</p>
-            <p>Dr. Olakunle Johnson</p>
-          </div>
-          <div className={styles.rightMenu2}>
-            <h3>22/10/2022</h3>
-            <p>Family Counselling</p>
-            <p>09:00am - 09:50am</p>
-            <p>Dr. Olakunle Johnson</p>
-          </div>
-          <div className={styles.rightMenu1}>
-            <h3>22/10/2022</h3>
-            <p>Family Counselling</p>
-            <p>09:00am - 09:50am</p>
-            <p>Dr. Olakunle Johnson</p>
-          </div>
+          <div  className={styles.rightMenuCover}  >
+           {
+            sessionsData?.map((item, index) => (
+              <div key={index}> {item?.appointments.filter((list) => list.status === "pending" ).map((sub, index) => (
+                <div key={index}  className={styles.rightMenu1} >
+                  <h3> {moment(sub.start_time).format('L') } </h3>
+                   <p> {sub.title} </p>
+                   <p> { `${moment(sub.start_time).format('LT')} - ${moment(sub.end_time).format('LT')}`} </p>
+                  <p> Dr. {item.therapist.name} </p>
+                  </div>
+               
+              ))} </div>
+            ))
+           }
+      
           </div>
         </div>
       </div>
@@ -61,3 +61,12 @@ function Right() {
 }
 
 export default Right;
+
+
+
+//  {/* <div className={styles.rightMenu1}>
+//             <h3>22/10/2022</h3>
+//             <p>Family Counselling</p>
+//             <p>09:00am - 09:50am</p>
+//             <p>Dr. Olakunle Johnson</p>
+//           </div> */}

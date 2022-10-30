@@ -23,7 +23,7 @@ function SubscriptionPlansComp() {
       const res = await getPlans()
 
       
-      console.log(res.data.data)
+      // console.log(res.data.data)
      
      
       setPlanList(res.data.data)
@@ -31,7 +31,7 @@ function SubscriptionPlansComp() {
       
 
       setLoading(false)
-      console.log(planList)
+      // console.log(planList)
     } catch (error) {
       setLoading(false)
       console.error(error)

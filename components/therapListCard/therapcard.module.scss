@@ -1,8 +1,9 @@
 .container {
   display: flex;
   flex-direction: column;
+  border: 1px solid gray;
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  height: 40rem;
+  // height: 40rem;
   width: 100%;
 
   img {
@@ -13,6 +14,32 @@
     // height: 100%;
     // height: 10rem;
     // outline: 3px solid green;
+  }
+
+  .availTimes {
+    width: 90%;
+    h3 {
+      font-size: 1rem;
+    }
+
+    .availTimesLower {
+      border:  1px solid #000;
+      border-radius: .3rem;
+      display: flex;
+      flex-direction: column;
+      height: 10rem;
+      overflow-y: auto;
+      padding: .5rem 0 0 .5rem;
+
+      p {
+        font-size: .85rem;
+        font-weight: 500;
+
+        span {
+          font-weight: normal;
+        }
+      }
+    }
   }
 
   .lowerContainer {
@@ -37,6 +64,7 @@
 
    .bottom {
     // outline: 3px solid red;
+    margin-top: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -117,9 +145,21 @@
 
 @media screen and (max-width: 600px) {
   .container {
-    height: 33rem;
+    // height: 33rem;
     // width: 100%;
     // outline: 3px solid brown;
+    .availTimes {
+      
+      h3 {
+        font-size: .8rem !important;
+      }
+  
+      .availTimesLower {
+        p {
+          font-size: .75rem;
+        }
+      }
+    }
 
     .lowerContainer {
   

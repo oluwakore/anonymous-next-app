@@ -10,6 +10,7 @@ import  Footer from '../components/Footer/Footer'
 import styles from  '../styles/dashboard.module.scss'
 import Link from 'next/link';
 import { myStory } from '../api/base';
+import { getUserDetails } from '../core/actions/useractions/useractions';
 
 function Dashboard() {
 
@@ -20,23 +21,25 @@ function Dashboard() {
   const userLogin = useSelector((state) => state.userLogin)
   const  { userInfo } = userLogin 
 
+  const loggedUserId = userInfo?.user?.id
+
+  const loggedUserToken = userInfo?.token
+
+  const userDetails = useSelector((state) => state.userDetails)
+  const { loading, error, user }  = userDetails
+
+
+  // console.log(user?.data?.activeSessions)
+
   const handlePush = () => {
     router.push('/login')
   }
+ 
 
-  // const getStory = async() => {
-  //   try {
-  //     const  res =  await myStory(userInfo.user.id, userInfo.token)
+  useEffect(() => {
+    dispatch(getUserDetails(loggedUserId, loggedUserToken))
+  }, [dispatch])
 
-  //     console.log(res.data)
-  //   } catch (err) {
-  //     console.log(err)
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   getStory()
-  // })
 
   return (
     <div  style={{ overflow: "hidden"}}>
@@ -50,7 +53,7 @@ function Dashboard() {
       userInfo ? (
         <div className={styles.dashContainer}>
         <DashboardNav />
-       <MainContent />
+       <MainContent  sessions={user?.data?.activeSessions}  />
        <Newsletter />
        <Footer />
         </div>

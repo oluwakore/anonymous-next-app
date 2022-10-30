@@ -13,6 +13,8 @@ function TherapistCheckout() {
 
   const { therapArray } = therapResults
 
+  // console.log(therapArray)
+
 
 
   useEffect(() => {
@@ -65,7 +67,8 @@ function TherapistCheckout() {
           {
             therapArray?.data?.map((item, index) => (
               <div key={index}>
-              <TherapCard  image={item.image} name={item.name} description={item.about} id={item.id} rating={item.rating} experience={item.work_experience} />
+              <TherapCard  image={item.image} name={item.name} description={item.about} id={item.id} rating={item.rating} experience={item.work_experience} availableTimes={item.availableTimes
+} />
               </div>
             ))
           }
