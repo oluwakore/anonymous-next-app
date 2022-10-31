@@ -13,7 +13,7 @@
     flex-direction: column;
 
     h1 {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       margin-left: 2rem;
       color: #0e0b8b;
     }
@@ -107,7 +107,7 @@
       align-self: flex-start;
       
       h1 {
-        font-size: 2.1rem;
+        font-size: 1.8rem;
         color: #0e0b8b;
         font-weight: 600;
       }
@@ -129,14 +129,14 @@
     // margin-left: 110px;
    
 
-    img {
-      aspect-ratio: 4/2.5;
-       width: 100%;
-       border-radius: 1.5rem;
-    }
+    // img {
+    //   aspect-ratio: 4/2.5;
+    //    width: 100%;
+    //    border-radius: 1.5rem;
+    // }
     h2 {
-      margin-top: 1.5rem;
-      font-size: 1.5rem;
+      margin-top: 1rem;
+      font-size: 1.2rem;
       font-weight: 600;
       text-transform: capitalize;
     }
@@ -173,19 +173,20 @@
       background-color: #0e0b8b;
       border: none;
       outline: none;
-      font-size: 1.2rem;
+      font-size: 1rem;
       border-radius: 50px;
     }
 
     button {
-     width: 33%;
-      padding: .5rem 3rem;
+     width: 100%;
+      padding: .5rem 0;
       color: #ffff;
       border: none;
       outline: none;
-      font-size: 1.2rem;
+      font-size: 1rem;
       background-color: lighten($color: #4745cc, $amount: 15);
       border-radius: 50px;
+      margin-left: .5rem;
     }
   }
 
@@ -219,9 +220,13 @@
     }
 
     img {
+      // object-fit: cover;
       width: 100%;
-      height: auto;
+      // height: 15rem;
+      aspect-ratio: 1/.8;
+      // height: auto;
       border-radius: 1rem;
+      // outline: 3px solid yellow;
     }
   }
 
@@ -234,6 +239,14 @@
 
     .storiesGridMainImages {
     // outline: 3px solid purple;
+
+    img {
+      // outline: 3px solid purple;
+      width: 100%;
+      aspect-ratio: 1/.8;
+      border-radius: 1.5rem;
+      // height: 10rem;
+    }
 
     position: relative;
     // outline: 3px solid yellow;
@@ -257,6 +270,8 @@
   .storiesGridMainDesc {
     
     // outline: 3px solid blueviolet;
+    margin-top: .5rem;
+    height: 7rem;
     // margin-left: 1.2em;
     // padding: .5em;
   }
@@ -367,6 +382,10 @@
       // outline: 3px solid yellow;
       width: 80% !important;
 
+
+      img {
+        // outline: 3px solid yellow;
+      }
       small {
         font-size: .65rem !important;
         }
@@ -413,7 +432,7 @@
       align-self: center !important;
       
       h1 {
-        font-size: 1.5rem !important;
+        font-size: 1.2rem !important;
       }
     }
   }
@@ -425,14 +444,14 @@
     // height: 50% !important;
 
     .active {
-      font-size: .9rem !important;
+      font-size: .85rem !important;
     }
 
     button {
     margin-bottom: 1rem;
-     width: 80% !important;
-      padding: .5rem 3rem;
-      font-size: .9rem !important;
+    //  width: 80% !important;
+    //   padding: .5rem 3rem;
+      font-size: .85rem !important;
     }
   }
 

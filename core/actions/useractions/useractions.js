@@ -9,7 +9,8 @@ import {
   USER_DETAILS_RESET,
   USER_PROFILE_UPDATE_REQUEST,
   USER_PROFILE_UPDATE_SUCCESS,
-  USER_PROFILE_UPDATE_FAIL
+  USER_PROFILE_UPDATE_FAIL,
+  STORE_USER_APPOINTMENT_DATES
 } from "../actiontypes";
 import { login, getDetails, updateProfile } from "../../../api/base";
 import { message } from "antd";
@@ -103,4 +104,8 @@ export const updateUserProfile = (id, details, token) => async (dispatch, getSta
 
     // console.log(error)
   }
+}
+
+export const storeApptDatesArray = (details) =>(dispatch) => {
+    dispatch({ type: STORE_USER_APPOINTMENT_DATES, payload: details})
 }

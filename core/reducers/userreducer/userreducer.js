@@ -1,4 +1,4 @@
-import {LOGIN_USER_REQUEST, LOGOUT_USER, LOGIN_USER_SUCCESS, LOGIN_FAIL, USER_DETAILS_SUCCESS, USER_DETAILS_FAIL, USER_DETAILS_RESET, USER_DETAILS_REQUEST, USER_PROFILE_UPDATE_FAIL, USER_PROFILE_UPDATE_SUCCESS, USER_PROFILE_UPDATE_REQUEST} from '../../actions/actiontypes'
+import {LOGIN_USER_REQUEST, LOGOUT_USER, LOGIN_USER_SUCCESS, LOGIN_FAIL, USER_DETAILS_SUCCESS, USER_DETAILS_FAIL, USER_DETAILS_RESET, USER_DETAILS_REQUEST, USER_PROFILE_UPDATE_FAIL, USER_PROFILE_UPDATE_SUCCESS, USER_PROFILE_UPDATE_REQUEST, STORE_USER_APPOINTMENT_DATES} from '../../actions/actiontypes'
 
 
 const initialState = {
@@ -52,6 +52,15 @@ export const userProfileUpdateReducer = (state = {} , action) => {
       return { loading: false, error: action.payload}
     default:
       return state
+  }
+}
+
+export const storeApptDetailsReducer = (state = { appt: null }, action) => {
+  switch(action.type) {
+    case STORE_USER_APPOINTMENT_DATES:
+      return { ...state, appt: action.payload }
+      default:
+        return state
   }
 }
 

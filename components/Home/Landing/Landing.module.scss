@@ -8,12 +8,12 @@
   left: 0;
   top: 0;
   padding: 1rem;
-  transition: 3s ease;
-
+  
   .close {
     position: absolute;
     right: 1rem;
     top: 1rem;
+    // transition: all 0.5s linear !important;
   }
 
   .openMenuList {

@@ -54,6 +54,10 @@
       // gap: 1.3rem;
       // justify-content: space-between;
       // width: 220px;
+
+      .rightButtonMainIcon {
+        font-size: 2rem;
+      }
        p{
         color: #ffff;
         font-size: 1rem;
@@ -82,10 +86,25 @@
   // outline:  3px solid magenta;
 
   h2 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 520;
     color: #0e0b8b;
     text-align: center;
+  }
+
+
+  .emptyMsg {
+  margin-top: 1.5rem;
+  //  outline: 3px solid red;
+
+   
+    .emptyMsgSpan {
+      display: flex;
+      // outline: 3px solid red;
+      font-size: .8rem;
+      color: gray;
+      width: 100%;
+    }
   }
 
   .rightMenuCover {
@@ -210,6 +229,18 @@ left: 2rem;
 
 
 @media screen and (max-width: 600px) {
+
+  .emptyMsg {
+    margin-top: 1rem !important;
+    //  outline: 3px solid red;
+  
+     
+      .emptyMsgSpan {
+        // outline: 3px solid red;
+        font-size: .7rem !important;
+      }
+    }
+
   .rightMainCover {
     margin-top: -2rem;
     // outline: 3px solid crimson;
@@ -226,8 +257,14 @@ left: 2rem;
        .rightButtonCover {
         min-width: fit-content !important;
         .rightButtonMain {
+
+
+          .rightButtonMainIcon {
+            font-size: 1.5rem;
+          }
+
            p{
-            font-size: 1.05rem !important;
+            font-size: .9rem !important;
            }
         }
        }
@@ -244,7 +281,7 @@ left: 2rem;
       }
 
       .rightAppointment {
-        margin-top: 15rem;
+        margin-top: 17rem;
         // outline: 3px solid goldenrod;
         padding-bottom: 4rem;
         width: 100% !important;
