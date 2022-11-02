@@ -114,7 +114,7 @@
 
   .forgotPasswordLink {
     margin-top: -1.5em !important;
-    width: 100%;
+    width: 60%;
     // outline: 3px solid sandybrown;
     margin: auto;
     display: flex;
@@ -158,7 +158,7 @@
     // margin-top: 69px;
     display: flex;
     flex-direction: row;
-    // justify-content: space-between;
+    justify-content: space-between;
     align-items: center;
     // gap: 0.5em;
 
@@ -184,7 +184,7 @@
 .loginLower {
   // outline: 3px solid springgreen;
   // display: flex;
-  padding: 2rem;
+  // padding: 2rem;
   // justify-content: center;
   // align-items: center;
 
@@ -258,7 +258,7 @@
 
   .loginMain {
     // outline: 3px solid sienna;
-    width: 90% !important;
+    width: 100% !important;
   }
 
   .loginMainContainer {
@@ -281,11 +281,11 @@
 
   .loginLower {
     // outline: 3px solid springgreen;
-    padding: 1rem !important;
+    // padding: 1rem !important;
   
     .loginLowerMain {
       // outline: 3px solid firebrick;
-      width: 90% !important;
+      width: 100% !important;
       margin: auto;
       font-size: .85rem !important;
     }
@@ -296,6 +296,7 @@
   }
 
   .forgotPasswordLink {
+    width: 100% !important;
     // outline: 3px solid sandybrown;
     margin-right: 1.6rem !important;
     p {
@@ -321,14 +322,14 @@
   .formzEndQuestion {
     p {
       font-weight: 400;
-      font-size: .85rem !important;
+      font-size: .75rem !important;
     }
   }
 
   .formzEndLink {
     // margin-left: 0.5rem;
     p {
-      font-size: .85rem  !important;
+      font-size: .75rem  !important;
     }
   }
   .formzEnd {

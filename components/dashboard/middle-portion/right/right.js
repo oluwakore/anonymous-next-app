@@ -8,7 +8,7 @@ import styles from  "./right.module.scss";
 import moment from "moment";
 import Calender from "./calendar";
 
-function Right({ sessionsData }) {
+function Right({ sessionsData, calendarDatesArray }) {
 
   // console.log(sessionsData)
 
@@ -27,7 +27,7 @@ function Right({ sessionsData }) {
         </div>
         <div style={{ width: "100%", position: "relative" }} >
           <div className={styles.rightCalendar}>
-          <Calender />
+          <Calender  apptDates={calendarDatesArray} />
           </div>
           <div className={styles.calendarImg}>
             <img

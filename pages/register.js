@@ -279,8 +279,8 @@ function Register() {
             <h4>or</h4>
           </div> */}
           <div className={styles.formGoogle}>
-            <div>
-              <Icon fontSize={35} icon="flat-color-icons:google" />
+            <div className={styles.formGoogleIcon}>
+              <Icon fontSize={32} icon="flat-color-icons:google" />
             </div>
             <div>
               <p>CREATE ACCOUNT WITH GOOGLE</p>

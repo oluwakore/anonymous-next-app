@@ -213,19 +213,29 @@
     width: 50%;
     // outline: 3px solid goldenrod;
     border: 2px solid #0e0b8b;
-    border-radius: 3em;
+    border-radius: 3rem;
     display: flex !important;
     align-items: center !important;
     justify-content: center;
     flex-direction: row !important;
-    padding: .2rem 1rem;
+    padding: .7rem 1.5rem;
     // gap: 1em;
 
-    p {
+    .formGoogleIcon {
+      // outline: 3px solid green;
       margin: auto;
+  
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+
+    p {
+      margin: auto ;
       font-size: 1rem;
       // font-weight: 500;
-      margin-left: 1rem !important;
+      margin-left: 0rem !important;
     }
   }
 
@@ -279,7 +289,7 @@
   }
 
   .registerMain {  
-    width: 90%;
+    width: 100%;
     // outline: 3px solid firebrick;
     padding: 1rem;
 
@@ -333,7 +343,7 @@
     margin: auto;
     margin-top: -2rem !important;
    
-    width: 90% !important;
+    width: 100% !important;
     // outline: 3px solid goldenrod;
     border: 2px solid #0e0b8b;
     border-radius: 3rem;
@@ -346,10 +356,12 @@
 
     p {
       margin: auto;
-      font-size: .85rem !important;
+      font-size: .7rem !important;
+      // margin-left: .2rem !important;
     }
   }
 
+  
 
   .formzEnd {
     margin-top: 1rem !important;
@@ -358,14 +370,14 @@
     .formzEndQuestion {
       p {
         font-weight: 400;
-        font-size: .85rem !important;
+        font-size: .75rem !important;
       }
     }
 
     .formzEndLink {
       // margin-left: 0.5rem;
       p {
-        font-size: .85rem !important;
+        font-size: .75rem !important;
       }
     }
   }

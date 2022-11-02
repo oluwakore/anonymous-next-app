@@ -25,7 +25,7 @@ const text = (
 );
 
 
-const Calender = () => {
+const Calender = ({ apptDates }) => {
  
   
 
@@ -48,36 +48,7 @@ const Calender = () => {
 
   
 
-  const calDetr = () => {
-    let newArray = []
-    user?.data?.activeSessions?.forEach((item) => {
-      item?.appointments?.filter((list) => list.status === "pending")?.forEach((subcard) => {
-          newArray.push({
-              date: adjustDateFormat(moment(subcard.start_time).format("L").split("/")),
-              title: subcard.title === undefined ? 'Appointment' : subcard.title,
-              appt_day: moment().format('YYYY-MM-DD') === adjustDateFormat(moment(subcard.start_time).format("L").split("/")) ? 'Today' :  moment(subcard.start_time).format("LL"),
-              timeRange: `${moment(subcard.start_time).format("LT")} - ${moment(
-                subcard.end_time
-              ).format("LT")}`,
-              therapist_name: `Dr. ${item.therapist.name}`,
-          });
-        });
-      // arrayCal.push(`${item.therapist.name}`)
-    });
 
-    const final =  newArray.filter((c, index) => {
-      return newArray.indexOf(c) === index;
-  });
-  
-   
-
-    let secondNewArray = []
-
-     secondNewArray.push(final)
-
-     return secondNewArray[0]
-
-  };
 
 
   // const removeDupli = () => {
@@ -90,36 +61,27 @@ const Calender = () => {
   // }
   
 
-  const adjustDateFormat = (dateArray) => {
-    let holder = []
-    const month = dateArray[0]
-    const days = dateArray[1]
-    const year = dateArray[2]
-
-
-    holder.push(year, month, days)
-    return holder.join("-")
-  }
+  
 
 
   
-  useEffect(() => {
-    // setMainSessionStuff(user?.data?.activeSessions)
+  // useEffect(() => {
+  //   // setMainSessionStuff(user?.data?.activeSessions)
 
-    if (user?.data?.activeSessions !== undefined) {
-      dispatch(storeApptDatesArray(calDetr()))
-      // console.log('yeah!!!')
-      //  calDetr();
-      //  removeDupli()
-    }
+  //   if (user?.data?.activeSessions !== undefined) {
+  //     dispatch(storeApptDatesArray(calDetr()))
+  //     // console.log('yeah!!!')
+  //     //  calDetr();
+  //     //  removeDupli()
+  //   }
     
    
-  }, [dispatch]);
+  // }, [dispatch]);
 
 
 
-  const appointmentDetails = useSelector((state) => state.storeApptDetails)
-  const { appt }  = appointmentDetails
+  // const appointmentDetails = useSelector((state) => state.storeApptDetails)
+  // const { appt }  = appointmentDetails
 
 
   // console.log(appt)
@@ -214,7 +176,7 @@ const Calender = () => {
         selectable={true}
         dayMaxEvents={1}
         eventClick={(e) => selectedEvent(e)}
-        events={appt}
+        events={apptDates}
         // in case you want to custmize whats being rendered on the date
         eventContent={(info) => eventContent(info)}
       />

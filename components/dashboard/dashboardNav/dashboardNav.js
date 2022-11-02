@@ -9,7 +9,7 @@ import {
   notification,
 } from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import { logoutUser, getUserDetails } from "../../../core/actions/useractions/useractions";
+import { logoutUser, getUserDetails, storeApptDatesArray } from "../../../core/actions/useractions/useractions";
 
 const openNotificationWithIcon = (type, msg, desc) => {
   notification[type]({
@@ -51,7 +51,6 @@ function DashboardNav() {
 
 const logoutHandler = () => {
   router.push('/')
-  // dispatch(logoutUser())
   openNotificationWithIcon('success', 'Sign Out', 'Logout was succesful.')
   console.log('Logged Out')
 }
