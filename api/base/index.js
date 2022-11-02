@@ -104,7 +104,7 @@ export const getPaymentLink = (data, token) => {
 }
 
 export const verifyPaymentStatus = (data, token) => {
-  return http.get(`/payments/paystack/callback?reference=${data}`,setAuthToken(token))
+  return http.get(`/payments/paystack/callback?trxref=${data}&reference=${data}`,setAuthToken(token))
 }
 
 export const postAppointmentDate = (id, sessionId, data, token) => {

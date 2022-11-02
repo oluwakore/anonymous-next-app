@@ -2,7 +2,7 @@ import React, { useEffect, useState }  from 'react'
 import { useRouter  } from 'next/router'
 import { useDispatch, useSelector } from "react-redux"
 import { Bars } from "react-loader-spinner";
-import { getPaymentLink } from '../api/base'
+import { getPaymentLink, verifyPaymentStatus } from '../api/base'
 import Link from 'next/link'
 import styles from '../styles/paymentlink.module.scss'
 import { saveReferenceID } from '../core/actions/therapistListActions/therapistListactions';
@@ -31,6 +31,8 @@ function PaymentLink() {
 
   const loggedUserToken = userInfo?.token
 
+  
+
   const handlePaymentLinkGen = async() => {
     try{
       setLoading(true)
@@ -49,9 +51,28 @@ function PaymentLink() {
     }
   }
 
+  const handleVerify = async () => {
+    // setLoading(true)
+    try {
+      // setLoading(true);
+
+      const res = await verifyPaymentStatus(referenceId, loggedUserToken);
+
+      if (res.data.status === "success") {
+        // setLoading(false);
+        dispatch(saveSessionMetadata(res?.data?.data?.metadata));
+      }
+      console.log(res.data);
+    } catch (error) {
+      // setLoading(false);
+      console.error(error);
+    }
+  };
+
 
   useEffect(() => {
     handlePaymentLinkGen()
+    handleVerify()
   }, [])
 
 

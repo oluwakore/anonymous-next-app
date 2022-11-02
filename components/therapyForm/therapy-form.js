@@ -93,7 +93,7 @@ const TherapyFormComp = ({ userToken }) => {
   const handleSetProblemArray = () => {
     handleProblemStates()
     // console.log(problem)
-    if(age === "" || gender === "" || country === "" || state === "" || status === "" || religion === "" || medication === "" || suicide === "" || health === "" || sleeping === "" || finance === "" || story === "") {
+    if(age === "" || gender === "" || country === "" || status === "" || religion === "" || medication === "" || suicide === "" || health === "" || sleeping === "" || finance === "" || story === "") {
       setError("Kindly ensure that all form fields are filled")
       
     }  else {

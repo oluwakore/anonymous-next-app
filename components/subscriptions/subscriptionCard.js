@@ -47,7 +47,7 @@ function SubscriptionCard({ discount, duration, price, title, id}) {
         router.push('/payment-link')
       }
 
-      console.log(res.data.data.id)
+      // console.log(res.data.data.id)
 
     } catch (error) {
       console.error(error)
