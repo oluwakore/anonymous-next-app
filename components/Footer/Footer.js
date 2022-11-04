@@ -12,7 +12,7 @@ export default function Footer() {
                 <div className={styles.footerColumnStoryPart}>
                     <h4>Our Story</h4>
                 <ul>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec duis elementum lobortis amet quis diam urna. Nibh in diam faucibus nibh dictum sed tempus.</li>
+                <li>Anonymous Confidant is a telepathy hub designed to specifically heal human hurtful minds and as a proven process that people can testify of recieving help anonymously, the site is made open to the world for this sole purpose.</li>
                 </ul>
                 </div>
                 <div className={styles.footerColumnAboutUsPart}>

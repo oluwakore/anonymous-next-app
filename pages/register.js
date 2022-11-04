@@ -46,12 +46,8 @@ function Register() {
     const { name, username, email, password } = values;
     setLoading(true);
 
-    if (name.split(" ").length < 2) {
-     setError("Please provide first and last name!")
-     setLoading(false)
-     console.log("not greater than 2")
-    } else if (name.split(" ").length >= 2) {
-           setError(null);
+  
+    setError(null);
    
     const newErrors = { ...errors };
     if (Object.values(newErrors).every((item) => item === "")) {
@@ -84,7 +80,7 @@ function Register() {
         }
       }
     } 
-    }
+    
   }
   //   } else {
   //   setError(null);
@@ -172,11 +168,11 @@ function Register() {
                   rules={[
                     {
                       required: true,
-                      message: "Please enter your name",
+                      message: "Please enter your username",
                     },
                   ]}
                 >
-                  <Input placeholder="ENTER YOUR FIRST &amp; LAST NAME" />
+                  <Input placeholder="ENTER YOUR USERNAME" />
                 </Form.Item>
 
                 <Form.Item

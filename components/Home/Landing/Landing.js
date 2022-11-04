@@ -114,7 +114,6 @@ export default function Landing() {
 
     <div className={styles.landingDesc}>
     <h1>
-      CAPTURE THE WHOLE  <br/> WORLD WITH YOU WITH {" "}
        <span style={{color: "#2BAB56", fontWeight: "bold"}}>ANONYMOUS CONFIDANT </span>
     </h1>
     <div className={styles.contentDescCover}>

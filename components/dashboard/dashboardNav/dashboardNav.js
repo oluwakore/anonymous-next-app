@@ -83,9 +83,10 @@ const logoutHandler = () => {
 
   const getInitials = (nameString) => {
   
-    const fullName = nameString.split(" ")
-    const initials = fullName.shift().charAt(0) + fullName.pop().charAt(0);
-    const result = initials.toUpperCase();
+    // const fullName = nameString.split(" ")
+    // const initials = fullName.shift().charAt(0) + fullName.pop().charAt(0);
+    const firstLetter = nameString.charAt(0)
+    const result = firstLetter.toUpperCase();
 
     return result
     
@@ -145,7 +146,7 @@ const logoutHandler = () => {
       <Dropdown overlay={menu} trigger={['click']}  >
             <Space>
               <div className={styles.avatarHolder} >
-              { userInfo ? <h2>{getInitials( user?.data?.name || userInfo?.user?.name)}</h2> : " "}
+              { userInfo ? <h2>{getInitials( user?.data?.name || userInfo?.user?.name)}</h2> : "NaN"}
               </div>
               <DownOutlined />
             </Space>

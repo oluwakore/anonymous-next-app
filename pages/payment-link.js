@@ -51,28 +51,11 @@ function PaymentLink() {
     }
   }
 
-  const handleVerify = async () => {
-    // setLoading(true)
-    try {
-      // setLoading(true);
 
-      const res = await verifyPaymentStatus(referenceId, loggedUserToken);
-
-      if (res.data.status === "success") {
-        // setLoading(false);
-        dispatch(saveSessionMetadata(res?.data?.data?.metadata));
-      }
-      console.log(res.data);
-    } catch (error) {
-      // setLoading(false);
-      console.error(error);
-    }
-  };
 
 
   useEffect(() => {
     handlePaymentLinkGen()
-    handleVerify()
   }, [])
 
 

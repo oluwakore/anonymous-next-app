@@ -114,8 +114,9 @@ function ProfileTabs({ userToken }) {
     if (nameString === undefined) {
       return null;
     } else {
-      const fullName = nameString.split(" ");
-      const initials = fullName.shift().charAt(0) + fullName.pop().charAt(0);
+      // const fullName = nameString.split(" ");
+      // const initials = fullName.shift().charAt(0) + fullName.pop().charAt(0);
+      const initials = nameString.charAt(0)
       const result = initials.toUpperCase();
 
       return result;
@@ -282,7 +283,7 @@ function ProfileTabs({ userToken }) {
                         >
                           <div>
                             <div className={styles.fillPart}>
-                              <label>Your Name</label>
+                              <label>Your Username</label>
                               <input
                                 type="text"
                                 required
