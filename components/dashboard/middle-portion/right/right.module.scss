@@ -96,6 +96,7 @@
   .emptyMsg {
   margin-top: 1.5rem;
   //  outline: 3px solid red;
+  display: flex;
 
    
     .emptyMsgSpan {
@@ -233,6 +234,10 @@ left: 2rem;
   .emptyMsg {
     margin-top: 1rem !important;
     //  outline: 3px solid red;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+
   
      
       .emptyMsgSpan {
@@ -281,7 +286,7 @@ left: 2rem;
       }
 
       .rightAppointment {
-        margin-top: 17rem;
+        margin-top: 12rem;
         // outline: 3px solid goldenrod;
         padding-bottom: 4rem;
         width: 100% !important;

@@ -33,11 +33,11 @@ function PaymentVerify() {
 
       const res = await verifyPaymentStatus(referenceId, loggedUserToken);
 
-      if (res.data.status === "success") {
+      if (res?.data?.status === "success") {
         setLoading(false);
         dispatch(saveSessionMetadata(res?.data?.data?.metadata));
       }
-      console.log(res.data);
+      // console.log(res.data);
     } catch (error) {
       // setLoading(false);
       console.error(error);

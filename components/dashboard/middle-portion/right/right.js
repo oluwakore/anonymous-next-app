@@ -10,7 +10,18 @@ import Calender from "./calendar";
 
 function Right({ sessionsData, calendarDatesArray }) {
 
-  // console.log(sessionsData)
+  console.log(sessionsData)
+
+  const checkForAppt = () => {
+    let arr = []
+    sessionsData?.forEach((item) => {
+      if(item.appointments.length !== 0) {
+        arr.push(item)
+      }
+    })
+
+    return arr.length 
+  }
 
   // const filteredSessions = sessionsData.filter((item) =>   )
   return (
@@ -39,8 +50,9 @@ function Right({ sessionsData, calendarDatesArray }) {
         </div>
         <div className={styles.rightAppointment}>
           <h2>Up Coming Appointment</h2>
+          
           {
-            sessionsData?.length === 0 ? 
+            checkForAppt() === 0 ? 
             (<div className={styles.emptyMsg} > <Empty  
               imageStyle={{
                 height: 80,

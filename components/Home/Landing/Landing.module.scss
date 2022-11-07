@@ -169,7 +169,7 @@
       padding: .5rem 2.5rem;
       outline: none;
       cursor: pointer;
-      // min-width: 100px;
+      transition: all 200ms ease-in-out;
       &:hover {
         // background: #ffff;
         color: #0e0b8b;
@@ -186,7 +186,7 @@
         padding: .5rem 2.5rem;
         outline: none;
         cursor: pointer;
-
+        transition: all 200ms ease-in-out;
         &:hover {
           color: #0e0b8b;
           background: white;
@@ -226,7 +226,7 @@
       font-weight: 500;
       border-radius: 2rem;
       padding: 0.6rem 2rem;
-
+      transition: all 200ms ease-in-out;
       &:hover {
         color: #ffff;
         background-color: #0e0b8b;

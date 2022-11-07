@@ -1,0 +1,73 @@
+.counselContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5rem 0;
+}
+
+.counselContainer .counselMain {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.counselContainer .counselMain h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #0E0B8B;
+  text-align: center;
+}
+
+.counselContainer .counselMain .counselCards {
+  padding: 3rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.counselContainer .counselMain .counselCards img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (max-width: 1024px) {
+  .counselContainer .counselMain {
+    width: 80% !important;
+  }
+  .counselContainer .counselMain h1 {
+    font-size: 2rem !important;
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .counselContainer {
+    padding: 2rem 0;
+  }
+  .counselContainer .counselMain {
+    width: 90% !important;
+  }
+  .counselContainer .counselMain h1 {
+    font-size: 1.5rem !important;
+  }
+  .counselContainer .counselMain .counselCards {
+    padding: 0 5rem 1rem 5rem;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+}
+/*# sourceMappingURL=Counsel.module.css.map */

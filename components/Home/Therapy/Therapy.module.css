@@ -1,0 +1,141 @@
+.therapyContainer {
+  z-index: 1000;
+  margin-top: -.1rem;
+  outline: 10px solid white;
+  border: 10px solid white;
+  padding-top: 8rem;
+  z-index: 1000;
+}
+
+.therapyContainer .therapyMainpart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: auto;
+  width: 80%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+}
+
+.therapyContainer .therapyMainpart .therapyDesc {
+  width: 50%;
+}
+
+.therapyContainer .therapyMainpart .therapyDesc h1 {
+  color: #0e0b8b;
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+.therapyContainer .therapyMainpart .therapyDesc p {
+  font-size: 1.1rem;
+  line-height: 2.2rem;
+  font-weight: 410;
+  width: 80%;
+}
+
+.therapyContainer .therapyMainpart .therapyDesc span {
+  font-weight: 600;
+  color: #0e0b8b;
+  font-size: 1.1rem;
+}
+
+.therapyContainer .therapyMainpart .therapyDesc span img {
+  margin-left: 1rem;
+}
+
+.therapyContainer .therapyMainpart .therapyImg {
+  width: 50%;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.therapyContainer .therapyMainpart .therapyImg .imageBase {
+  top: 2.5rem;
+  right: 2.8rem;
+  position: relative;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.therapyContainer .therapyMainpart .therapyImg .imageMain {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (max-width: 1024px) {
+  .therapyMainpart .therapyDesc h1 {
+    font-size: 2rem !important;
+  }
+  .therapyMainpart .therapyDesc p {
+    font-size: 1rem !important;
+    width: 100% !important;
+    line-height: 1.8rem !important;
+  }
+  .therapyMainpart .therapyDesc span {
+    font-size: 0.9rem !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .therapyContainer {
+    padding-top: 2rem !important;
+  }
+  .therapyContainer .therapyMainpart {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 90%;
+    gap: 1rem !important;
+  }
+  .therapyContainer .therapyMainpart .therapyDesc {
+    width: 100%;
+  }
+  .therapyContainer .therapyMainpart .therapyDesc h1 {
+    font-size: 1.5rem !important;
+    text-align: center;
+  }
+  .therapyContainer .therapyMainpart .therapyDesc p {
+    font-size: .9rem !important;
+    width: 100% !important;
+  }
+  .therapyContainer .therapyMainpart .therapyDesc span {
+    font-size: .9rem !important;
+  }
+  .therapyContainer .therapyMainpart .therapyDesc span img {
+    margin-left: 1rem;
+  }
+  .therapyContainer .therapyMainpart .therapyImg {
+    width: 80%;
+  }
+  .therapyContainer .therapyMainpart .therapyImg .imageBase {
+    top: 0;
+    right: 1.5rem;
+    position: relative;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+/*# sourceMappingURL=Therapy.module.css.map */

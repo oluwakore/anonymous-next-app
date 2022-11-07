@@ -1,0 +1,56 @@
+.compCover {
+  background: #ffff;
+  padding: 2rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  gap: 2rem;
+  border-radius: 2rem;
+  -webkit-box-shadow: 7px 10px 5px 1px rgba(0, 0, 0, 0.6);
+          box-shadow: 7px 10px 5px 1px rgba(0, 0, 0, 0.6);
+}
+
+.compCover .compCoverHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.compCover .compCoverHeader p {
+  color: #0e0b8b;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: auto;
+  margin-left: .8rem !important;
+}
+
+.compCover .compCoverHeader .coverImg {
+  width: 4rem;
+  height: 4rem;
+}
+
+.compCover .formzButton {
+  margin-top: 1.2rem !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+}
+
+.compCover .formzButton button {
+  outline: none;
+  border: none;
+  background-color: #0e0b8b;
+  color: white;
+  font-size: 1.1rem;
+  padding: 0.5rem 4rem;
+  font-weight: 600;
+  border-radius: 2rem;
+}
+/*# sourceMappingURL=therapistLogin.module.css.map */

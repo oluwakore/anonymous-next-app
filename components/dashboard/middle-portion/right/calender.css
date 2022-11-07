@@ -1,0 +1,61 @@
+.fc .fc-scroller-liquid-absolute {
+  position: relative !important;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.fc .fc-daygrid-day-number {
+  color: black !important;
+  font-size: 1rem;
+  text-align: center !important;
+}
+
+.fc .fc-daygrid-day-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.fc .fc-col-header-cell-cushion {
+  color: black;
+}
+
+.fc .fc-toolbar-title {
+  color: #0e0b8b !important;
+  font-size: 1.1rem !important;
+}
+
+.fc .fc-toolbar.fc-header-toolbar {
+  margin-bottom: 1.5em;
+  width: 100% !important;
+}
+
+.fc-toolbar-chunk .fc-button-primary:not(:disabled).fc-button-active {
+  display: none !important;
+}
+
+.fc-icon-chevron-left:before {
+  content: "\e900";
+  color: #0e0b8b !important;
+}
+
+.fc-icon-chevron-right:before {
+  content: "\e901";
+  color: #0e0b8b !important;
+}
+
+.fc .fc-button-primary {
+  /* background-color: var(--fc-button-bg-color, #2C3E50); */
+  background-color: white !important;
+  border: none !important;
+  outline: none !important;
+}
+/*# sourceMappingURL=calender.css.map */

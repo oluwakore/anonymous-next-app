@@ -1,0 +1,202 @@
+.shareContainer {
+  margin-top: -3rem;
+  padding-top: 8rem;
+  padding-bottom: 5rem;
+  z-index: 1000;
+}
+
+.shareContainer .shareMainpart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: auto;
+  width: 80%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+}
+
+.shareContainer .shareMainpart .shareDesc1 {
+  display: none;
+}
+
+.shareContainer .shareMainpart .shareDesc {
+  width: 50%;
+}
+
+.shareContainer .shareMainpart .shareDesc h1 {
+  color: #0e0b8b;
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+.shareContainer .shareMainpart .shareDesc p {
+  font-size: 1.1rem;
+  line-height: 2.2rem;
+  font-weight: 410;
+  width: 75%;
+}
+
+.shareContainer .shareMainpart .shareDesc span {
+  font-weight: 600;
+  color: #0e0b8b;
+  font-size: 1.1rem;
+}
+
+.shareContainer .shareMainpart .shareDesc span img {
+  margin-left: 1rem;
+}
+
+.shareContainer .shareMainpart .shareImg {
+  width: 50%;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.shareContainer .shareMainpart .shareImg .imageBase {
+  top: 2.5rem;
+  position: relative;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.shareContainer .shareMainpart .shareImg .imageMain {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (max-width: 1024px) {
+  .shareMainpart .shareDesc h1 {
+    font-size: 2rem !important;
+  }
+  .shareMainpart .shareDesc p {
+    font-size: 1rem !important;
+    width: 100% !important;
+    line-height: 1.8rem !important;
+  }
+  .shareMainpart .shareDesc span {
+    font-size: 0.9rem !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .shareContainer {
+    padding-top: 3rem;
+    padding-bottom: 0rem;
+  }
+  .shareContainer .shareMainpart {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: auto;
+    width: 90%;
+  }
+  .shareContainer .shareMainpart .shareDesc {
+    display: none;
+  }
+  .shareContainer .shareMainpart .shareDesc1 {
+    display: block;
+    width: 100%;
+  }
+  .shareContainer .shareMainpart .shareDesc1 h1 {
+    color: #0e0b8b;
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .shareContainer .shareMainpart .shareDesc1 p {
+    font-size: .9rem;
+    line-height: 2.2rem;
+    font-weight: 410;
+    width: 100%;
+  }
+  .shareContainer .shareMainpart .shareDesc1 span {
+    font-weight: 600;
+    color: #0e0b8b;
+    font-size: .9rem;
+  }
+  .shareContainer .shareMainpart .shareDesc1 span img {
+    margin-left: 1rem;
+  }
+  .shareContainer .shareMainpart .shareImg {
+    width: 80%;
+  }
+  .shareContainer .shareMainpart .shareImg .imageBase {
+    top: 2rem;
+  }
+}
+
+.share-session {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 90vh;
+}
+
+.share-img {
+  margin-top: -100px;
+  margin-right: 90px;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.share-img .share-1 {
+  top: -60px;
+  left: 20px;
+  position: absolute;
+  z-index: 1;
+}
+
+.speak-img .share-11 {
+  position: relative;
+}
+
+.share {
+  width: 500px;
+}
+
+.share h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+  margin-bottom: 50px;
+  color: var(--blue-color);
+}
+
+.share p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+  margin: 12px 0;
+}
+/*# sourceMappingURL=Share.module.css.map */

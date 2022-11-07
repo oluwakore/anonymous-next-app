@@ -96,6 +96,19 @@ function ProfileTabs({ userToken }) {
 
   const { loading: updateLoading, userInfo } = userUpdateProfile;
 
+  // console.log(user?.data?.activeSessions)
+
+  const checkForAppt = () => {
+    let arr = [];
+    user?.data?.activeSessions.forEach((item) => {
+      if (item.appointments.length !== 0) {
+        arr.push(item);
+      }
+    });
+
+    return arr.length;
+  };
+
   const logoutHandler = () => {
     router.push("/");
     dispatch(logoutUser());
@@ -116,7 +129,7 @@ function ProfileTabs({ userToken }) {
     } else {
       // const fullName = nameString.split(" ");
       // const initials = fullName.shift().charAt(0) + fullName.pop().charAt(0);
-      const initials = nameString.charAt(0)
+      const initials = nameString.charAt(0);
       const result = initials.toUpperCase();
 
       return result;
@@ -155,9 +168,9 @@ function ProfileTabs({ userToken }) {
   };
 
   const handleCurrentModal = (item) => {
-    setCurrentModal(item)
-    setIsModalOpen(true)
-  }
+    setCurrentModal(item);
+    setIsModalOpen(true);
+  };
 
   const spliceWords = (str) => {
     let sentence;
@@ -208,23 +221,23 @@ function ProfileTabs({ userToken }) {
                       switchTabs(index);
                     }}
                   >
-                    <span>{item.icon}</span> <span  className={styles.menuListTitle}> {item.title} </span>
+                    <span>{item.icon}</span>{" "}
+                    <span className={styles.menuListTitle}> {item.title} </span>
                   </h1>
                 ))}
               </div>
               <div className={styles.backToMain}>
                 <Link href="/dashboard">
-                <h4>
-                  {" "}
-                  <span>
+                  <h4>
                     {" "}
-                    <ArrowLeftOutlined style={{ marginRight: "1rem", fontSize: "1.5rem" }} />
-                  </span>{" "}
-                  <span className={styles.backToMainTitle}>
-                  Back to Main
-                  </span>
-            
-                </h4>
+                    <span>
+                      {" "}
+                      <ArrowLeftOutlined
+                        style={{ marginRight: "1rem", fontSize: "1.5rem" }}
+                      />
+                    </span>{" "}
+                    <span className={styles.backToMainTitle}>Back to Main</span>
+                  </h4>
                 </Link>
               </div>
               <div className={styles.logoutPart} onClick={logoutHandler}>
@@ -232,12 +245,9 @@ function ProfileTabs({ userToken }) {
                   {" "}
                   <span>
                     {" "}
-                    <LogoutOutlined style={{fontSize: "1.5rem" }} />
+                    <LogoutOutlined style={{ fontSize: "1.5rem" }} />
                   </span>{" "}
-                  <span className={styles.logoutPartTitle}>
-                  Log Out
-                  </span>
-                 
+                  <span className={styles.logoutPartTitle}>Log Out</span>
                 </h2>
               </div>
               `{" "}
@@ -252,8 +262,7 @@ function ProfileTabs({ userToken }) {
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  overflow: "auto"
-                  
+                  overflow: "auto",
                 }}
               >
                 <div className={styles.compsCover}>
@@ -267,12 +276,15 @@ function ProfileTabs({ userToken }) {
                           flexDirection: "column",
                           justifyContent: "center",
                           alignItems: "center",
-                          height: "20rem"
+                          height: "20rem",
                         }}
                       >
                         {" "}
                         <Bars height="20" width="20" color="#0e0b8b" />{" "}
-                        <p style={{fontSize: ".8rem"}}> Updating details... </p>{" "}
+                        <p style={{ fontSize: ".8rem" }}>
+                          {" "}
+                          Updating details...{" "}
+                        </p>{" "}
                       </div>
                     ) : (
                       <>
@@ -330,12 +342,15 @@ function ProfileTabs({ userToken }) {
                           flexDirection: "column",
                           justifyContent: "center",
                           alignItems: "center",
-                          height: "20rem"
+                          height: "20rem",
                         }}
                       >
                         {" "}
                         <Bars height="20" width="20" color="#0e0b8b" />{" "}
-                        <p style={{fontSize: ".8rem"}}> Updating password... </p>{" "}
+                        <p style={{ fontSize: ".8rem" }}>
+                          {" "}
+                          Updating password...{" "}
+                        </p>{" "}
                       </div>
                     ) : (
                       <>
@@ -395,24 +410,56 @@ function ProfileTabs({ userToken }) {
 
             {addTypes[1].active && (
               <div
-                style={{
-                  height: "100%",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
+                style={
+                  {
+                    // height: "100%",
+                    // display: "flex",
+                    // justifyContent: "center",
+                    // alignItems: "center",
+                  }
+                }
               >
-                <div style={{ margin: "auto !important" }}>
-                  {user?.data?.activeSessions.length === 0 ? (
+                <div
+                  style={{
+                    margin: "auto !important",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  {checkForAppt() === 0 ? (
                     <Empty
                       description={
-                        <span style={{ fontSize: ".75rem" }}>You don&apos;t have any sessions yet.</span>
+                        <span style={{ fontSize: ".75rem" }}>
+                          You don&apos;t have any sessions yet.
+                        </span>
                       }
                     />
                   ) : (
-                    user?.data?.activeSessions.map((item, index) => (
-                      <div key={index}> {item.title} </div>
-                    ))
+                    <div className={styles.apptItemCover}>
+                      {user?.data?.activeSessions?.map((item, index) => (
+                        <div key={index}>
+                          {" "}
+                          {item?.appointments
+                            .filter((list) => list.status === "pending")
+                            .map((sub, index) => (
+                              <div key={index} className={styles.apptItem}>
+                                {/* <h3> {moment(sub.start_time).format('L') } </h3> */}
+                                <p>
+                                  {" "}
+                                  <b> Appointment Subject: </b> {sub.title}{" "}
+                                </p>
+                                {/* <p> { `${moment(sub.start_time).format('LT')} - ${moment(sub.end_time).format('LT')}`} </p> */}
+                                <p>
+                                  {" "}
+                                  <b> Therapist Name: </b> Dr.{" "}
+                                  {item.therapist.name}{" "}
+                                </p>
+                              </div>
+                            ))}{" "}
+                        </div>
+                      ))}
+                    </div>
                   )}
                 </div>
               </div>
@@ -428,18 +475,22 @@ function ProfileTabs({ userToken }) {
                       justifyContent: "center",
                       alignItems: "center",
                       flexDirection: "column",
-                      gap: "2rem"
+                      gap: "2rem",
                     }}
                   >
                     <Empty
                       description={
-                        <span style={{ fontSize: ".75rem" }}>You haven&apos;t created any stories yet.</span>
+                        <span style={{ fontSize: ".75rem" }}>
+                          You haven&apos;t created any stories yet.
+                        </span>
                       }
                     />
                     <div className={styles.storiesCta}>
                       <Link href="/share-story">
                         <button type="button">
-                          <span style={{ fontSize: ".75rem" }}>Create Story</span>{" "}
+                          <span style={{ fontSize: ".75rem" }}>
+                            Create Story
+                          </span>{" "}
                           <PlusOutlined
                             style={{ color: "#ffff", fontSize: "1.1rem" }}
                           />
@@ -461,12 +512,16 @@ function ProfileTabs({ userToken }) {
                             alt={item.title}
                           />
                           <div className={styles.storiesDesc}>
-                            <h1> {item.title.split(" ").slice(0, 2).join(" ")}... </h1>
+                            <h1>
+                              {" "}
+                              {item.title
+                                .split(" ")
+                                .slice(0, 2)
+                                .join(" ")}...{" "}
+                            </h1>
                             <>
                               <MoreOutlined
-                                onClick={() => 
-                                 handleCurrentModal(item)
-                                }
+                                onClick={() => handleCurrentModal(item)}
                                 style={{
                                   fontSize: "1.5rem",
                                   color: "black",
@@ -494,7 +549,12 @@ function ProfileTabs({ userToken }) {
                                     />
                                     <div className={styles.prevTitle}>
                                       <h3>{currentModal.title}</h3>
-                                      <small>Created on {moment(currentModal.createdAt).format("LL")} </small>
+                                      <small>
+                                        Created on{" "}
+                                        {moment(currentModal.createdAt).format(
+                                          "LL"
+                                        )}{" "}
+                                      </small>
                                     </div>
                                     <p>{currentModal.content}</p>
                                   </div>

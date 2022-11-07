@@ -1,0 +1,264 @@
+.footerContainer {
+  background-color: #0e0b8b;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.footerContainer li {
+  list-style-type: none;
+}
+
+.footerContainer .mainContainer {
+  padding: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footerContainer .footerRow {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 70%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 3rem;
+}
+
+.footerContainer .footerRow .footerColumnStoryPart {
+  width: 40%;
+  padding: .5em;
+  color: #ffff;
+}
+
+.footerContainer .footerRow .footerColumnStoryPart h4 {
+  color: #ffff;
+  font-size: 1.3rem;
+}
+
+.footerContainer .footerRow .footerColumnStoryPart ul {
+  font-size: 1rem;
+}
+
+.footerContainer .footerRow .footerColumnStoryPart ul li {
+  margin-left: -3em;
+}
+
+.footerContainer .footerRow .footerColumnAboutUsPart {
+  padding: .5em;
+  color: #ffff;
+}
+
+.footerContainer .footerRow .footerColumnAboutUsPart h4 {
+  color: #ffff;
+  font-size: 1.3rem;
+}
+
+.footerContainer .footerRow .footerColumnAboutUsPart ul {
+  font-size: 1rem;
+}
+
+.footerContainer .footerRow .footerColumnAboutUsPart ul li {
+  margin-left: -3em;
+}
+
+.footerContainer .footerRow .footerColumnHelpCenterPart {
+  padding: .5em;
+  color: #ffff;
+}
+
+.footerContainer .footerRow .footerColumnHelpCenterPart h4 {
+  color: #ffff;
+  font-size: 1.3rem;
+}
+
+.footerContainer .footerRow .footerColumnHelpCenterPart ul {
+  font-size: 1rem;
+}
+
+.footerContainer .footerRow .footerColumnHelpCenterPart ul li {
+  margin-left: -3em;
+  margin-bottom: .5em;
+}
+
+.footerContainer .footerRow .footerColumnHelpCenterPart ul .helpCenterIcons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footerContainer .footerRow .footerColumnHelpCenterPart ul .helpCenterIcons span {
+  margin-left: .5rem;
+}
+
+.footerContainer .footerRow .footerColumnHelpCenterPart ul .helpCenterIcons1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footerContainer .footerRow .footerColumnHelpCenterPart ul .helpCenterIcons1 span {
+  margin-left: .5rem;
+}
+
+.footerContainer .footerRow .footerColumnHelpCenterPart ul .helpCenterIcons2 {
+  z-index: 1;
+  color: #ffff !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .footerRow {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    width: 90% !important;
+    padding: 5em !important;
+  }
+  .mainContainer {
+    padding: 1rem !important;
+  }
+  .footerColumnAboutUsPart {
+    margin-top: .25rem !important;
+    padding: .2em !important;
+    color: #ffff;
+  }
+  .footerColumnAboutUsPart h4 {
+    color: #ffff;
+    font-size: 1rem !important;
+  }
+  .footerColumnAboutUsPart ul {
+    margin-left: -1.2rem !important;
+    font-size: .9rem !important;
+    width: -webkit-max-content !important;
+    width: -moz-max-content !important;
+    width: max-content !important;
+  }
+  .footerColumnAboutUsPart ul li {
+    margin-left: -2em !important;
+    margin-bottom: .8rem !important;
+  }
+  .footerColumnHelpCenterPart {
+    padding: .5em;
+    color: #ffff;
+  }
+  .footerColumnHelpCenterPart h4 {
+    color: #ffff;
+    font-size: 1rem !important;
+  }
+  .footerColumnHelpCenterPart ul {
+    font-size: .9rem !important;
+  }
+  .footerColumnHelpCenterPart ul .helpCenterIcons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .footerColumnHelpCenterPart ul .helpCenterIcons1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .footerColumnHelpCenterPart ul .help-center-icons-2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .footerColumnStoryPart {
+    width: 40%;
+    padding: .5em;
+    color: #ffff;
+  }
+  .footerColumnStoryPart h4 {
+    color: #ffff;
+    font-size: 1rem !important;
+  }
+  .footerColumnStoryPart ul {
+    font-size: .9rem !important;
+  }
+  .footerColumnStoryPart ul li {
+    margin-left: -3em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .mainContainer {
+    padding: 0rem !important;
+  }
+  .footerRow {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100% !important;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 1rem !important;
+  }
+  .footerRow .footerColumnStoryPart {
+    margin-bottom: 1.5rem;
+    width: 100% !important;
+    padding: 1rem !important;
+    color: #ffff;
+  }
+  .footerRow .footerColumnStoryPart h4 {
+    font-size: 1rem !important;
+  }
+  .footerRow .footerColumnStoryPart ul {
+    font-size: .8rem !important;
+  }
+  .footerRow .footerColumnStoryPart ul li {
+    margin-left: -3em;
+  }
+  .footerRow .footerColumnAboutUsPart {
+    margin-bottom: 1.5rem;
+    padding: .5em;
+    color: #ffff;
+    margin-left: .5rem;
+  }
+  .footerRow .footerColumnAboutUsPart h4 {
+    font-size: 1rem !important;
+  }
+  .footerRow .footerColumnAboutUsPart ul {
+    font-size: .8rem !important;
+  }
+  .footerRow .footerColumnAboutUsPart ul li {
+    margin-left: -1rem !important;
+  }
+  .footerRow .footerColumnHelpCenterPart .smallerFont {
+    font-size: .75rem;
+  }
+}
+/*# sourceMappingURL=Footer.module.css.map */

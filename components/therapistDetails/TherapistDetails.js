@@ -71,7 +71,7 @@ function TherapistDetails({ therapistName, therapistImg,  therapistRating, sessi
       const res = await postAppointmentDate(loggedUserId, sessionData.sessionID, {time: realDateObject, title: appointmentTitle}, loggedUserToken)
 
       if(res.data.status === 'success') {
-          message.success('Appointment confirmed, view details in upcoming appointments tab and on calendar')
+          message.success('Appointment confirmed, view details in upcoming appointments tab and on calendar', [5])
           router.push('/dashboard')
       }
 

@@ -32,6 +32,8 @@ function Dashboard() {
   const userDetails = useSelector((state) => state.userDetails)
   const { loading, error, user }  = userDetails
 
+  console.log(user)
+
   const adjustDateFormat = (dateArray) => {
     let holder = []
     const month = dateArray[0]

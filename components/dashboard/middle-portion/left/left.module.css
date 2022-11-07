@@ -1,0 +1,11 @@
+.leftBody {
+  background-color: #0e0b8b;
+  width: 5%;
+}
+
+@media screen and (max-width: 600px) {
+  .leftBody {
+    display: none;
+  }
+}
+/*# sourceMappingURL=left.module.css.map */

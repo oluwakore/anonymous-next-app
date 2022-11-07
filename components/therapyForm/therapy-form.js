@@ -88,6 +88,8 @@ const TherapyFormComp = ({ userToken }) => {
 
 
   const { therapArray } = therapResults
+
+  // console.log(therapArray?.status)
   // console.log(therapResults)
 
   const handleSetProblemArray = () => {
@@ -114,7 +116,7 @@ const TherapyFormComp = ({ userToken }) => {
             problem
           },
         }, userToken))
-      if (therapArray.status === 'success') {
+      if (therapArray?.status === 'success') {
          router.push('/therapist-checkout')
       }
     }
