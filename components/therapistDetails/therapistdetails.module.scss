@@ -73,6 +73,7 @@
       border-radius: .5rem;
       font-size: .8rem;
       padding: .5rem;
+      background: transparent;
     }
 
   }
@@ -170,7 +171,7 @@
     align-items: center;
     justify-content: center;
     img{
-      outline: 2px solid #0e0b8b;
+      // outline: 2px solid #0e0b8b;
       object-fit: cover;
       width: 12rem;
       // padding: 1rem;

@@ -75,7 +75,7 @@ function TherapistDetails({ therapistName, therapistImg,  therapistRating, sessi
           router.push('/dashboard')
       }
 
-      // console.log(res.data)
+      console.log(res.data)
       // setLoading(false)
   } catch (error) {
     // setLoading(false)
