@@ -67,7 +67,7 @@ function Right({ sessionsData, calendarDatesArray }) {
                sessionsData?.map((item, index) => (
                  <div key={index}> {item?.appointments.filter((list) => list.status === "pending" ).map((sub, index) => (
                    <div key={index}  className={styles.rightMenu1} >
-                     <h3> {moment(sub.start_time).format('L') } </h3>
+                     <h3> { moment(Date.now()).format('L') ===  moment(sub.start_time).format('L') ? 'Today' : moment(sub.start_time).format('L') } </h3>
                       <p> {sub.title} </p>
                       <p> { `${moment(sub.start_time).format('LT')} - ${moment(sub.end_time).format('LT')}`} </p>
                      <p> Dr. {item.therapist.name} </p>
