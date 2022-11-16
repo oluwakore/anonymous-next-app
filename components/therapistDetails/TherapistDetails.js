@@ -118,8 +118,8 @@ function TherapistDetails({ therapistName, therapistImg,  therapistRating, sessi
     
   };
   const handleOk = () => {
+   handleConfirmAppointmentDetails()
     setIsModalOpen(false);
-    handleConfirmAppointmentDetails()
   };
   const handleCancel = () => {
     setIsModalOpen(false);
@@ -224,7 +224,7 @@ function TherapistDetails({ therapistName, therapistImg,  therapistRating, sessi
       <div  className={styles.buttonCover}  >
         <>
       <button onClick={showModal}>Confirm details</button>
-      <Modal visible={isModalOpen} open={isModalOpen} onOk={handleOk} onCancel=  {handleCancel} className={styles.modalCover}  >
+      <Modal visible={isModalOpen} open={isModalOpen} onOk={() => handleOk()} onCancel=  {handleCancel} className={styles.modalCover}  >
         <h2> <ExclamationCircleOutlined className={styles.modalIcon}  style={{ color: "#FC6A03", fontSize: "1.5rem"}} /> <span> Are you sure about the following appointment title and time? </span>
         </h2>
         <p> {appointmentTitle} </p>
