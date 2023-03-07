@@ -54,6 +54,7 @@ function ProfileTabs({ userToken }) {
     setIsModalOpen(false);
   };
 
+  // menu items
   const [addTypes, setAddTypes] = useState([
     {
       id: "in-1",
@@ -75,6 +76,7 @@ function ProfileTabs({ userToken }) {
     },
   ]);
 
+  // switch between menu items
   const switchTabs = (valueIndex) => {
     const newTabs = [...addTypes];
     newTabs.forEach((item, index) => {
@@ -88,16 +90,19 @@ function ProfileTabs({ userToken }) {
 
   const dispatch = useDispatch();
 
+  // gets the user details redux state
   const userDetails = useSelector((state) => state.userDetails);
 
   const { loading, error, user } = userDetails;
 
+  // gets the user updated details redux state
   const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
 
   const { loading: updateLoading, userInfo } = userUpdateProfile;
 
   // console.log(user?.data?.activeSessions)
 
+  // gets active session
   const checkForAppt = () => {
     let arr = [];
     user?.data?.activeSessions.forEach((item) => {
@@ -109,11 +114,12 @@ function ProfileTabs({ userToken }) {
     return arr.length;
   };
 
+  // handles user logout
   const logoutHandler = () => {
     router.push("/");
     dispatch(logoutUser());
     openNotificationWithIcon("success", "Sign Out", "Logout was succesful.");
-    console.log("Logged Out");
+    // console.log("Logged Out");
   };
 
   useEffect(() => {
@@ -123,12 +129,11 @@ function ProfileTabs({ userToken }) {
     }
   }, [dispatch, user]);
 
+  // extract initials from name
   const getInitials = (nameString) => {
     if (nameString === undefined) {
       return null;
     } else {
-      // const fullName = nameString.split(" ");
-      // const initials = fullName.shift().charAt(0) + fullName.pop().charAt(0);
       const initials = nameString.charAt(0);
       const result = initials.toUpperCase();
 
@@ -136,12 +141,14 @@ function ProfileTabs({ userToken }) {
     }
   };
 
+  // updates user details
   const handleUpdateDetails = (e) => {
     e.preventDefault();
     dispatch(updateUserProfile(user?.data?.id, { name, email }, userToken));
     message.success(`Update details ${user.status}`);
   };
 
+  // update user password
   const handleUpdatePassword = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
@@ -167,6 +174,7 @@ function ProfileTabs({ userToken }) {
     }
   };
 
+  // open modal with story details
   const handleCurrentModal = (item) => {
     setCurrentModal(item);
     setIsModalOpen(true);

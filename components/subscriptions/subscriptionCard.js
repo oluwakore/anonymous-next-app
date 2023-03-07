@@ -1,62 +1,58 @@
-import { Router, useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from "react-redux"
-import { createReservation } from '../../api/base';
-import { savePlanID, saveReservationID } from '../../core/actions/therapistListActions/therapistListactions';
-import styles from './subcard.module.scss'
+import { Router, useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { createReservation } from "../../api/base";
+import {
+  savePlanID,
+  saveReservationID,
+} from "../../core/actions/therapistListActions/therapistListactions";
+import styles from "./subcard.module.scss";
+
+function SubscriptionCard({ discount, duration, price, title, id }) {
+  const [loading, setLoading] = useState(false);
+
+  const dispatch = useDispatch();
+
+  const router = useRouter();
+
+   // gets the userlogin redux state
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
 
 
+   // the id for the logged in user
+  const loggedUserId = userInfo?.user?.id;
 
-function SubscriptionCard({ discount, duration, price, title, id}) {
+   // the token for the logged in user
+  const loggedUserToken = userInfo?.token;
 
-  const [loading, setLoading] = useState(false)
+  // redux state for therapist details
+  const therapId = useSelector((state) => state.therapistBooking);
 
-  const dispatch = useDispatch()
+  const { therapistId, planId } = therapId;
 
-  const router = useRouter()
+  // console.log(`${therapistId} ${planId}`)
 
-
- 
-
-
-
-  const userLogin = useSelector((state) => state.userLogin)
-  const  { userInfo } = userLogin 
-
-  const loggedUserId = userInfo?.user?.id
-
-  const loggedUserToken = userInfo?.token
-
-
-  const therapId = useSelector((state) => state.therapistBooking)
-
-  const {therapistId, planId} = therapId
-
-  
-
-  const handleChoosePlanId = async() => {
-    dispatch(savePlanID(id))
-
-
+  //processes selected plan and navigates to payment link
+  const handleChoosePlanId = async () => {
     try {
-
-      const res = await createReservation(loggedUserId, {therapistID: therapistId, subscriptionPlan: planId }, loggedUserToken) 
-
-      if (res?.data?.data?.id) {
-        dispatch(saveReservationID(res?.data?.data?.id))
-        router.push('/payment-link')
-      }
+      const res = await createReservation(
+        loggedUserId,
+        { therapistID: therapistId, subscriptionPlan: planId },
+        loggedUserToken
+      );
+      //  console.log(res?.data?.data?.id)
+      // if (res?.data?.data?.id) {
+      dispatch(savePlanID(id));
+      dispatch(saveReservationID(res?.data?.data?.id));
+      router.push("/payment-link");
+      // }
 
       // console.log(res.data.data.id)
-
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
-
-    
-  }
-
- 
+  };
 
   return (
     <div className={styles.container}>
@@ -64,15 +60,13 @@ function SubscriptionCard({ discount, duration, price, title, id}) {
       <p> {title} </p>
       <div className={styles.lowerContainer}>
         <h4> {duration} hours </h4>
-       <h4> { discount === 0 ? '' :  <span>{discount}% Discount</span>  } </h4>
+        <h4> {discount === 0 ? "" : <span>{discount}% Discount</span>} </h4>
       </div>
-      <div className={styles.buttonComp} >
-        <button onClick={handleChoosePlanId}>
-          Choose
-        </button>
+      <div className={styles.buttonComp}>
+        <button onClick={handleChoosePlanId}>Choose</button>
       </div>
     </div>
-  )
+  );
 }
 
-export default SubscriptionCard
+export default SubscriptionCard;

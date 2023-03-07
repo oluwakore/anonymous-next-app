@@ -10,14 +10,14 @@ import {
   USER_PROFILE_UPDATE_REQUEST,
   USER_PROFILE_UPDATE_SUCCESS,
   USER_PROFILE_UPDATE_FAIL,
-  STORE_USER_APPOINTMENT_DATES
+  STORE_USER_APPOINTMENT_DATES,
 } from "../actiontypes";
 import { login, getDetails, updateProfile } from "../../../api/base";
 import { message } from "antd";
 import axios from "axios";
 
 /**
- * Logins the user
+ * action to login user
  * @param  payload object
  * @returns dispatch
  */
@@ -29,15 +29,16 @@ export const loginUser = (email, password) => async (dispatch) => {
 
     const { data } = res;
     dispatch({ type: LOGIN_USER_SUCCESS, payload: data });
-
-    // console.log(data);
-    // console.log(res.headers['Authorization']);
-    // console.log()
-    // localStorage.setItem("userInfo", JSON.stringify(data.user))
   } catch (error) {
     dispatch({
       type: LOGIN_FAIL,
-      payload: message.error(`${error?.response?.data?.msg === undefined ? 'Something went wrong' :  error?.response?.data?.msg }`)
+      payload: message.error(
+        `${
+          error?.response?.data?.msg === undefined
+            ? "Something went wrong"
+            : error?.response?.data?.msg
+        }`
+      ),
       // payload:
       //   error.response && error.response.data.msg
       //     ? error.response.data.msg
@@ -47,13 +48,15 @@ export const loginUser = (email, password) => async (dispatch) => {
   }
 };
 
+// action to logout user
 export const logoutUser = () => (dispatch) => {
   dispatch({ type: LOGOUT_USER });
-  dispatch({ type: USER_DETAILS_RESET})
+  dispatch({ type: USER_DETAILS_RESET });
 
   // document.location.href = "/"
 };
 
+// action to get user details
 export const getUserDetails = (id, token) => async (dispatch, getState) => {
   try {
     dispatch({ type: USER_DETAILS_REQUEST });
@@ -61,51 +64,58 @@ export const getUserDetails = (id, token) => async (dispatch, getState) => {
     //   user: { userInfo },
     // } = getState();
 
-    const res = await getDetails(id, token)
-    const {data} = res
-
+    const res = await getDetails(id, token);
+    const { data } = res;
 
     dispatch({ type: USER_DETAILS_SUCCESS, payload: data });
-    // console.log(data)
-    // localStorage.setItem("userInfo", JSON.stringify(data.user))
   } catch (error) {
-    const message = `${error?.response?.data?.msg === undefined ? 'Something went wrong' :  error?.response?.data?.msg}`
+    const message = `${
+      error?.response?.data?.msg === undefined
+        ? "Something went wrong"
+        : error?.response?.data?.msg
+    }`;
     dispatch({
       type: USER_DETAILS_FAIL,
-      payload: message
+      payload: message,
       // payload: message.error(`${error?.response?.data?.msg === undefined ? 'Something went wrong' :  error?.response?.data?.msg }`),
     });
   }
 };
 
-export const updateUserProfile = (id, details, token) => async (dispatch, getState) => {
-  try {
-    dispatch({ type: USER_PROFILE_UPDATE_REQUEST })
+// action to get update user details
+export const updateUserProfile =
+  (id, details, token) => async (dispatch, getState) => {
+    try {
+      dispatch({ type: USER_PROFILE_UPDATE_REQUEST });
 
-    // const {
-    //   userLogin: { userInfo }
-    // } = getState()
+      // const {
+      //   userLogin: { userInfo }
+      // } = getState()
 
-    const res = await updateProfile(id, details, token)
+      const res = await updateProfile(id, details, token);
 
-    const {data} = res
-    dispatch({ type: USER_PROFILE_UPDATE_SUCCESS, payload: data })
-    // dispatch({ type: USER_DETAILS_SUCCESS, payload: data})
-    
-    // console.log(data)
+      const { data } = res;
+      dispatch({ type: USER_PROFILE_UPDATE_SUCCESS, payload: data });
+      // dispatch({ type: USER_DETAILS_SUCCESS, payload: data})
 
+      // console.log(data)
+    } catch (error) {
+      dispatch({
+        type: USER_PROFILE_UPDATE_FAIL,
+        payload: message.error(
+          `${
+            error?.response?.data?.msg === undefined
+              ? "Something went wrong"
+              : error?.response?.data?.msg
+          }`
+        ),
+      });
 
-  } catch(error) {
+      // console.log(error)
+    }
+  };
 
-    dispatch({
-      type: USER_PROFILE_UPDATE_FAIL,
-      payload: message.error(`${error?.response?.data?.msg === undefined ? 'Something went wrong' :  error?.response?.data?.msg }`),
-    });
-
-    // console.log(error)
-  }
-}
-
-export const storeApptDatesArray = (details) =>(dispatch) => {
-    dispatch({ type: STORE_USER_APPOINTMENT_DATES, payload: details})
-}
+// action to store user appointments
+export const storeApptDatesArray = (details) => (dispatch) => {
+  dispatch({ type: STORE_USER_APPOINTMENT_DATES, payload: details });
+};

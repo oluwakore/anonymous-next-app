@@ -1,8 +1,8 @@
 .centralContainer {
   margin-top: 10px;
-  
+
   background-color: #fcfcfc;
-  
+
   width: 90%;
   padding: 1rem;
 
@@ -25,7 +25,6 @@
     img {
       width: 100%;
       height: 100%;
-      
     }
 
     .videoCta {
@@ -35,10 +34,7 @@
       transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
     }
-
   }
-
-
 
   .centralContainerServices {
     display: flex;
@@ -46,15 +42,13 @@
     margin-top: 8rem;
     // outline: 3px solid green;
     width: 90%;
-    
-    
+
     h1 {
       color: #0e0b8b;
       font-weight: 500;
       font-size: 1.5rem;
     }
 
-    
     .centralContainerServicesMain {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -76,8 +70,7 @@
         // outline: 3px solid orange;
         align-items: center;
         justify-content: center;
-  
-        
+
         img {
           padding: 1.5rem;
           border-radius: 2rem;
@@ -87,15 +80,13 @@
           aspect-ratio: 5/5;
           object-fit: cover;
         }
-      
-        h2{
+
+        h2 {
           font-size: 1.2rem;
-         
         }
       }
     }
   }
-
 
   .centralContainerTrending {
     display: flex;
@@ -118,7 +109,7 @@
     }
 
     p {
-      font-size: .9rem;
+      font-size: 0.9rem;
     }
 
     button {
@@ -126,7 +117,7 @@
       border-radius: 3rem;
       border: 3px solid #0e0b8b;
       background-color: #fcfcfc;
-      padding: .5rem 2rem;
+      padding: 0.5rem 2rem;
       color: #0e0b8b;
       outline: none;
       cursor: pointer;
@@ -153,87 +144,76 @@
       }
     }
   }
-  
 
- .centralContainerTrendingCardDesc {
-  position: absolute;
-  top: 5%;
-  left: 8%;
-  // transform: translate(-420%, -600%);
-  // -ms-transform: translate(-420%, -600%);
+  .centralContainerTrendingCardDesc {
+    position: absolute;
+    top: 5%;
+    left: 8%;
 
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: fit-content;
-  padding: .5em 1rem;
-  border-radius: 1.5em;
-  color: black;
-  background-color: darken($color: rgba(255, 255, 255, 0.486), $amount: 1);
-  p {
-    font-size: .7rem;
-    margin: auto;
-  }
- } 
-
-}
-
-
-@media screen and (max-width: 1024px)  {
-
-.centralContainer {
-  // outline: 3px solid brown;
-  width: 65% !important;
-
-}
-
-.centralContainerServices {  
-  h1 {
-    color: #0e0b8b;
-    font-weight: 500;
-    font-size: 1.2rem !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding: 0.5em 1rem;
+    border-radius: 1.5em;
+    color: black;
+    background-color: darken($color: rgba(255, 255, 255, 0.486), $amount: 1);
+    p {
+      font-size: 0.7rem;
+      margin: auto;
+    }
   }
 }
 
-
-
-.centralContainerTrending {
-  h1 {
-    font-size: 1.2rem !important;
+@media screen and (max-width: 992px) {
+  .centralContainer {
+    // outline: 3px solid brown;
+    width: 65% !important;
   }
 
-  h2 {
-    font-size: 1rem !important;
+  .centralContainerServices {
+    h1 {
+      color: #0e0b8b;
+      font-weight: 500;
+      font-size: 1.2rem !important;
+    }
   }
 
-  p {
-    font-size: .75rem !important;
+  .centralContainerTrending {
+    h1 {
+      font-size: 1.2rem !important;
+    }
+
+    h2 {
+      font-size: 1rem !important;
+    }
+
+    p {
+      font-size: 0.75rem !important;
+    }
+
+    button {
+      padding: 0.4em 1em !important;
+      font-size: 0.9rem !important;
+    }
   }
 
-  button {
-    padding: .4em 1em !important;
-    font-size: .9rem !important; 
+  .centralContainerTrendingcardDesc {
+    // transform: translate(-220%, -480%) !important;
+    // -ms-transform: translate(-220%, -480%) !important;
+
+    p {
+      font-size: 0.6rem !important;
+    }
+  }
+
+  .centralContainerServicesMain {
+    overflow-x: scroll !important;
+    // outline: 3px solid maroon;
   }
 }
 
-.centralContainerTrendingcardDesc {
-  // transform: translate(-220%, -480%) !important;
-  // -ms-transform: translate(-220%, -480%) !important;
-
-
- 
-  p {
-    font-size: .6rem !important;
-   
-  }
- } 
-
- .centralContainerServicesMain {
-  overflow-x: scroll !important;
-  // outline: 3px solid maroon;
- }
-
+@media screen and (max-width: 768px) {
 }
 
 @media screen and (max-width: 600px) {
@@ -242,28 +222,26 @@
     // outline: 3px solid slateblue;
     width: 100% !important;
 
-    .centralContainerVideoHolder { 
+    .centralContainerVideoHolder {
       //  outline: 3px solid green;
       height: 15rem;
 
       .videoCta {
         font-size: 4rem !important;
       }
-      
     }
 
-    .centralContainerServices{
+    .centralContainerServices {
       margin-top: 4rem;
       // outline: 3px solid green;
       width: 90%;
       display: flex;
       align-items: center;
       justify-content: center;
-      
-      
+
       h1 {
         text-align: center;
-        font-size: .95rem !important;
+        font-size: 0.95rem !important;
       }
 
       .centralContainerServicesMain {
@@ -278,14 +256,13 @@
           // outline: 3px solid purple;
 
           img {
-            width:  13rem !important;
+            width: 13rem !important;
           }
-          
-         
+
           h2 {
             margin-top: 1rem;
             text-align: center;
-            font-size: .85rem !important;
+            font-size: 0.85rem !important;
           }
         }
       }
@@ -301,20 +278,20 @@
         font-size: 1rem !important;
         text-align: center;
       }
-  
+
       h2 {
         font-size: 1rem !important;
         font-weight: 500;
       }
-  
+
       p {
-        font-size: .9rem;
+        font-size: 0.9rem;
       }
-  
+
       button {
-        font-size: .85rem  !important;
+        font-size: 0.85rem !important;
       }
-  
+
       .centralContainerTrendingMain {
         display: grid;
         grid-template-columns: repeat(1, 1fr);

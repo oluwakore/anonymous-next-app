@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 import { Icon } from "@iconify/react";
 import {
   Button,
@@ -10,13 +10,14 @@ import {
   message,
   Alert,
   notification,
-  Divider
+  Divider,
 } from "antd";
 // import { login } from '../api/base';
 import styles from "../styles/Login.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../core/actions/useractions/useractions";
 
+// opens a notification based type passed
 const openNotificationWithIcon = (type, msg, desc) => {
   notification[type]({
     message: msg,
@@ -25,36 +26,35 @@ const openNotificationWithIcon = (type, msg, desc) => {
 };
 
 export default function Login() {
-  const [form] = Form.useForm()
-   
-  const router = useRouter() 
+  const [form] = Form.useForm();
+
+  const router = useRouter();
 
   // const [loading, setLoading] = useState(false)
   // const [error, setError] = useState(null)
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-   const userLogin = useSelector((state) => state.userLogin)
-   const  { error, loading, userInfo } = userLogin
+  // gets the userlogin redux state
+  const userLogin = useSelector((state) => state.userLogin);
+  const { error, loading, userInfo } = userLogin;
 
-   useEffect(() => {
-    if(userInfo) {
-      router.push('/dashboard')
-      openNotificationWithIcon('success', 'Sign In', `Welcome ${userInfo.user.name}`)
+  useEffect(() => {
+    if (userInfo) {
+      router.push("/dashboard");
+      openNotificationWithIcon(
+        "success",
+        "Sign In",
+        `Welcome ${userInfo.user.name}`
+      );
     }
-   
-   }, [userInfo]) 
+  }, [userInfo]);
 
-/** 
-   * Form submission
-   * @param values Object 
-   */
-
-const onFinish = async (values) => {
-  const {email, password} = values
-  dispatch(loginUser(email, password))
- 
-}
+  // runs when login button is clicked
+  const onFinish = async (values) => {
+    const { email, password } = values;
+    dispatch(loginUser(email, password));
+  };
 
   return (
     <div className={styles.loginContainer}>
@@ -68,26 +68,6 @@ const onFinish = async (values) => {
         <img src="images/register/hero-image.jpg" alt=" " />
       </div>
       <div className={styles.loginMain}>
-      {/* {
-            error &&
-            <div className={styles.errorHolder}>
-              <Alert
-                message={error}
-                type="error"
-                closable
-                showIcon
-                onClose={() => {
-                  // setError(null)
-                }}
-              />
-              </div>
-          } */}
-{/* 
-          {
-            loading && <>
-            <h2>Loading...</h2>
-            </>
-          } */}
         <div className={styles.loginMainContainer}>
           <div>
             <h1 className={styles.topText}>LOGIN</h1>
@@ -103,17 +83,15 @@ const onFinish = async (values) => {
             {/* <div className={styles.divider}>
               <h4>Or</h4>
             </div> */}
-            <Divider className={styles.divider} >
-              Or
-            </Divider>
+            <Divider className={styles.divider}>Or</Divider>
             <div className={styles.loginLower}>
-                <Form
-                  layout="vertical"
-                  id="loginform"
-                  form={form}
-                  onFinish={onFinish}
-                >
-                  <div className={styles.loginLowerMain}>
+              <Form
+                layout="vertical"
+                id="loginform"
+                form={form}
+                onFinish={onFinish}
+              >
+                <div className={styles.loginLowerMain}>
                   <Form.Item
                     name="email"
                     rules={[
@@ -145,24 +123,22 @@ const onFinish = async (values) => {
                   >
                     <Input.Password placeholder="PASSWORD (MIN. 8 CHARACTER)" />
                   </Form.Item>
+                </div>
+                <div className={styles.forgotPasswordLink}>
+                  <p>Forgot Password</p>
+                </div>
+                <Form.Item>
+                  <div className={styles.formzButton}>
+                    <Button
+                      htmlType="submit"
+                      loading={loading}
+                      disabled={loading}
+                    >
+                      LOGIN
+                    </Button>
                   </div>
-                  <div className={styles.forgotPasswordLink} >
-                    <p>Forgot Password</p>
-                  </div>
-                  <Form.Item>
-                    <div className={styles.formzButton}>
-                     
-                      <Button
-                        htmlType="submit"
-                        loading={loading}
-                        disabled={loading}
-                      >
-                        LOGIN
-                      </Button>
-                   
-                    </div>
-                  </Form.Item>
-                </Form>
+                </Form.Item>
+              </Form>
             </div>
             <div className={styles.formzEnd}>
               <div className={styles.formzEndQuestion}>
@@ -177,8 +153,6 @@ const onFinish = async (values) => {
           </div>
         </div>
       </div>
-
-      
     </div>
   );
 }

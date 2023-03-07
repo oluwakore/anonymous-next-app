@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Head from "next/head";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 import {
   Button,
   Form,
@@ -9,13 +9,14 @@ import {
   Alert,
   Checkbox,
   notification,
-  Divider
+  Divider,
 } from "antd";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import styles from "../styles/Register.module.scss";
 import { register } from "../api/base";
 
+// opens a notification based type passed
 const openNotificationWithIcon = (type, msg, desc) => {
   notification[type]({
     message: msg,
@@ -24,32 +25,28 @@ const openNotificationWithIcon = (type, msg, desc) => {
 };
 
 function Register() {
- 
   const [form] = Form.useForm();
 
-  const router = useRouter()
-
+  const router = useRouter();
+  // state for loading when user registration is ongoing
   const [loading, setLoading] = useState(false);
+
   const [errors, setErrors] = useState({
     password: "",
   });
+
+  // stores error message
   const [error, setError] = useState(null);
 
-  /**
-   * Update the form instance with it appropriate  values
-   * @param  name string
-   * @param  value string
-   */
-
- 
+  // runs when register button is clicked
   const onFinish = async (values) => {
     const { name, username, email, password } = values;
     setLoading(true);
 
-  
     setError(null);
-   
+
     const newErrors = { ...errors };
+
     if (Object.values(newErrors).every((item) => item === "")) {
       try {
         const res = await register({
@@ -57,7 +54,7 @@ function Register() {
           email,
           password,
         });
-        console.log(res.data);
+        // console.log(res.data);
         setLoading(false);
         if (res.data.status === "success") {
           openNotificationWithIcon(
@@ -65,72 +62,31 @@ function Register() {
             "Register",
             "Registration was successful, login to continue."
           );
-          router.push('/login')
+          router.push("/login");
         } else {
           const errors = res.data.message;
           setError(errors);
         }
       } catch (error) {
         setLoading(false);
-        console.log(error);
+        // console.log(error);
         if (error?.response?.data) {
-          console.log(error.response.data);
+          // console.log(error.response.data);
         } else {
           message.error("Something went wrong.");
         }
       }
-    } 
-    
-  }
-  //   } else {
-  //   setError(null);
-   
-  //   const newErrors = { ...errors };
-  //   if (Object.values(newErrors).every((item) => item === "")) {
-  //     try {
-  //       const res = await register({
-  //         name,
-  //         email,
-  //         password,
-  //       });
-  //       console.log(res.data);
-  //       setLoading(false);
-  //       if (res.data.status === "success") {
-  //         openNotificationWithIcon(
-  //           "success",
-  //           "Register",
-  //           "Registration was successful, login to continue."
-  //         );
-  //         router.push('/login')
-  //       } else {
-  //         const errors = res.data.message;
-  //         setError(errors);
-  //       }
-  //     } catch (error) {
-  //       setLoading(false);
-  //       console.log(error);
-  //       if (error?.response?.data) {
-  //         console.log(error.response.data);
-  //       } else {
-  //         message.error("Something went wrong.");
-  //       }
-  //     }
-  //   } else {
-  //     setLoading(false);
-  //   }
-  // }
-  // };
-
-  /**
-   * Checks validation error for pasword field
-   * @param  errorInfo Object
-   */
-  const onFinishFailed = (errorInfo) => {
-    console.log(errorInfo);
+    }
   };
+
+  // runs when registration fails
+  const onFinishFailed = (errorInfo) => {
+    console.error(errorInfo);
+  };
+
   return (
     <div className={styles.registerContainer}>
-         <Head>
+      <Head>
         <title>Register for Anonymous Confidant</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="/blue-logo.png" />
@@ -261,37 +217,31 @@ function Register() {
                     >
                       CREATE ACCOUNT
                     </Button>
-                    
                   </div>
                 </Form.Item>
               </Form>
             </div>
           </div>
+        </div>
+        <Divider className={styles.divider}>Or</Divider>
+        <div className={styles.formGoogle}>
+          <div className={styles.formGoogleIcon}>
+            <Icon fontSize={32} icon="flat-color-icons:google" />
           </div>
-          <Divider className={styles.divider}>
-            Or
-          </Divider>
-          {/* <div className="divider">
-            <h4>or</h4>
-          </div> */}
-          <div className={styles.formGoogle}>
-            <div className={styles.formGoogleIcon}>
-              <Icon fontSize={32} icon="flat-color-icons:google" />
-            </div>
-            <div>
-              <p>CREATE ACCOUNT WITH GOOGLE</p>
-            </div>
+          <div>
+            <p>CREATE ACCOUNT WITH GOOGLE</p>
           </div>
-          <div className={styles.formzEnd}>
-            <div className={styles.formzEndQuestion}>
-              <p>Already have an account?</p>
-            </div>
-            <div className={styles.formzEndLink}>
-              <Link style={{ textDecoration: "none" }} href="/login">
-                <p>LOGIN HERE</p>
-              </Link>
-            </div>
+        </div>
+        <div className={styles.formzEnd}>
+          <div className={styles.formzEndQuestion}>
+            <p>Already have an account?</p>
           </div>
+          <div className={styles.formzEndLink}>
+            <Link style={{ textDecoration: "none" }} href="/login">
+              <p>LOGIN HERE</p>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

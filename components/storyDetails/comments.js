@@ -12,7 +12,12 @@ import {
   UpOutlined,
 } from "@ant-design/icons";
 import { Divider, message } from "antd";
-import { getStoryComments, likeComments, postComments, unlikeComments } from "../../api/base";
+import {
+  getStoryComments,
+  likeComments,
+  postComments,
+  unlikeComments,
+} from "../../api/base";
 import Replies from "./Replies";
 
 function Comments({
@@ -24,7 +29,7 @@ function Comments({
   parentID,
   onSubmitReply,
   repliesArray,
-  claps
+  claps,
 }) {
   const [content, setContent] = useState("");
   const [showReplyInput, setShowReplyInput] = useState(false);
@@ -37,32 +42,30 @@ function Comments({
 
   // console.log(repliesArray);
 
- 
-  const handleLikes = async() => {
-    try{
-      const res = await likeComments(parentID, {authorID}, userToken)
+  const handleLikes = async () => {
+    try {
+      const res = await likeComments(parentID, { authorID }, userToken);
 
       // console.log(res.data);
-      setLikes(true)
-      onSubmitReply()
+      setLikes(true);
+      onSubmitReply();
     } catch (err) {
-      console.error(err)
+      console.error(err);
     }
-  }
+  };
 
-  const handleUnlikes = async() => {
-    console.log('I was clicked!')
-    try{
-      const res = await unlikeComments(parentID, {authorID}, userToken)
+  const handleUnlikes = async () => {
+    // console.log('I was clicked!')
+    try {
+      const res = await unlikeComments(parentID, { authorID }, userToken);
 
       // console.log(res.data);
-      setLikes(false)
-      onSubmitReply()
+      setLikes(false);
+      onSubmitReply();
     } catch (err) {
-      console.error(err)
+      console.error(err);
     }
-  }
-
+  };
 
   const handleSendReply = async (e) => {
     e.preventDefault();
@@ -77,8 +80,8 @@ function Comments({
 
       //  handleGetReplies(storyID)
       //  handleComments()
-       setContent("")
-       setShowReplyInput(false)
+      setContent("");
+      setShowReplyInput(false);
       // console.log(data);
 
       onSubmitReply();
@@ -101,7 +104,7 @@ function Comments({
   };
 
   return (
-    <div key={item?.id}  className={styles.commentContainer}>
+    <div key={item?.id} className={styles.commentContainer}>
       <div className={styles.contentUmbrella}>
         <div className={styles.commentContainerTopPart}>
           <div className={styles.commentContainerTopAvatar}>
@@ -111,9 +114,7 @@ function Comments({
             </div>
             <div>
               <h1>
-
                 {" "}
-                
                 {item?.authorID?.name === authorName
                   ? "ME"
                   : item?.authorID?.name}{" "}
@@ -132,13 +133,18 @@ function Comments({
           <p> {item?.content} </p>
         </div>
         <div className={styles.commentActions}>
-          <div style={{display: "flex"}}>
-          {/* <LikeFilled onClick={handleUnlikes} /> */}
-        { !likes ? <LikeOutlined onClick={handleLikes} /> : <LikeFilled onClick={handleUnlikes} />} 
-        <span style={{marginLeft: "-.5rem"}}> {
-            claps?.length === 0 ? "" : claps?.length
-            } </span>
-          </div> 
+          <div style={{ display: "flex" }}>
+            {/* <LikeFilled onClick={handleUnlikes} /> */}
+            {!likes ? (
+              <LikeOutlined onClick={handleLikes} />
+            ) : (
+              <LikeFilled onClick={handleUnlikes} />
+            )}
+            <span style={{ marginLeft: "-.5rem" }}>
+              {" "}
+              {claps?.length === 0 ? "" : claps?.length}{" "}
+            </span>
+          </div>
           <span
             style={{ cursor: "pointer" }}
             onClick={() => setShowReplyInput(true)}
@@ -189,15 +195,24 @@ function Comments({
       {/* <div style={{ outline: "3px solid green" }}> */}
 
       {
-      <div style={{ /*outline: "3px solid green", */  marginTop: "1rem"}}>
-{
-      showReplyList &&
-        repliesArray.map((rep) => (
-          <Replies item={rep} authorName={authorName}   key={rep?.id} storyID={storyID} parentID={rep?.id} authorID={authorID} userToken={userToken} onSubmitReply={onSubmitReply} repliesArray={rep?.replies} claps={rep?.claps} />
-        ))
-        }
+        <div style={{ /*outline: "3px solid green", */ marginTop: "1rem" }}>
+          {showReplyList &&
+            repliesArray.map((rep) => (
+              <Replies
+                item={rep}
+                authorName={authorName}
+                key={rep?.id}
+                storyID={storyID}
+                parentID={rep?.id}
+                authorID={authorID}
+                userToken={userToken}
+                onSubmitReply={onSubmitReply}
+                repliesArray={rep?.replies}
+                claps={rep?.claps}
+              />
+            ))}
         </div>
-        }
+      }
 
       <div style={{ width: "100%" }}>
         <Divider />

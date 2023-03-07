@@ -17,10 +17,13 @@ function StoryDetails() {
 
   const dispatch = useDispatch()
 
+
+  // gets the userlogin redux state
   const userLogin = useSelector((state) => state.userLogin)
   const  { userInfo } = userLogin 
 
 
+   // gets story id from the redux state
   const storyId = useSelector((state) => state.storyIden)
 
   const authorID = userInfo?.user?.id
@@ -28,7 +31,8 @@ function StoryDetails() {
   const authorName = userInfo?.user?.name
 
   const loggedUserToken = userInfo?.token
-//  console.log(storyId?.id)
+
+  //  console.log(storyId?.id)
 
 // console.log(loggedUserToken)
 

@@ -1,83 +1,71 @@
-
 .counselContainer {
-    // outline: 3px solid magenta;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5rem 0;
+  // outline: 3px solid magenta;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0;
 
+  .counselMain {
+    // outline: 3px solid green;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      color: #0e0b8b;
+      text-align: center;
+    }
+
+    .counselCards {
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .counselContainer {
+    // outline: 3px solid magenta;
+    .counselMain {
+      // outline: 3px solid green;
+      width: 80% !important;
+
+      h1 {
+        font-size: 2rem !important;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {}
+
+@media screen and (max-width: 600px) {
+  .counselContainer {
+    // outline: 3px solid magenta;
+    padding: 2rem 0;
 
     .counselMain {
-        // outline: 3px solid green;
-        width: 60%;
-        display: flex;
-        flex-direction: column;
+      // outline: 3px solid green;
+      width: 90% !important;
 
-        h1 {
-            font-size: 3rem;
-            font-weight: 600;
-            color: #0E0B8B;
-            text-align: center;
-        }
+      h1 {
+        font-size: 1.5rem !important;
+      }
 
-        .counselCards {
-            padding: 3rem; 
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;    
-            
-            img {
-                width: 100%;
-                object-fit: cover;
-            }
-
-         
-
-       
-        }
+      .counselCards {
+        padding: 0 5rem 1rem 5rem;
+        grid-template-columns: repeat(1, 1fr);
+      }
     }
+  }
 }
-
-@media screen and (max-width: 1024px)  {
-    .counselContainer {
-        // outline: 3px solid magenta;
-        .counselMain {
-            // outline: 3px solid green;
-            width: 80% !important;
-
-            h1 {
-                font-size: 2rem !important;
-                font-weight: 600;
-            }
-    
-    }
-}
-
-}
-
-@media screen and (max-width: 600px)  {
-    .counselContainer {
-        // outline: 3px solid magenta;
-        padding: 2rem 0;
-
-        .counselMain {
-            // outline: 3px solid green;
-            width: 90% !important;
-
-            
-        h1 {
-            font-size: 1.5rem !important;
-        }
-
-        .counselCards {
-            padding: 0 5rem 1rem 5rem; 
-            grid-template-columns: repeat(1, 1fr);    
-            
-        }
-        }
-    }
-}
-
-
-
-

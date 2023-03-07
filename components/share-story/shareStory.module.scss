@@ -1,10 +1,6 @@
 .shareStoryContainer {
-  
   margin-top: 1rem;
   padding-bottom: 2rem;
-  // height: 10vh;
-  // width: 100%;
-  // background-color: coral;
 
   .shareStoryTitle {
     h1 {
@@ -24,16 +20,6 @@
     display: flex;
     flex-direction: column;
     margin-top: 2rem;
-    // margin-bottom: 10rem;
-    // margin-bottom: 10rem;
-    // justify-content: center;
-    // align-items: center;
-    // gap: 2rem;
-    // width: 70%;
-    // margin-top: 100px;
-    // width: 70%;
-    // outline: 3px solid firebrick;
-    // padding: 4em;
 
     .shareStorySelect {
       // outline: 3px solid slateblue;
@@ -46,7 +32,7 @@
         display: flex;
         flex-direction: column;
         width: 30%;
-        
+
         label {
           font-size: 1.1rem;
           font-weight: bold;
@@ -55,8 +41,8 @@
         select {
           outline: none;
           border: 2px solid #0e0b8b;
-          border-radius: .5rem;
-          padding: .5rem;
+          border-radius: 0.5rem;
+          padding: 0.5rem;
           accent-color: #0e0b8b;
           font-size: 1rem;
           background: transparent;
@@ -65,16 +51,12 @@
             font-size: 1rem;
           }
 
-          option[disabled]{ display: none; }
-         
+          option[disabled] {
+            display: none;
+          }
         }
-
       }
-
-    
-
     }
-
 
     .shareStoryInputCover {
       display: flex;
@@ -89,7 +71,7 @@
       }
 
       input {
-        padding: .8rem;
+        padding: 0.8rem;
         font-size: 1rem;
         border: 2px solid #0e0b8b;
         border-radius: 1rem;
@@ -105,18 +87,17 @@
       background-color: #0e0b8b;
       color: #ffff;
       border-radius: 2rem;
-      padding: .8rem 1.5rem;
+      padding: 0.8rem 1.5rem;
       outline: none;
-      border: none; 
+      border: none;
       font-size: 1rem;
       cursor: pointer;
 
       &:hover {
-        background: rgba($color: #0e0b8b, $alpha: .6);
+        background: rgba($color: #0e0b8b, $alpha: 0.6);
       }
       // margin-bottom: 200px;
     }
-    
 
     .shareStoryMic {
       // margin-top: 42.5px;
@@ -130,7 +111,6 @@
       // margin: auto !important;
 
       img {
-        
         object-fit: cover;
         width: 100%;
         height: auto;
@@ -138,13 +118,6 @@
     }
 
     .shareStoryTextarea {
-      // margin-top: 3rem !important;
-      // display: flex;
-      // flex-direction: column;
-      // gap: 2rem;
-      // justify-content: center;
-      // align-items: center;
-      // outline: 2px solid magenta;
       margin-bottom: 2rem !important;
       margin: auto;
       // padding: 1rem;
@@ -154,13 +127,7 @@
       border: 2px solid #0e0b8b;
       border-radius: 1.2rem;
 
-
       textarea {
-        // margin-top: 10px;
-        // margin-left: 10px;
-        // margin-right: -2em;
-        // margin: auto;
-        // flex: 1;
         background: transparent;
         // min-height: 30rem;
         width: 100%;
@@ -175,17 +142,6 @@
     }
   }
 }
-
-
-
-// .shareStoryTop {
-//   // outline: 3px solid yellow;
-//   // width: 100%;
-//   // margin: auto !important;
-//   height: 100vh;
-
-
-// }
 
 .shareStoryMicCover {
   // outline:  3px solid firebrick;
@@ -204,17 +160,15 @@
   width: 100%;
 }
 
-
-.modalContainer{
+.modalContainer {
   // outline: 3px solid red;
-  
 
   .modalContent {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: .5rem;
+    gap: 0.5rem;
 
     .prevTitle {
       // outline: 3px solid blue;
@@ -239,13 +193,13 @@
       border-radius: 1.5rem;
     }
 
-   small {
-    font-weight: 500;
+    small {
+      font-weight: 500;
 
-    span {
-      font-weight: normal !important;
+      span {
+        font-weight: normal !important;
+      }
     }
-   }
 
     p {
       // outline: 3px solid blueviolet;
@@ -259,54 +213,43 @@
     .button2 {
       background: #0e0b8b;
       color: #ffff;
-      font-size: .9rem;
-      padding: .5rem 1rem;
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
       width: fit-content;
       border: none;
       outline: none;
-      
+
       &:hover {
-        background: rgba($color: #0e0b8b, $alpha: .6);
+        background: rgba($color: #0e0b8b, $alpha: 0.6);
       }
-      
     }
   }
 }
 
-
-@media screen and (max-width: 1024px) {
-  // .shareStoryTop {
-  //   // outline: 3px solid yellow;
-  //   // width: 90% !important;
-  // }
-
+@media screen and (max-width: 992px) {
   .shareStoryTitle {
     h1 {
       font-size: 1.6rem !important;
     }
     p {
-      
-      font-size: .8rem !important;
+      font-size: 0.8rem !important;
     }
   }
 
-  .btnShare  { 
+  .btnShare {
     font-size: 0.95rem;
-    
   }
 
-  .shareStoryContainer { 
+  .shareStoryContainer {
     height: 80vh;
   }
 }
 
+@media screen and (max-width: 768px) {
+}
 
-@media screen and (max-width: 600px)  {
-  .shareStoryContainer{
-    // padding: 1rem !important;
-    // padding-bottom: 45rem !important;
-    // height: 100vh !important;
-    // width: 100%;
+@media screen and (max-width: 600px) {
+  .shareStoryContainer {
     margin-bottom: 25rem !important;
     // background-color: coral;
   }
@@ -315,7 +258,7 @@
       font-size: 1.2rem !important;
     }
     p {
-      font-size: .7rem !important;
+      font-size: 0.7rem !important;
     }
   }
 
@@ -325,21 +268,19 @@
 
     .shareStorySelectMain {
       width: 60% !important;
-
     }
     label {
       font-size: 0.9rem !important;
     }
-     
+
     option {
       font-size: 0.75rem !important;
     }
 
     select {
-      padding: .6rem !important;
-      font-size: .85rem !important;
+      padding: 0.6rem !important;
+      font-size: 0.85rem !important;
     }
-
   }
 
   .shareStoryInputCover {
@@ -351,93 +292,57 @@
     }
 
     input {
-      padding: .6rem !important;
-      font-size: .85rem !important;
+      padding: 0.6rem !important;
+      font-size: 0.85rem !important;
     }
   }
 
   .shareStoryTextarea {
     width: 90% !important;
 
-
     textarea {
-    
       min-height: 0rem !important;
-      padding: .1rem !important;
-      font-size: .85rem !important;
+      padding: 0.1rem !important;
+      font-size: 0.85rem !important;
     }
-  
-}
+  }
 
-.textareaCover {
-  // outline: 3px solid blueviolet;
-  height:
-  12rem;
-}
+  .textareaCover {
+    // outline: 3px solid blueviolet;
+    height: 12rem;
+  }
 
-// .shareStoryMic {
-//   height: 3rem !important;
-//   width: 3rem !important;
-//   margin: auto !important;
+  .button1 {
+    // padding: .6rem 1.2rem !important;
+    font-size: 0.8rem !important;
+  }
 
-//   img {
-//     width: 3rem !important;
-//   }
-// }
+  .modalContainer {
+    // outline: 3px solid red;
 
-.button1 {
- 
-  // padding: .6rem 1.2rem !important;
-  font-size: .8rem !important;
-}
-
-
-.modalContainer{
-  // outline: 3px solid red;
-  
-
-  .modalContent {
-   
-    .prevTitle {
-      // outline: 3px solid blue;
-      h3 {
-        font-size: .85rem !important;
+    .modalContent {
+      .prevTitle {
+        // outline: 3px solid blue;
+        h3 {
+          font-size: 0.85rem !important;
+        }
       }
-    }
 
-    h1 {
-      font-size: 0.95rem !important;
-    }
+      h1 {
+        font-size: 0.95rem !important;
+      }
 
+      p {
+        // outline: 3px solid blueviolet;
+        font-size: 0.75rem;
+        width: 100% !important;
+        // height: 18rem;
+      }
 
-   
-
-    p {
-      // outline: 3px solid blueviolet;
-      font-size: 0.75rem;
-      width: 100% !important;
-      // height: 18rem;
-    }
-
-    .button2 {
-      font-size: .7rem !important;
-      padding: .35rem 1rem !important;      
+      .button2 {
+        font-size: 0.7rem !important;
+        padding: 0.35rem 1rem !important;
+      }
     }
   }
 }
-
-// .shareStoryTop {
-//   outline: 3px solid yellow;
-//   height: 100vh !important;
-//   // width: 90% !important;
-//   // padding-bottom: 10rem !important;
-// }
-
-
-
-}
-
-
-
-
-

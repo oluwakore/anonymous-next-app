@@ -2,17 +2,17 @@
   background-color: #0e0b8b;
   width: 100%;
   bottom: 0;
-  left: 0; 
+  left: 0;
   li {
-   list-style-type: none;
+    list-style-type: none;
   }
 
   .mainContainer {
-   padding: 4rem;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-  //  outline: 3px solid gold;
+    padding: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //  outline: 3px solid gold;
   }
 
   .footerRow {
@@ -28,7 +28,7 @@
     .footerColumnStoryPart {
       width: 40%;
       // outline: 3px solid white;
-      padding: .5em;
+      padding: 0.5em;
       color: #ffff;
 
       h4 {
@@ -40,47 +40,46 @@
         font-size: 1rem;
         // width: fit-content;
         li {
-    
           margin-left: -3em;
         }
       }
     }
-    
+
     .footerColumnAboutUsPart {
       // width: 20%;
       // outline: 3px solid pink;
-      padding: .5em;
+      padding: 0.5em;
       color: #ffff;
-      
+
       h4 {
         color: #ffff;
         font-size: 1.3rem;
       }
       ul {
-        // outline: 3px solid green; 
+        // outline: 3px solid green;
         font-size: 1rem;
         li {
           margin-left: -3em;
         }
       }
     }
-    
+
     .footerColumnHelpCenterPart {
       // width: 40%;
       // outline: 3px solid yellow;
-      padding: .5em;
+      padding: 0.5em;
       color: #ffff;
-      
+
       h4 {
         color: #ffff;
         font-size: 1.3rem;
       }
       ul {
-        // outline: 3px solid green; 
+        // outline: 3px solid green;
         font-size: 1rem;
         li {
           margin-left: -3em;
-          margin-bottom: .5em;
+          margin-bottom: 0.5em;
         }
 
         .helpCenterIcons {
@@ -92,8 +91,8 @@
           // justify-content: center;
           align-items: center;
 
-          span{
-            margin-left: .5rem;
+          span {
+            margin-left: 0.5rem;
           }
         }
 
@@ -104,9 +103,9 @@
           // gap: .8em;
           // justify-content: center;
           align-items: center;
-          
-          span{
-            margin-left: .5rem;
+
+          span {
+            margin-left: 0.5rem;
           }
         }
         .helpCenterIcons2 {
@@ -123,17 +122,14 @@
       }
     }
   }
- 
 }
 
-
-@media screen and (max-width: 1024px)  {
+@media screen and (max-width: 992px) {
   .footerRow {
     display: inline-flex;
     // outline: 3px solid violet;
     width: 90% !important;
-    // gap: 3em !important;
-    // justify-content: space-between;
+
     padding: 5em !important;
   }
 
@@ -143,43 +139,38 @@
   }
 
   .footerColumnAboutUsPart {
-    margin-top: .25rem !important;
-    padding: .2em !important; 
+    margin-top: 0.25rem !important;
+    padding: 0.2em !important;
     color: #ffff;
-    
+
     h4 {
       color: #ffff;
       font-size: 1rem !important;
     }
     ul {
-      // outline: 3px solid green; 
+      // outline: 3px solid green;
       margin-left: -1.2rem !important;
-      font-size: .9rem !important;
+      font-size: 0.9rem !important;
       width: max-content !important;
       li {
         margin-left: -2em !important;
-        margin-bottom: .8rem !important;
+        margin-bottom: 0.8rem !important;
       }
     }
   }
 
   .footerColumnHelpCenterPart {
-    // width: 40%;
     // outline: 3px solid yellow;
-    padding: .5em;
+    padding: 0.5em;
     color: #ffff;
-    
+
     h4 {
       color: #ffff;
       font-size: 1rem !important;
     }
     ul {
-      // outline: 3px solid green; 
-      font-size: .9rem !important;
-      // li {
-      //   margin-left: -3em;
-      //   margin-bottom: .5em;
-      // }
+      // outline: 3px solid green;
+      font-size: 0.9rem !important;
 
       .helpCenterIcons {
         // outline: 3px solid black;
@@ -192,19 +183,11 @@
 
       .helpCenterIcons1 {
         // outline: 3px solid black;
-        // padding: .2em;
         display: flex;
-        // gap: .8em;
-        // justify-content: center;
         align-items: center;
-
       }
       .help-center-icons-2 {
-        // outline: 3px solid black;
-        // padding: .2em;
         display: flex;
-        // gap: .8em;
-        // justify-content: center;
         align-items: center;
       }
     }
@@ -213,7 +196,7 @@
   .footerColumnStoryPart {
     width: 40%;
     // outline: 3px solid white;
-    padding: .5em;
+    padding: 0.5em;
     color: #ffff;
 
     h4 {
@@ -222,35 +205,30 @@
     }
     ul {
       // outline: 3px solid green;
-      font-size: .9rem !important;
+      font-size: 0.9rem !important;
       // width: fit-content;
       li {
-  
         margin-left: -3em;
       }
     }
   }
-  
-   
+}
+
+@media screen and (max-width: 768px) {
+
 }
 
 @media screen and (max-width: 600px) {
   .mainContainer {
     padding: 0rem !important;
-   }
+  }
 
-   .footerRow {
-    // display: inline-flex;
-    // outline: 3px solid violet;
+  .footerRow {
     flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
     width: 100% !important;
     // gap: 1rem !important;
     justify-content: space-between;
     padding: 1rem !important;
-    // align-items: center;
-    // flex-wrap: wrap;
 
     .footerColumnStoryPart {
       margin-bottom: 1.5rem;
@@ -265,102 +243,37 @@
       }
       ul {
         // outline: 3px solid green;
-        font-size: .8rem !important;
+        font-size: 0.8rem !important;
         li {
-    
           margin-left: -3em;
         }
       }
     }
-    
+
     .footerColumnAboutUsPart {
       margin-bottom: 1.5rem;
       // width: 20%;
       // outline: 3px solid pink;
-      padding: .5em;
+      padding: 0.5em;
       color: #ffff;
-      margin-left: .5rem;
-      
+      margin-left: 0.5rem;
+
       h4 {
         font-size: 1rem !important;
       }
       ul {
-        // outline: 3px solid green; 
-        font-size: .8rem !important;
+        // outline: 3px solid green;
+        font-size: 0.8rem !important;
         li {
           margin-left: -1rem !important;
         }
       }
     }
-    
+
     .footerColumnHelpCenterPart {
-
       .smallerFont {
-        font-size: .75rem;
+        font-size: 0.75rem;
       }
-      // margin-bottom: 1.5rem;
-      // width: 40%;
-      // outline: 3px solid yellow;
-      // padding: .5em;
-      // color: #ffff;
-      
-      // h4 {
-      //   color: #ffff;
-      //   font-size: 1rem !important;
-      //   // text-align: center;
-      // }
-    // .ulHelpCenter {
-    //     // outline: 3px solid green; 
-    //     font-size: .8rem !important;
-    //     width: fit-content !important;
-    //     li {
-    //         // outline: 3px solid green; 
-    //       margin-left: -3rem;
-    //       margin-bottom: .5rem;
-    //     }
-
-    //     .helpCenterIcons {
-    //       // outline: 3px solid black;
-    //       // padding: .2em;
-    //       display: flex;
-    //       // gap: .8em;
-    //       // justify-content: center;
-    //       align-items: center;
-
-    //       // .helpCenterIconsMail {
-    //       //   font-size: 1.5rem !important;
-    //       //   // margin-right: 1rem;
-    //       // }
-
-    //       span {
-    //         // font-size: .8rem !important;
-    //         margin-left: 0rem !important;
-    //       }
-    //     }
-
-    //     .helpCenterIcons1 {
-    //       // outline: 3px solid black;
-    //       // padding: .2em;
-    //       display: flex;
-    //       // gap: .8em;
-    //       // justify-content: center;
-    //       align-items: center;
-    //     }
-    //     .helpCenterIcons2 {
-    //       z-index: 1;
-    //       // outline: 3px solid black;
-    //       color: #ffff !important;
-    //       // background: crimson;
-    //       // padding: .2em;
-    //       display: flex;
-    //       // gap: .8em;
-    //       // justify-content: center;
-    //       align-items: center;
-    //     }
-    //   }
     }
   }
 }
-
-
-

@@ -10,7 +10,7 @@ export default function People() {
         <div className={styles.peopleDesc}>
           <h1>What People Say About Us</h1>
           <p>
-          These are the testimonies from people who use Anonymous Confidant
+            These are the testimonies from people who use Anonymous Confidant
           </p>
           <Link href="/register" style={{ cursor: "pointer" }}>
             <span>

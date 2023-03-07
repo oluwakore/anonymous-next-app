@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useRouter  } from 'next/router'
+import { useRouter } from "next/router";
 import { SearchOutlined, DownOutlined } from "@ant-design/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { Select, Alert } from "antd";
@@ -10,21 +10,17 @@ import { countiresRawData } from "./countriesData";
 import { getPotentialTherapist } from "../../api/base";
 import { getTherapList } from "../../core/actions/therapistListActions/therapistListactions";
 
-
 const TherapyFormComp = ({ userToken }) => {
-
-
+  // state for different pages of the form
   const [step, setStep] = useState(0);
+
   const [stateList, setStateList] = useState([]);
 
   const [error, setError] = useState(null);
 
+  const router = useRouter();
 
-  const router = useRouter()
-
-  const dispatch = useDispatch()
-
- 
+  const dispatch = useDispatch();
 
   const [age, setAge] = useState("");
   const [gender, setGender] = useState("");
@@ -33,144 +29,122 @@ const TherapyFormComp = ({ userToken }) => {
   const [status, setStatus] = useState("");
   const [religion, setReligion] = useState("");
   const [medication, setMedication] = useState("");
-  const  [suicide, setSuicide] = useState("");
-  const  [health, setHealth] = useState("");
-  const  [sleeping, setSleeping] = useState("");
-  const  [finance, setFinance] = useState("");
-  const [story, setStory] = useState("")
+  const [suicide, setSuicide] = useState("");
+  const [health, setHealth] = useState("");
+  const [sleeping, setSleeping] = useState("");
+  const [finance, setFinance] = useState("");
+  const [story, setStory] = useState("");
 
-  
-  let problem = []
+  let problem = [];
 
   // console.log(stateList[0]?.states);
   // console.log(state);
 
+  // algorithm for selecting problem faced
   const handleProblemStates = () => {
-
-    if(suicide === "Yes") {
-      problem.push('suicide', 'depression')
+    if (suicide === "Yes") {
+      problem.push("suicide", "depression");
     }
     if (status === "married") {
-      problem.push('marriage', 'child')
+      problem.push("marriage", "child");
     }
     if (status === "dating") {
-      problem.push('dating')
+      problem.push("dating");
     }
     if (status === "divorced") {
-      problem.push('divorce')
+      problem.push("divorce");
     }
     if (health === "fair" || "poor") {
-      problem.push('exercise')
+      problem.push("exercise");
     }
-    if (suicide === "Yes" && finance === "fair" || "poor") {
-      problem.push('depression')
+    if ((suicide === "Yes" && finance === "fair") || "poor") {
+      problem.push("depression");
     }
     if (sleeping === "fair" || "poor" || medication === "Yes") {
-      problem.push('personalityDisorder', 'depression')
+      problem.push("personalityDisorder", "depression");
     }
-    return problem
-  }
+    return problem;
+  };
 
+  // get state from country selected
   const filterStates = (county) => {
-    const result = countiresRawData.filter(
-      (item) => item.name === county
-
-      // setStateList(item.states)
-      // console.log(stateList)
-      // console.log(item.states)
-    );
+    const result = countiresRawData.filter((item) => item.name === county);
 
     return result;
     // console.log(result)
   };
 
-  const therapResults = useSelector((state) => state.therapistList)
+  const therapResults = useSelector((state) => state.therapistList);
 
-
-  const { therapArray } = therapResults
+  const { therapArray } = therapResults;
 
   // console.log(therapArray?.status)
   // console.log(therapResults)
 
+  // gets list of therapists based on problem identified
   const handleSetProblemArray = () => {
-    handleProblemStates()
+    handleProblemStates();
     // console.log(problem)
-    if(age === "" || gender === "" || country === "" || status === "" || religion === "" || medication === "" || suicide === "" || health === "" || sleeping === "" || finance === "" || story === "") {
-      setError("Kindly ensure that all form fields are filled")
-      
-    }  else {
-      setError(null)
-            dispatch(getTherapList({profile: {
-            age,
-            gender,
-            country,
-            state,
-            status,
-            religion,
-            medication,
-            suicide,
-            health,
-            sleeping,
-            finance,
-            story,
-            problem
+    if (
+      age === "" ||
+      gender === "" ||
+      country === "" ||
+      status === "" ||
+      religion === "" ||
+      medication === "" ||
+      suicide === "" ||
+      health === "" ||
+      sleeping === "" ||
+      finance === "" ||
+      story === ""
+    ) {
+      setError("Kindly ensure that all form fields are filled");
+    } else {
+      setError(null);
+      dispatch(
+        getTherapList(
+          {
+            profile: {
+              age,
+              gender,
+              country,
+              state,
+              status,
+              religion,
+              medication,
+              suicide,
+              health,
+              sleeping,
+              finance,
+              story,
+              problem,
+            },
           },
-        }, userToken))
-      if (therapArray?.status === 'success') {
-         router.push('/therapist-checkout')
+          userToken
+        )
+      );
+      if (therapArray?.status === "success") {
+        router.push("/therapist-checkout");
       }
     }
-   
+  };
 
-    // try {
-    //     const res = await getPotentialTherapist({profile: {
-    //       age,
-    //       gender,
-    //       country,
-    //       state,
-    //       status,
-    //       religion,
-    //       medication,
-    //       suicide,
-    //       health,
-    //       sleeping,
-    //       finance,
-    //       story,
-    //       problem
-    //     },
-    //   }, userToken)
-
-    //   const {data} = res
-
-    //   if(data.status === "success") {
-        
-    //   }
-
-    //     console.log(data.status)
-    // } catch(err) {
-    //   console.error(err)
-    // }
-
-  } 
-
- 
-
+  // handles country change
   const handleChange = (value) => {
     setCountry(value);
     const result = countiresRawData.filter((item) => item.name === value);
-
 
     const rel = filterStates(value);
 
     setStateList(rel);
   };
 
+  // handles state change
   const handleStateChange = (value) => {
     setState(value);
     // console.log(state);
   };
 
-  // console.log(age)
   return (
     <div className={styles.therapyFormContainerCover}>
       <div className={styles.therapyFormContainer}>
@@ -182,8 +156,6 @@ const TherapyFormComp = ({ userToken }) => {
           </p>
         </div>
         <form>
-
-
           {step === 0 && (
             <div className={styles.therapyForm1Container}>
               <div className={styles.therapyForm1Cover}>
@@ -380,181 +352,162 @@ const TherapyFormComp = ({ userToken }) => {
             </div>
           )}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           {step === 1 && (
+            <div className={styles.therapyForm1Container}>
+              <div className={styles.therapyForm1Cover}>
+                <div className={styles.therapyForm1Fields}>
+                  <h2>
+                    All fields marked as important{" "}
+                    <span style={{ color: "red" }}>*</span>
+                  </h2>
+                  <div className={styles.therapyForm1Field}>
+                    <h4>
+                      <span style={{ color: "red" }}>*</span>Are you on
+                      Medication?
+                    </h4>
+                    <Radio
+                      value="yes"
+                      selected={medication}
+                      text="Yes"
+                      onChange={setMedication}
+                    />
+                    <Radio
+                      value="no"
+                      selected={medication}
+                      text="No"
+                      onChange={setMedication}
+                    />
+                  </div>
 
+                  <div>
+                    <h4>
+                      {" "}
+                      <span style={{ color: "red" }}>*</span>Suicide Thoughts?
+                    </h4>
+                    <Radio
+                      value="yes"
+                      selected={suicide}
+                      text="Yes"
+                      onChange={setSuicide}
+                    />
+                    <Radio
+                      value="no"
+                      selected={suicide}
+                      text="No"
+                      onChange={setSuicide}
+                    />
+                  </div>
 
-<div className={styles.therapyForm1Container}>
-<div className={styles.therapyForm1Cover}>
-  <div className={styles.therapyForm1Fields}>
-    <h2>
-      All fields marked as important{" "}
-      <span style={{ color: "red" }}>*</span>
-    </h2>
-    <div className={styles.therapyForm1Field}>
-      <h4>
-        <span style={{ color: "red" }}>*</span>Are you on Medication?
-      </h4>
-      <Radio
-        value="yes"
-        selected={medication}
-        text="Yes"
-        onChange={setMedication}
-      />
-      <Radio
-        value="no"
-        selected={medication}
-        text="No"
-        onChange={setMedication}
-      />
-    </div>
+                  <div>
+                    <h4>
+                      <span style={{ color: "red" }}>*</span>Physical Health
+                    </h4>
+                    <Radio
+                      value="good"
+                      selected={health}
+                      text="Good"
+                      onChange={setHealth}
+                    />
+                    <Radio
+                      value="fair"
+                      selected={health}
+                      text="Fair"
+                      onChange={setHealth}
+                    />
 
-    <div>
-      <h4>
-        {" "}
-        <span style={{ color: "red" }}>*</span>Suicide Thoughts?
-      </h4>
-      <Radio
-        value="yes"
-        selected={suicide}   
-        text="Yes"
-        onChange={setSuicide}
-      />
-      <Radio
-        value="no"
-        selected={suicide}
-        text="No"
-        onChange={setSuicide}
-      />
-    </div>
+                    <Radio
+                      value="poor"
+                      selected={health}
+                      text="Poor"
+                      onChange={setHealth}
+                    />
+                  </div>
 
- 
+                  <div>
+                    <h4>
+                      {" "}
+                      <span style={{ color: "red" }}>*</span> Sleeping Habit
+                    </h4>
 
-    <div>
-      <h4>
-        <span style={{ color: "red" }}>*</span>Physical Health
-      </h4>
-      <Radio
-        value="good"
-        selected={health}
-        text="Good"
-        onChange={setHealth}
-      />
-      <Radio
-        value="fair"
-        selected={health}  
-        text="Fair"
-        onChange={setHealth}
-      />
+                    <Radio
+                      value="good"
+                      selected={sleeping}
+                      text="Good"
+                      onChange={setSleeping}
+                    />
+                    <Radio
+                      value="fair"
+                      selected={sleeping}
+                      text="Fair"
+                      onChange={setSleeping}
+                    />
 
-      <Radio
-        value="poor"
-        selected={health}
-        text="Poor"
-        onChange={setHealth}
-      />
+                    <Radio
+                      value="poor"
+                      selected={sleeping}
+                      text="Poor"
+                      onChange={setSleeping}
+                    />
+                  </div>
 
-    </div>
+                  <div>
+                    <h4>
+                      {" "}
+                      <span style={{ color: "red" }}>*</span> Financial Status
+                    </h4>
 
-    <div>
-      <h4>
-        {" "}
-        <span style={{ color: "red" }}>*</span>  Sleeping Habit
-      </h4>
+                    <Radio
+                      value="good"
+                      selected={finance}
+                      text="Good"
+                      onChange={setFinance}
+                    />
+                    <Radio
+                      value="fair"
+                      selected={finance}
+                      text="Fair"
+                      onChange={setFinance}
+                    />
 
-      <Radio
-        value="good"
-        selected={sleeping} 
-        text="Good"
-        onChange={setSleeping}
-      />
-      <Radio
-        value="fair"
-        selected={sleeping}
-        text="Fair"
-        onChange={setSleeping}
-      />
-
-      <Radio
-        value="poor"
-        selected={sleeping}
-        text="Poor"
-        onChange={setSleeping}
-      />
-    </div>
-
-    <div>
-      <h4>
-        {" "}
-        <span style={{ color: "red" }}>*</span>  Financial Status
-      </h4>
-
-      <Radio
-        value="good"
-        selected={finance}  
-        text="Good"
-        onChange={setFinance}
-      />
-      <Radio
-        value="fair"
-        selected={finance}
-        text="Fair"
-        onChange={setFinance}
-      />
-
-      <Radio
-        value="poor"
-        selected={finance}
-        text="Poor"
-        onChange={setFinance}
-      />
-    </div>
-  </div>
-  <div className={styles.therapyButton01}>
-   <button onClick={() => setStep(0)}>Back</button>
-   <button onClick={() => setStep(2)}>Next</button>  </div>
-</div>
-</div>
- )}
+                    <Radio
+                      value="poor"
+                      selected={finance}
+                      text="Poor"
+                      onChange={setFinance}
+                    />
+                  </div>
+                </div>
+                <div className={styles.therapyButton01}>
+                  <button onClick={() => setStep(0)}>Back</button>
+                  <button onClick={() => setStep(2)}>Next</button>{" "}
+                </div>
+              </div>
+            </div>
+          )}
 
           {step === 2 && (
             <div className={styles.therapyForm1Container}>
               <div className={styles.therapyNotesContainer}>
                 <div className={styles.therapyNotesTextarea}>
-                {error !== null && (
-            <div className={styles.errorHolder}>
-              <Alert
-                message={error}
-                type="error"
-                closable
-                onClose={() => {
-                  setError(null);
-                }}
-              />
-            </div>
-          )}
+                  {error !== null && (
+                    <div className={styles.errorHolder}>
+                      <Alert
+                        message={error}
+                        type="error"
+                        closable
+                        onClose={() => {
+                          setError(null);
+                        }}
+                      />
+                    </div>
+                  )}
                   <h1>Kindly Discuss your Issue</h1>
                   <div className={styles.therapyNotesTextareaPart}>
-                    <textarea placeholder='Tell your story...'
-              value={story}  onChange={(e) => setStory(e.target.value)} ></textarea>
+                    <textarea
+                      placeholder="Tell your story..."
+                      value={story}
+                      onChange={(e) => setStory(e.target.value)}
+                    ></textarea>
                   </div>
                 </div>
                 {/* <div className={styles.therapyNotesDivider}>
@@ -570,7 +523,9 @@ const TherapyFormComp = ({ userToken }) => {
                 </div> */}
                 <div className={styles.therapyButton02}>
                   <button onClick={() => setStep(1)}>Back</button>
-                  <button type="button" onClick={handleSetProblemArray}>Complete</button>
+                  <button type="button" onClick={handleSetProblemArray}>
+                    Complete
+                  </button>
                 </div>
               </div>
             </div>

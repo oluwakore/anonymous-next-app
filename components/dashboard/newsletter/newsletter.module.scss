@@ -1,9 +1,9 @@
 .newsletterContainer {
   background-repeat: no-repeat;
   background-size: cover;
-  
+
   width: 100%;
-   padding: 10rem 0;
+  padding: 10rem 0;
 
   .newsletterContainerMain {
     display: flex;
@@ -12,7 +12,7 @@
 
     margin: auto;
     width: 70%;
-  } 
+  }
 
   .newsletterContainerMainDesc {
     // display: flex;
@@ -22,7 +22,6 @@
       font-size: 1.8rem;
       font-weight: 600;
       color: #ffff;
-      
     }
     p {
       font-size: 1rem;
@@ -35,16 +34,15 @@
   .newsletterContainerMainForm {
     display: flex;
     margin-left: 2rem;
-    
+
     button {
       color: white;
       font-size: 1rem;
       background-color: #0e0b8b;
       outline: none;
       border: none;
-      padding: .8rem 3rem;
+      padding: 0.8rem 3rem;
       border-radius: 2rem;
-
     }
 
     input {
@@ -63,41 +61,41 @@
   }
 }
 
-
-@media screen and (max-width: 1024px)  {
- .newsletterContainerMain {
+@media screen and (max-width: 1024px) {
+  .newsletterContainerMain {
     width: 80% !important;
-  } 
+  }
 
   .newsletterContainerMainDesc {
     h1 {
       font-size: 1.25rem !important;
-      
     }
     p {
-      font-size: .8rem !important;
+      font-size: 0.8rem !important;
     }
   }
 
   .newsletterContainerMainForm {
     button {
-      font-size: .85rem !important;
+      font-size: 0.85rem !important;
     }
 
     input {
-      font-size: .85rem !important;
+      font-size: 0.85rem !important;
     }
   }
+}
+
+@media screen and (max-width: 768px) {
 }
 
 @media screen and (max-width: 600px) {
   .newsletterContainer {
     background-repeat: no-repeat !important;
     background-size: cover !important;
-    background-image: url('../../../public/images/dashboard/newsletter-mobile.png') !important;
+    background-image: url("../../../public/images/dashboard/newsletter-mobile.png") !important;
 
     padding: 5rem 0;
-
 
     .newsletterContainerMain {
       flex-direction: column;
@@ -109,7 +107,7 @@
         margin-bottom: 2rem !important;
         color: #ffff;
         h1 {
-          text-align: center;          
+          text-align: center;
         }
         p {
           text-align: center;
@@ -121,20 +119,20 @@
         // outline: 3px solid crimson;
         margin-left: 0 !important;
         // gap: 1rem;
-    
+
         button {
           margin-top: 1rem !important;
           margin: auto;
           width: fit-content !important;
-          font-size: .85rem !important;
-          padding: .8rem 2rem !important;
+          font-size: 0.85rem !important;
+          padding: 0.8rem 2rem !important;
         }
-    
+
         input {
-          font-size: .8rem !important;
+          font-size: 0.8rem !important;
         }
       }
-    } 
+    }
 
     .newsletterContainerInput {
       padding: 1rem 1rem 1rem 1.5rem !important;

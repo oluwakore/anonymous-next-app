@@ -1,18 +1,14 @@
 .rightMainCover {
   // display: flex;
   margin: auto;
-  // align-items: flex-end;
-  // justify-content: flex-end;
   width: 25%;
 
-
   // background-color: #fcfcfc;
-  
+
   margin-top: 1rem;
   .rightMainContainer {
     margin-top: 4rem;
     width: 100%;
-   
 
     display: flex;
     flex-direction: column;
@@ -20,30 +16,27 @@
     // justify-content: center;
     background-color: #ffff;
     height: 90rem;
-   
 
     .rightMainSvg {
       // outline: 3px solid black;
-       margin-top: 6.5em;
-       img {
+      margin-top: 6.5em;
+      img {
         width: 100%;
         // outline: 3px solid blue;
-       }
+      }
     }
   }
 
   .rightButtonCover {
-    margin-top: .5em;
+    margin-top: 0.5em;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #0e0b8b;
     // outline: 3px solid salmon;
     width: 80%;
-    // width: 330px;
-    // height: 50px;
     min-width: 14rem;
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
     border-radius: 2rem;
     cursor: pointer;
 
@@ -51,39 +44,32 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      // gap: 1.3rem;
-      // justify-content: space-between;
-      // width: 220px;
+
 
       .rightButtonMainIcon {
         font-size: 2rem;
       }
-       p{
+      p {
         color: #ffff;
         font-size: 1rem;
         margin: auto;
         margin-left: 1.2rem;
-       }
-      
+      }
     }
   }
 }
 
-.rightCalendar{
+.rightCalendar {
   margin-top: 6rem;
   width: 100%;
- 
 }
 
 .rightAppointment {
   margin-top: 16rem;
   display: flex;
-  flex-direction: column;
-  // align-items: center;
-  // justify-content: center;
+  flex-direction: column; 
   width: 75%;
-  // gap: 1.5rem;
-  // outline:  3px solid magenta;
+
 
   h2 {
     font-size: 1rem;
@@ -92,17 +78,15 @@
     text-align: center;
   }
 
-
   .emptyMsg {
-  margin-top: 1.5rem;
-  //  outline: 3px solid red;
-  display: flex;
+    margin-top: 1.5rem;
+    //  outline: 3px solid red;
+    display: flex;
 
-   
     .emptyMsgSpan {
       display: flex;
       // outline: 3px solid red;
-      font-size: .8rem;
+      font-size: 0.8rem;
       color: gray;
       width: 100%;
     }
@@ -116,10 +100,9 @@
     height: 20rem;
     overflow: auto;
     // outline: 3px solid magenta;
-    padding: .5rem;
+    padding: 0.5rem;
     width: 100%;
   }
-
 
   .rightMenu1 {
     display: flex;
@@ -128,9 +111,9 @@
     align-items: center;
     color: #ffff;
     width: 100%;
-    padding: .5rem 2rem;
+    padding: 0.5rem 2rem;
     border-radius: 1rem;
-    background-color: #00BCD7;
+    background-color: #00bcd7;
     margin-bottom: 1.5rem;
 
     h3 {
@@ -141,7 +124,7 @@
 
     p {
       text-align: center;
-      font-size: .8rem;
+      font-size: 0.8rem;
     }
   }
   .rightMenu2 {
@@ -151,37 +134,33 @@
     align-items: center;
     color: #ffff;
     width: 100%;
-    padding: .5em 2em;
+    padding: 0.5em 2em;
     border-radius: 1em;
-    background-color: #FFC107;
+    background-color: #ffc107;
     margin-bottom: 1.5rem;
     h3 {
       color: #ffff;
       font-size: 1rem;
     }
     p {
-      font-size: .8rem;
+      font-size: 0.8rem;
     }
   }
-
 }
-
 
 .calendarImg {
-// display: none !important;
-position: absolute;
-top: 5.7rem;
-left: 2rem;
-// transform: translate(-400%, -310%);
-// -ms-transform: translate(-400%, -310%);
+  // display: none !important;
+  position: absolute;
+  top: 5.7rem;
+  left: 2rem;
+  // transform: translate(-400%, -310%);
+  // -ms-transform: translate(-400%, -310%);
 }
 
-
-@media screen and (max-width: 1024px)  {
+@media screen and (max-width: 1024px) {
   .right-main-cover {
     width: 30% !important;
   }
-
 
   .rightAppointment {
     h2 {
@@ -190,61 +169,54 @@ left: 2rem;
   }
 
   .rightMenu1 {
-  
     h3 {
-     
-      font-size: .9rem !important;
+      font-size: 0.9rem !important;
     }
 
     p {
-      font-size: .7rem !important;
+      font-size: 0.7rem !important;
     }
   }
   .rightMenu2 {
-   
     h3 {
-     
-      font-size: .9rem !important;
+      font-size: 0.9rem !important;
     }
 
     p {
-      font-size: .7rem !important;
+      font-size: 0.7rem !important;
     }
   }
 
   .rightButtonMain {
-   
-     p{
+    p {
       color: #ffff;
-      font-size: .85rem !important;
+      font-size: 0.85rem !important;
       margin: auto;
-     }
-    
+    }
   }
 
   .calendarImg {
     left: 0% !important;
     top: 25% !important;
-    }
+  }
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {}
 
+@media screen and (max-width: 600px) {
   .emptyMsg {
     margin-top: 1rem !important;
     //  outline: 3px solid red;
-     display: flex;
-     align-items: center;
-     justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  
-     
-      .emptyMsgSpan {
-        // outline: 3px solid red;
-        font-size: .7rem !important;
-      }
+    .emptyMsgSpan {
+      // outline: 3px solid red;
+      font-size: 0.7rem !important;
     }
+  }
 
   .rightMainCover {
     margin-top: -2rem;
@@ -257,54 +229,50 @@ left: 2rem;
 
       .rightMainSvg {
         // outline: 3px solid black;
-         margin-top: 0rem;
+        margin-top: 0rem;
       }
-       .rightButtonCover {
+      .rightButtonCover {
         min-width: fit-content !important;
         .rightButtonMain {
-
-
           .rightButtonMainIcon {
             font-size: 1.5rem;
           }
 
-           p{
-            font-size: .9rem !important;
-           }
+          p {
+            font-size: 0.9rem !important;
+          }
         }
-       }
+      }
     }
-    .rightCalendar{
+    .rightCalendar {
       margin-top: 2rem;
     }
-
 
     .calendarImg {
       // position: absolute;
       top: 1.8rem !important;
       left: 1rem !important;
+    }
+
+    .rightAppointment {
+      margin-top: 12rem;
+      // outline: 3px solid goldenrod;
+      padding-bottom: 4rem;
+      width: 100% !important;
+      h2 {
+        font-size: 1rem !important;
       }
 
-      .rightAppointment {
-        margin-top: 12rem;
-        // outline: 3px solid goldenrod;
-        padding-bottom: 4rem;
+      .rightMenuCover {
+        display: flex;
+        flex-direction: column;
+        // gap: 1.5rem;
+        height: 20rem;
+        overflow: auto;
+        // outline: 3px solid magenta;
+        padding: 0.5rem;
         width: 100% !important;
-        h2 {
-          font-size: 1rem !important;
-        }
-      
-
-        .rightMenuCover {
-          display: flex;
-          flex-direction: column;
-          // gap: 1.5rem;
-          height: 20rem;
-          overflow: auto;
-          // outline: 3px solid magenta;
-          padding: .5rem;
-          width: 100% !important;
-        }
       }
+    }
   }
 }

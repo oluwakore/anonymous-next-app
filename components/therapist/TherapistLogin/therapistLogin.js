@@ -28,25 +28,21 @@ function TherapistLogin() {
 
   const dispatch = useDispatch()
 
+   // gets the userlogin redux state
   const userLogin = useSelector((state) => state.userLogin)
    const  { error, loading, userInfo } = userLogin
 
-
+ // logins the therapist
    const onFinish = async (values) => {
     const {email, password} = values
     dispatch(loginUser(email, password))
-   }
-
-   useEffect(() => {
-    if(userInfo) {
-      if(userInfo?.user?._kind !== 'therapist') {
-        message.error('You are not a therapist!')
-      } else {
-           router.push('/therapist/dashboard')
+    if (userInfo.user._kind === "therapist") {
       openNotificationWithIcon('success', 'Sign In', `Welcome Therapist`)
+      router.push("/therapist/dashboard");
+    } else {
+      message.error("you do not possess therapist rights!");
     }
-      }
-   }, [userInfo]) 
+   }
 
   
   return (

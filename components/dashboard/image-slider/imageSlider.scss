@@ -3,22 +3,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .left-arrow {
- 
   margin-right: 1em;
   cursor: pointer;
   user-select: none;
-  
+
   img {
     width: 100%;
   }
 }
 
 .right-arrow {
- 
   margin-left: 1em;
   cursor: pointer;
   user-select: none;
@@ -28,19 +25,16 @@
   }
 }
 
-
 .encapsulator {
-// margin-top: 90px;
-// margin-left: 5rem;
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: center;
-width: 70%;
-// outline: 3px solid black;
-padding:  4em 0;
-
-
+  // margin-top: 90px;
+  // margin-left: 5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  // outline: 3px solid black;
+  padding: 4em 0;
 }
 
 .image-slider-card {
@@ -50,16 +44,13 @@ padding:  4em 0;
   display: flex;
   gap: 1em;
   // outline: 3px solid salmon;
-
- 
 }
-
 
 .image-slider-card-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #0e0b8b ;
+  background-color: #0e0b8b;
   padding: 4em;
   // width: 965px;
   // height: 378px;
@@ -75,39 +66,38 @@ padding:  4em 0;
   color: white;
   width: 70%;
   // padding: 20px;
-
- 
 }
-
 
 .image-slider-card-image {
- outline: 3px solid yellow;
+  outline: 3px solid yellow;
   width: 30%;
-  img { width: 100%;}
+  img {
+    width: 100%;
+  }
 }
 
-@media screen and (max-width: 1024px)  { 
+@media screen and (max-width: 992px) {
   .encapsulator {
     width: 90% !important;
     outline: 3px solid black;
-    padding:  4em 0;
-    }
+    padding: 4em 0;
+  }
 
-    .image-slider-card-container {
-      padding: 2rem !important;
-      transition: 5s ease !important;
+  .image-slider-card-container {
+    padding: 2rem !important;
+    transition: 5s ease !important;
+  }
+
+  .image-slider-card {
+    // width: 840px;
+    // height: 248px;
+    background-color: #0e0b8b;
+    display: flex;
+    gap: 1em;
+    // outline: 3px solid salmon;
+
+    p {
+      font-size: 0.5rem !important;
     }
-    
-    .image-slider-card {
-      // width: 840px;
-      // height: 248px;
-      background-color: #0e0b8b;
-      display: flex;
-      gap: 1em;
-      // outline: 3px solid salmon;
-    
-     p {
-      font-size: .5rem !important;
-     }
-    } 
+  }
 }

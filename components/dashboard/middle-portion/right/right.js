@@ -1,27 +1,27 @@
 import React, { useState } from "react";
-import { Empty } from 'antd';
-import  Link  from 'next/link';
+import { Empty } from "antd";
+import Link from "next/link";
 import { PlusCircleOutlined } from "@ant-design/icons";
 
-import styles from  "./right.module.scss";
+import styles from "./right.module.scss";
 
 import moment from "moment";
 import Calender from "./calendar";
 
 function Right({ sessionsData, calendarDatesArray }) {
+  // console.log(sessionsData)
 
-  console.log(sessionsData)
-
+  // get appointments from session data
   const checkForAppt = () => {
-    let arr = []
+    let arr = [];
     sessionsData?.forEach((item) => {
-      if(item.appointments.length !== 0) {
-        arr.push(item)
+      if (item.appointments.length !== 0) {
+        arr.push(item);
       }
-    })
+    });
 
-    return arr.length 
-  }
+    return arr.length;
+  };
 
   // const filteredSessions = sessionsData.filter((item) =>   )
   return (
@@ -32,13 +32,16 @@ function Right({ sessionsData, calendarDatesArray }) {
         </div>
         <div className={styles.rightButtonCover}>
           <div className={styles.rightButtonMain}>
-            <PlusCircleOutlined style={{color: "white" }} className={styles.rightButtonMainIcon} />
+            <PlusCircleOutlined
+              style={{ color: "white" }}
+              className={styles.rightButtonMainIcon}
+            />
             <p>Make Appointment</p>
           </div>
         </div>
-        <div style={{ width: "100%", position: "relative" }} >
+        <div style={{ width: "100%", position: "relative" }}>
           <div className={styles.rightCalendar}>
-          <Calender  apptDates={calendarDatesArray} />
+            <Calender apptDates={calendarDatesArray} />
           </div>
           <div className={styles.calendarImg}>
             <img
@@ -50,35 +53,51 @@ function Right({ sessionsData, calendarDatesArray }) {
         </div>
         <div className={styles.rightAppointment}>
           <h2>Up Coming Appointment</h2>
-          
-          {
-            checkForAppt() === 0 ? 
-            (<div className={styles.emptyMsg} > <Empty  
-              imageStyle={{
-                height: 80,
-              }}
-              description={
-              <span className={styles.emptyMsgSpan} >
-               You do not have any appointments yet...
-              </span>
-            } />  </div>) 
-            : (<div  className={styles.rightMenuCover}  >
-              {
-               sessionsData?.map((item, index) => (
-                 <div key={index}> {item?.appointments.filter((list) => list.status === "pending" ).map((sub, index) => (
-                   <div key={index}  className={styles.rightMenu1} >
-                     <h3> { moment(Date.now()).format('L') ===  moment(sub.start_time).format('L') ? 'Today' : moment(sub.start_time).format('L') } </h3>
-                      <p> {sub.title} </p>
-                      <p> { `${moment(sub.start_time).format('LT')} - ${moment(sub.end_time).format('LT')}`} </p>
-                     <p> Dr. {item.therapist.name} </p>
-                     </div>
-                  
-                 ))} </div>
-               ))
-              }
-         
-             </div>)
-          }
+
+          {checkForAppt() === 0 ? (
+            <div className={styles.emptyMsg}>
+              {" "}
+              <Empty
+                imageStyle={{
+                  height: 80,
+                }}
+                description={
+                  <span className={styles.emptyMsgSpan}>
+                    You do not have any appointments yet...
+                  </span>
+                }
+              />{" "}
+            </div>
+          ) : (
+            <div className={styles.rightMenuCover}>
+              {sessionsData?.map((item, index) => (
+                <div key={index}>
+                  {" "}
+                  {item?.appointments
+                    .filter((list) => list.status === "pending")
+                    .map((sub, index) => (
+                      <div key={index} className={styles.rightMenu1}>
+                        <h3>
+                          {" "}
+                          {moment(Date.now()).format("L") ===
+                          moment(sub.start_time).format("L")
+                            ? "Today"
+                            : moment(sub.start_time).format("L")}{" "}
+                        </h3>
+                        <p> {sub.title} </p>
+                        <p>
+                          {" "}
+                          {`${moment(sub.start_time).format("LT")} - ${moment(
+                            sub.end_time
+                          ).format("LT")}`}{" "}
+                        </p>
+                        <p> Dr. {item.therapist.name} </p>
+                      </div>
+                    ))}{" "}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -86,8 +105,6 @@ function Right({ sessionsData, calendarDatesArray }) {
 }
 
 export default Right;
-
-
 
 //  {/* <div className={styles.rightMenu1}>
 //             <h3>22/10/2022</h3>

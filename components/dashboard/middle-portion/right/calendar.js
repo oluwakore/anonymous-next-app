@@ -24,69 +24,12 @@ const text = (
   </div>
 );
 
-
 const Calender = ({ apptDates }) => {
- 
-  
+  const dispatch = useDispatch();
 
-  const dispatch = useDispatch()
-
-  // const userLogin = useSelector((state) => state.userLogin)
-  // const  { userInfo } = userLogin 
-
-  // const loggedUserId = userInfo?.user?.id
-
-  // const loggedUserToken = userInfo?.token
-
-
-  const userDetails = useSelector((state) => state.userDetails)
-  const {  user }  = userDetails
-
-  
-
-  // console.log(user?.data?.activeSessions);
-
-  
-
-
-
-
-  // const removeDupli = () => {
-  //  const final =  arrayCal.filter((c, index) => {
-  //     return arrayCal.indexOf(c) === index;
-  // });
-  
-  //  arrayCal2.push(final)
-
-  // }
-  
-
-  
-
-
-  
-  // useEffect(() => {
-  //   // setMainSessionStuff(user?.data?.activeSessions)
-
-  //   if (user?.data?.activeSessions !== undefined) {
-  //     dispatch(storeApptDatesArray(calDetr()))
-  //     // console.log('yeah!!!')
-  //     //  calDetr();
-  //     //  removeDupli()
-  //   }
-    
-   
-  // }, [dispatch]);
-
-
-
-  // const appointmentDetails = useSelector((state) => state.storeApptDetails)
-  // const { appt }  = appointmentDetails
-
-
-  // console.log(appt)
-
- 
+  // gets the userlogin redux state
+  const userDetails = useSelector((state) => state.userDetails);
+  const { user } = userDetails;
 
   const data = [
     {
@@ -109,31 +52,25 @@ const Calender = ({ apptDates }) => {
     },
   ];
 
-
   /**
    * Gets the object of the date that was clicked
    * @param e Object
    */
   const selectedEvent = (e) => {
-    const { extendedProps, title} = e.event._def;
+    const { extendedProps, title } = e.event._def;
 
     let clicked = {
       title,
       ...extendedProps,
     };
 
-    
     // console.log(clicked);
     // console.log(extendedProps)
-    
-  
-   message.info(`You have an appointment by: ${extendedProps.appt_day} with ${extendedProps.therapist_name}. Do keep this in mind...`, [5])
-   
-    // return (
-    //   <Tooltip placement="top" title={title}  trigger={["click"]} >
-    //     <div class="fc-event-title fc-sticky"> {title} </div>
-    //   </Tooltip>
-    // )
+
+    message.info(
+      `You have an appointment by: ${extendedProps.appt_day} with ${extendedProps.therapist_name}. Do keep this in mind...`,
+      [5]
+    );
   };
 
   /**
@@ -146,16 +83,6 @@ const Calender = ({ apptDates }) => {
       title,
       ...extendedProps,
     };
-
-    // return (
-    //   <Tooltip placement="left"  title={text} color={`blue`}>
-    //     <div className='calend-events'>
-    //     <div  className='calend-events-main'>
-    //     {title}
-    //     </div>
-    //   </div>
-    //   </Tooltip>
-    // )
   };
 
   return (
@@ -164,7 +91,6 @@ const Calender = ({ apptDates }) => {
         width: "100%",
       }}
     >
-     
       <FullCalendar
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
         initialView="dayGridMonth"
@@ -177,7 +103,7 @@ const Calender = ({ apptDates }) => {
         dayMaxEvents={1}
         eventClick={(e) => selectedEvent(e)}
         events={apptDates}
-        // in case you want to custmize whats being rendered on the date
+        // in case you want to customize whats being rendered on the date
         eventContent={(info) => eventContent(info)}
       />
     </div>

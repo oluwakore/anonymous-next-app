@@ -88,9 +88,7 @@ function ImageSlider() {
                         {" "}
                         <img src="images/dashboard/apos.png" alt="" />{" "}
                       </div>
-                      <p
-                        style={{ fontSize: "1rem", padding: "1em" }}
-                      >
+                      <p style={{ fontSize: "1rem", padding: "1em" }}>
                         {" "}
                         {slide.desc}{" "}
                       </p>

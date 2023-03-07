@@ -4,47 +4,47 @@ const { Option } = Select;
 import styles from "./admindashboard.module.scss";
 import { addTherapists } from "../../../api/base";
 
-
+// list of specializations for therapist
 const children = [
   {
     id: 0,
     title: "Dating",
-    rep: 'dating'
+    rep: "dating",
   },
   {
     id: 1,
     title: "Marriage",
-    rep: 'marriage'
+    rep: "marriage",
   },
   {
     id: 2,
     title: "Depression",
-    rep: 'depression'
+    rep: "depression",
   },
   {
     id: 3,
     title: "Divorce",
-    rep: 'divorce'
+    rep: "divorce",
   },
   {
     id: 4,
     title: "Child",
-    rep: 'child'
+    rep: "child",
   },
   {
     id: 5,
     title: "Exercise",
-    rep: 'exercise'
+    rep: "exercise",
   },
   {
     id: 6,
     title: "Personality Disorder",
-    rep: 'personalityDisorder'
+    rep: "personalityDisorder",
   },
   {
     id: 7,
     title: "Suicide",
-    rep: 'suicide'
+    rep: "suicide",
   },
 ];
 
@@ -59,9 +59,9 @@ function AdminDashboardComp({ adminToken }) {
   // const [pseudospecialization, setPseudoSpecialization] = useState([])
   const [loading, setLoading] = useState(false);
 
-  let specialization = []
+  // initailize specialiation array
+  let specialization = [];
 
-  
   const showModal = () => {
     setIsModalOpen(true);
   };
@@ -76,44 +76,49 @@ function AdminDashboardComp({ adminToken }) {
 
   const handleChange = (value) => {
     setGender(value);
-   
   };
 
+  // creates a new therapist
+  const handleAddTherapists = async (e) => {
+    e.preventDefault();
 
- const  handleAddTherapists = async(e) => {
-  e.preventDefault()
+    // const data = { email, name, password, image, gender };
 
-  const data = {email, name, password, image, gender}
+    if (specialization[specialization.length - 1]?.length > 4) {
+      message.error("Specs above 4!");
+    } else {
+      try {
+        setLoading(true);
+        const res = await addTherapists(
+          {
+            email,
+            name,
+            password,
+            image,
+            gender,
+            specialization: specialization[specialization.length - 1],
+          },
+          adminToken
+        );
 
-  if (specialization[specialization.length - 1]?.length > 4) {
-    message.error('Specs above 4!')
-     
-  } else {
-    try {
-    setLoading(true)
-     const res = await addTherapists({email, name, password, image, gender, specialization: specialization[specialization.length - 1]}, adminToken) 
+        //  console.log(res.data)
 
-     console.log(res.data)
-
-     setLoading(false)
-
-    } catch(err) {
-      setLoading(false)
-      console.error(err)
+        setLoading(false);
+      } catch (err) {
+        setLoading(false);
+        console.error(err);
+      }
     }
-  }
-  
- }
+  };
 
-
+  // handles selection of specializations
   const handleSpecChange = (value) => {
-    specialization.push(value)
+    specialization.push(value);
 
-   if (specialization[specialization.length - 1]?.length > 4) {
-    message.error('check your error in specs')
-   }
-    console.log(specialization)
-    
+    if (specialization[specialization.length - 1]?.length > 4) {
+      message.error("check your error in specs");
+    }
+    // console.log(specialization)
   };
 
   return (
@@ -196,11 +201,12 @@ function AdminDashboardComp({ adminToken }) {
                     <Option key={index} value={spec.rep}>
                       {spec.title}
                     </Option>
-                  )
-                )}
+                  ))}
                 </Select>
               </div>
-              <button type="submit">{loading ? 'Creating' : 'Create Therapist' }</button>
+              <button type="submit">
+                {loading ? "Creating" : "Create Therapist"}
+              </button>
             </form>
           </div>
         </Modal>

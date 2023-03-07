@@ -1,9 +1,7 @@
 .storiesContainer {
-  margin-top: .8rem;
+  margin-top: 0.8rem;
   display: flex;
   flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
   width: 100%;
 
   .tagsCover {
@@ -39,14 +37,7 @@
 
   .storiesHeadliner {
     display: flex;
-    // flex-direction: row;
-    // justify-content: center;
-    // align-items: center;
-    // outline: 3px solid green;
-    background-color: #E2DBFF;
-    // gap: 2em;
-    // height: 748px;
-    // width: 100%;
+    background-color: #e2dbff;
     padding: 3rem 0;
     font-size: 1rem;
 
@@ -55,12 +46,7 @@
       height: 100%;
     }
 
-
     .storiesNotes {
-      // display: flex;
-      // flex-direction: column;
-      // gap: 1em;
-      // padding: 92px;
       width: 50%;
       margin-top: 2rem;
       margin-left: 2rem;
@@ -73,7 +59,7 @@
       p {
         font-size: 1rem;
         font-weight: 400;
-        color: #5A5A5A;
+        color: #5a5a5a;
       }
       button {
         color: #0e0b8b;
@@ -82,8 +68,8 @@
         border-radius: 2em;
         // height: 40px;
         width: fit-content;
-        padding: .5em 1em;
-        font-size: .9rem;
+        padding: 0.5em 1em;
+        font-size: 0.9rem;
         font-weight: 500;
       }
     }
@@ -94,18 +80,15 @@
     display: flex;
     flex-direction: column;
     padding: 6rem 4em;
-    // margin-left: 50px;
     justify-content: center;
     align-items: center;
     width: 90%;
-    // outline: 3px solid forestgreen;
-    // background-color: coral;
 
     .storiesMainTitle {
       display: flex;
       // outline: 3px solid yellow;
       align-self: flex-start;
-      
+
       h1 {
         font-size: 1.8rem;
         color: #0e0b8b;
@@ -114,9 +97,7 @@
     }
   }
 
-
-
-  .storiesGrid { 
+  .storiesGrid {
     align-items: center;
     justify-content: center;
     // margin-top: 80px;
@@ -125,15 +106,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 6rem;
     width: 100%;
-    // margin-left: 60px;
-    // margin-left: 110px;
-   
 
-    // img {
-    //   aspect-ratio: 4/2.5;
-    //    width: 100%;
-    //    border-radius: 1.5rem;
-    // }
     h2 {
       margin-top: 1rem;
       font-size: 1.2rem;
@@ -142,7 +115,7 @@
     }
 
     p {
-      color: #5A5A5A;
+      color: #5a5a5a;
       font-size: 1rem;
       // max-width: 70em;
       width: 100%;
@@ -154,21 +127,17 @@
       cursor: pointer;
       user-select: none;
     }
-    
   }
 
   .storiesMainButtonGroup {
     display: flex;
     flex-direction: row;
     align-items: center;
-    // gap: 5rem;
     justify-content: space-between;
     width: 100%;
     // outline: 3px solid pink;
 
     .active {
-      
-     
       color: #ffff;
       background-color: #0e0b8b;
       border: none;
@@ -178,15 +147,15 @@
     }
 
     button {
-     width: 100%;
-      padding: .5rem 0;
+      width: 100%;
+      padding: 0.5rem 0;
       color: #ffff;
       border: none;
       outline: none;
       font-size: 1rem;
       background-color: lighten($color: #4745cc, $amount: 15);
       border-radius: 50px;
-      margin-left: .5rem;
+      margin-left: 0.5rem;
     }
   }
 
@@ -207,23 +176,23 @@
     width: 50%;
 
     small {
-    position: absolute;
-    //  transform: translate(5%, 5%);
-    top: 3%;
-    left: 3%; 
-    background: #BDB0FF;
-    padding: .5rem;
-    border-radius: 1rem;
-    color: #0e0b8b;
-    font-size: .8rem;
-    font-weight: 500;
+      position: absolute;
+      //  transform: translate(5%, 5%);
+      top: 3%;
+      left: 3%;
+      background: #bdb0ff;
+      padding: 0.5rem;
+      border-radius: 1rem;
+      color: #0e0b8b;
+      font-size: 0.8rem;
+      font-weight: 500;
     }
 
     img {
       // object-fit: cover;
       width: 100%;
       // height: 15rem;
-      aspect-ratio: 1/.8;
+      aspect-ratio: 1/0.8;
       // height: auto;
       border-radius: 1rem;
       // outline: 3px solid yellow;
@@ -238,51 +207,48 @@
     padding: 1rem;
 
     .storiesGridMainImages {
-    // outline: 3px solid purple;
-
-    img {
       // outline: 3px solid purple;
-      width: 100%;
-      aspect-ratio: 1/.8;
-      border-radius: 1.5rem;
-      // height: 10rem;
-    }
 
-    position: relative;
-    // outline: 3px solid yellow;
+      img {
+        // outline: 3px solid purple;
+        width: 100%;
+        aspect-ratio: 1/0.8;
+        border-radius: 1.5rem;
+        // height: 10rem;
+      }
 
-    small {
-    position: absolute;
-    top: 7%;
-    left: 5%; 
-    background: #BDB0FF;
-    padding: .5rem;
-    border-radius: 1rem;
-    color: #0e0b8b;
-    font-size: .8rem;
-    font-weight: 500;
-    }
-       
-    }
+      position: relative;
+      // outline: 3px solid yellow;
 
+      small {
+        position: absolute;
+        top: 7%;
+        left: 5%;
+        background: #bdb0ff;
+        padding: 0.5rem;
+        border-radius: 1rem;
+        color: #0e0b8b;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+    }
   }
 
   .storiesGridMainDesc {
-    
     // outline: 3px solid blueviolet;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
     height: 7rem;
-    // margin-left: 1.2em;
-    // padding: .5em;
   }
 }
 
 
-@media screen and (max-width: 1024px) {
+
+
+@media screen and (max-width: 992px) {
   .storiesHeadliner {
     display: flex;
     // outline: 3px solid green;
-    background-color: #E2DBFF;
+    background-color: #e2dbff;
     padding: 3rem 4rem !important;
     font-size: 1rem;
 
@@ -291,21 +257,19 @@
       height: 100%;
     }
 
-
     .storiesNotes {
       h1 {
         font-size: 1.2rem !important;
       }
       p {
-        font-size: .8rem !important;
+        font-size: 0.8rem !important;
       }
       button {
-        font-size: .8rem !important;
+        font-size: 0.8rem !important;
       }
     }
   }
 
- 
   .storiesHeadlinerContent {
     width: 95% !important;
     padding: 0 1rem !important;
@@ -327,31 +291,26 @@
     // outline: 3px solid purple;
   }
 
-  .storiesGrid { 
-   
-
+  .storiesGrid {
     img {
       height: auto;
-       width: 100%;
+      width: 100%;
     }
     h2 {
       font-size: 1.2rem !important;
     }
 
     p {
-      font-size: .85rem !important;
+      font-size: 0.85rem !important;
     }
     span {
       margin-left: 3.8rem !important;
-     
     }
-    
   }
 
   .tagsCover {
-    
     // outline: 3px solid yellowgreen;
-    
+
     h1 {
       font-size: 1.2rem !important;
       margin-left: 2rem;
@@ -362,19 +321,16 @@
     }
 
     .tags {
-      font-size: .9rem !important;
-      padding: .8rem 1.5rem !important;
+      font-size: 0.9rem !important;
+      padding: 0.8rem 1.5rem !important;
     }
   }
-
-
 }
-
 
 @media screen and (max-width: 600px) {
   .storiesHeadliner {
     display: flex;
-    
+
     padding: 2rem 0 !important;
     font-size: 1rem;
 
@@ -382,27 +338,22 @@
       // outline: 3px solid yellow;
       width: 80% !important;
 
-
       img {
         // outline: 3px solid yellow;
       }
       small {
-        font-size: .65rem !important;
-        }
-  
+        font-size: 0.65rem !important;
+      }
     }
 
     .storiesHeadlinerContent {
       // outline: 3px solid firebrick;
       flex-direction: column;
       width: 90% !important;
-      padding: 0 .5rem !important;
+      padding: 0 0.5rem !important;
     }
 
-
-
     .storiesNotes {
-     
       width: 90% !important;
 
       h1 {
@@ -410,12 +361,11 @@
         text-align: center !important;
       }
       p {
-        font-size: .8rem !important;
+        font-size: 0.8rem !important;
       }
       button {
-        padding: .35rem .5rem !important;
-        font-size: .8rem !important;
-       
+        padding: 0.35rem 0.5rem !important;
+        font-size: 0.8rem !important;
       }
     }
   }
@@ -430,7 +380,7 @@
       justify-content: center !important;
       // outline: 3px solid yellow;
       align-self: center !important;
-      
+
       h1 {
         font-size: 1.2rem !important;
       }
@@ -444,48 +394,46 @@
     // height: 50% !important;
 
     .active {
-      font-size: .85rem !important;
+      font-size: 0.85rem !important;
     }
 
     button {
-    margin-bottom: 1rem;
-    //  width: 80% !important;
-    //   padding: .5rem 3rem;
-      font-size: .85rem !important;
+      margin-bottom: 1rem;
+      //  width: 80% !important;
+      //   padding: .5rem 3rem;
+      font-size: 0.85rem !important;
     }
   }
 
-  .storiesGrid { 
+  .storiesGrid {
     padding: 1rem 0 !important;
     grid-template-columns: 1fr !important;
     gap: 1.5rem !important;
-   
+
     h2 {
       font-size: 1rem !important;
     }
 
     p {
-      font-size: .8rem !important;
+      font-size: 0.8rem !important;
     }
     span {
-      margin-left: .2rem !important;
+      margin-left: 0.2rem !important;
     }
 
     .storiesGridMainImages {
       // outline: 3px solid purple;
-  
+
       small {
-      font-size: .65rem !important;
+        font-size: 0.65rem !important;
       }
-         
-      }
-    
+    }
   }
 
   .tagsCover {
     // width: 90%;
     // outline: 3px solid yellowgreen;
-    
+
     h1 {
       font-size: 1rem !important;
       margin-left: 1rem !important;
@@ -496,9 +444,13 @@
     }
 
     .tags {
-      font-size: .75rem !important;
-      padding: .6rem 1.2rem !important;
+      font-size: 0.75rem !important;
+      padding: 0.6rem 1.2rem !important;
     }
   }
+}
+
+
+@media screen and (max-width: 768px) {
 
 }

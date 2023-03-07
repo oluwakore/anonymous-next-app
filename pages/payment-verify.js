@@ -9,29 +9,37 @@ import { saveSessionMetadata } from "../core/actions/therapistListActions/therap
 import Link from "next/link";
 
 function PaymentVerify() {
+  // state for loading  verification status
   const [loading, setLoading] = useState(true);
 
   const dispatch = useDispatch();
 
+  // redux state for therapist booking details
   const therapId = useSelector((state) => state.therapistBooking);
 
+  // reference id for payment
   const { referenceId } = therapId;
 
+  // gets the userlogin redux state
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
+  // the id for the logged in user
   const loggedUserId = userInfo?.user?.id;
 
+  // the token for the logged in user
   const loggedUserToken = userInfo?.token;
 
-  // console.log(loggedUserToken)
+  // console.log(referenceId)
 
+  // runs the verification check
   const handleVerify = async () => {
-    // setLoading(true)
     try {
       // setLoading(true);
 
       const res = await verifyPaymentStatus(referenceId, loggedUserToken);
+
+      console.log(res?.data?.data?.metadata);
 
       if (res?.data?.status === "success") {
         setLoading(false);
@@ -47,8 +55,8 @@ function PaymentVerify() {
   useEffect(() => {
     if (referenceId) {
       setTimeout(() => {
-        setLoading(false)
-      }, 5000)
+        setLoading(false);
+      }, 5000);
       handleVerify();
     }
   }, []);

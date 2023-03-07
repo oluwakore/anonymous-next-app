@@ -7,26 +7,22 @@
 }
 
 .therapyFormContainer {
-  margin-top: .7rem;
+  margin-top: 0.7rem;
   // height: 100vh;
   // display: flex;
   // flex-direction: column;
-  
+
   //  outline: 3px solid salmon;
 
-
   .therapyFormContainerTitle {
-   
     text-align: center;
     h1 {
       font-size: 2rem;
       font-weight: 600;
-    
-    } 
+    }
     p {
-      font-size:  1rem;
+      font-size: 1rem;
       font-weight: 500;
-     
     }
   }
 
@@ -35,191 +31,179 @@
     display: flex;
     padding: 1rem;
     justify-content: center;
-    margin-bottom: 5rem;  
+    margin-bottom: 5rem;
 
-   .optionSelect {
-    display:  grid;
-    grid-template-columns: 1fr;
-    gap: .5rem;
-   }
-
-
-   .therapyFormInputText {
-    display: flex;
-    justify-content: space-between;
-    // align-items: center;
-    // background-color: chartreuse;
-    border: 2px solid #0e0b8b;
-    // height: 54px;
-    // width: 294px;
-    // padding: 20px;
-    padding: .2rem .5rem;
-    border-radius: 1rem;
-    margin-bottom: 1rem;
-
-    input[type="input"] {
-      // width: 250px;
-      // height: 48px;
-      padding-left: .5rem;
-      font-size: .9rem;
-      outline: none;
-      border: none;
-      background: transparent;
-
-    }
-  }
-
-   .therapyForm1Cover {
-    background:  #ffff;
-    padding: 2rem;
-    border: 2px solid  #0e0b8b; 
-    border-radius: 2rem;
-    display: grid;
-    grid-template-columns:  1fr;
-    gap: 2rem;
-    width: 50%;
-
-    .therapyForm1Fields {
-      // outline: 3px solid green;
+    .optionSelect {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 1rem;
-
-      h2 {
-        font-size: 1rem;
-      } 
-
-      .therapyForm1Field {
-        // outline: 3px solid green;
-        h4 {
-          font-size: .9rem;
-        }
-      }
-    }
-   }
-
-   .therapyNotesContainer {
-    // outline: 3px solid green;
-    display: flex;
-    flex-direction: column;
-    width: 75%;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
-    padding: 1rem;
-
-    .therapyButton02 {
-      // outline: 3px solid green;
-      // padding: 3em;
-      width: 60%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin: auto;
-      margin-top: 5rem;
-
-      button {
-      //  width: 50%;
-       background-color: #0e0b8b;
-      //  padding: .5rem 1rem;
-      padding: .5rem 3rem;
-       border-radius: .5rem;
-       color: #ffff;
-       font-size: 1.2rem;
-       border: none;
-       outline: none;
-       cursor: pointer;
-     }
-
+      gap: 0.5rem;
     }
 
-    .therapyNotesVoicenote {
-      // background-color:  #fcfcfc;
-
-
-      // outline: 3px solid saddlebrown;
-      width: 100%;
+    .therapyFormInputText {
       display: flex;
-      flex-direction: column;
-
-
-      h1 {
-        font-size: 1.2rem;
-        text-align: center;
-        
-      }
-
-      .therapyNotesVoicenoteMain {
-        border: 2px solid #0e0b8b;
-        height: 20rem;
-        border-radius: 1rem;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-
-        .therapyNotesVoicenoteMicrophone {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: #0e0b8b;
-          padding: 1rem;
-
-          img {
-            width: 2rem;
-            height: 2rem;
-            object-fit: contain;
-            // aspect-ratio: 1/1;
-          }
-         
-        }
-      }
-    }
-    
-
-    .therapyNotesDivider {
-      margin-top: 2rem;
-      h1 {
-        text-align: center;
-      }
-    }
-
-    .therapyNotesTextarea {
-      width: 100%;
-      // outline: 3px solid slateblue;
-      display: flex;
-      flex-direction: column;
-
-      h1 {
-        font-size: 1.2rem;
-        text-align: center;
-        
-      }
-
-    }
-
-    .therapyNotesTextareaPart {
-     
+      justify-content: space-between;
+      // align-items: center;
+      // background-color: chartreuse;
       border: 2px solid #0e0b8b;
-      // height: 319px;
+      // height: 54px;
+      // width: 294px;
+      // padding: 20px;
+      padding: 0.2rem 0.5rem;
       border-radius: 1rem;
-      width: 100%;
+      margin-bottom: 1rem;
+
+      input[type="input"] {
+        // width: 250px;
+        // height: 48px;
+        padding-left: 0.5rem;
+        font-size: 0.9rem;
+        outline: none;
+        border: none;
+        background: transparent;
+      }
+    }
+
+    .therapyForm1Cover {
+      background: #ffff;
+      padding: 2rem;
+      border: 2px solid #0e0b8b;
+      border-radius: 2rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      width: 50%;
+
+      .therapyForm1Fields {
+        // outline: 3px solid green;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+
+        h2 {
+          font-size: 1rem;
+        }
+
+        .therapyForm1Field {
+          // outline: 3px solid green;
+          h4 {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+
+    .therapyNotesContainer {
+      // outline: 3px solid green;
       display: flex;
+      flex-direction: column;
+      width: 75%;
       justify-content: center;
       align-items: center;
+      margin-top: 2rem;
       padding: 1rem;
 
-      textarea {
-        outline: none;
+      .therapyButton02 {
+        // outline: 3px solid green;
+        // padding: 3em;
+        width: 60%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin: auto;
+        margin-top: 5rem;
+
+        button {
+          //  width: 50%;
+          background-color: #0e0b8b;
+          //  padding: .5rem 1rem;
+          padding: 0.5rem 3rem;
+          border-radius: 0.5rem;
+          color: #ffff;
+          font-size: 1.2rem;
+          border: none;
+          outline: none;
+          cursor: pointer;
+        }
+      }
+
+      .therapyNotesVoicenote {
+        // background-color:  #fcfcfc;
+
+        // outline: 3px solid saddlebrown;
         width: 100%;
-        height: 20rem;
-        background-color: transparent;
-        border: none;
-        resize: none;
-        font-size: 1rem;
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+          font-size: 1.2rem;
+          text-align: center;
+        }
+
+        .therapyNotesVoicenoteMain {
+          border: 2px solid #0e0b8b;
+          height: 20rem;
+          border-radius: 1rem;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+
+          .therapyNotesVoicenoteMicrophone {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0e0b8b;
+            padding: 1rem;
+
+            img {
+              width: 2rem;
+              height: 2rem;
+              object-fit: contain;
+              // aspect-ratio: 1/1;
+            }
+          }
+        }
+      }
+
+      .therapyNotesDivider {
+        margin-top: 2rem;
+        h1 {
+          text-align: center;
+        }
+      }
+
+      .therapyNotesTextarea {
+        width: 100%;
+        // outline: 3px solid slateblue;
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+          font-size: 1.2rem;
+          text-align: center;
+        }
+      }
+
+      .therapyNotesTextareaPart {
+        border: 2px solid #0e0b8b;
+        // height: 319px;
+        border-radius: 1rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+
+        textarea {
+          outline: none;
+          width: 100%;
+          height: 20rem;
+          background-color: transparent;
+          border: none;
+          resize: none;
+          font-size: 1rem;
+        }
       }
     }
-  }
-   
   }
   .formContainer1 {
     // outline: 3px solid yellow;
@@ -239,7 +223,6 @@
     // outline: 3px solid chartreuse;
     justify-content: space-between;
     gap: 2rem;
-    
 
     h2 {
       font-size: 1.2rem;
@@ -292,17 +275,16 @@
         // height: 54px;
         // width: 294px;
         // padding: 20px;
-        padding: .4rem;
+        padding: 0.4rem;
         border-radius: 1rem;
 
         input[type="input"] {
           // width: 250px;
           // height: 48px;
-          font-size: .9rem;
+          font-size: 0.9rem;
           outline: none;
           border: none;
           background: transparent;
-
         }
       }
     }
@@ -318,7 +300,6 @@
     }
   }
 
-
   .therapyForm1Headers {
     border-right: 2px solid #5a5757;
     display: flex;
@@ -326,9 +307,9 @@
     flex-direction: column;
     gap: 7rem;
 
-   h2 {
-    font-size: 2rem;
-   }
+    h2 {
+      font-size: 2rem;
+    }
   }
 
   .therapyColumns {
@@ -347,17 +328,16 @@
       font-size: 1.1rem;
       // font-weight: 500.5;
     }
-    
+
     input[type="radio"] {
       width: 2.5em;
       height: 2.5em;
-     accent-color: black;
+      accent-color: black;
     }
   }
 
-
   .therapyButton {
-  //  outline: 3px solid crimson;
+    //  outline: 3px solid crimson;
     margin: auto !important ;
     width: 100%;
     display: flex;
@@ -365,8 +345,8 @@
     button {
       width: 100%;
       background-color: #0e0b8b;
-      padding: .5rem 3rem;
-      border-radius: .5rem;
+      padding: 0.5rem 3rem;
+      border-radius: 0.5rem;
       color: #ffff;
       font-size: 1.2rem;
       border: none;
@@ -381,7 +361,6 @@
     // outline: 3px solid chartreuse;
     justify-content: space-between;
     gap: 2rem;
-   
 
     h2 {
       font-size: 1.2rem;
@@ -406,11 +385,10 @@
       .therapyFormInputText {
         display: flex;
         flex-direction: row;
-       
+
         align-items: center;
-       
+
         border: 2px solid #0e0b8b;
-     
       }
     }
     .therapyForm1RadioGroups04 {
@@ -426,27 +404,23 @@
       display: flex;
       flex-direction: row;
       gap: 3rem;
-     
     }
   }
 
   .therapyForm2Container {
     display: flex;
     flex-direction: row;
-    
   }
 
   .therapyButton01 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
-   
-   
-    
+
     button {
       background-color: #0e0b8b;
-      padding: .5rem 3rem;
-      border-radius: .5rem;
+      padding: 0.5rem 3rem;
+      border-radius: 0.5rem;
       color: #ffff;
       font-size: 1.2rem;
       border: none;
@@ -464,16 +438,11 @@
     // outline: 3px solid blueviolet;
     width: 80%;
   }
-
-
-
-
 }
 
-@media screen and (max-width: 1024px)  {
-
-  .therapyNotesTextarea, .therapyNotesVoicenote {
-   
+@media screen and (max-width: 992px) {
+  .therapyNotesTextarea,
+  .therapyNotesVoicenote {
     h1 {
       // color: crimson !important;
       // font-size: .2rem !important;
@@ -481,26 +450,22 @@
   }
 
   .therapyFormContainerTitle {
-   
-  
     h1 {
       font-size: 1.5rem !important;
-    } 
+    }
     p {
-      font-size:  .85rem !important;
+      font-size: 0.85rem !important;
     }
   }
 
-
   .therapyNotesContainer {
-    width: 80% !important; 
+    width: 80% !important;
   }
 
   .therapyNotesTextarea {
     h1 {
       font-size: 1.15rem !important;
     }
-
   }
 
   .therapyNotesVoicenote {
@@ -518,8 +483,8 @@
 
   .therapyButton02 {
     button {
-     font-size: 1rem !important;
-     }
+      font-size: 1rem !important;
+    }
   }
 
   .therapyButton01 {
@@ -529,13 +494,13 @@
   }
 
   .therapyForm1Headers {
-   h2 {
-    font-size: 1.5rem !important;
-   }
+    h2 {
+      font-size: 1.5rem !important;
+    }
   }
 
   .therapyColumns {
-     h2 {
+    h2 {
       // color: purple;
       font-size: 1rem !important;
     }
@@ -579,32 +544,32 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+}
 
-@media screen and (max-width: 600px)  {
-
+@media screen and (max-width: 600px) {
   .errorHolder {
-    font-size: .8rem !important;
+    font-size: 0.8rem !important;
   }
 
   .therapyNotesTextareaPart {
     textarea {
       height: 25rem !important;
-      font-size: .8rem !important;
+      font-size: 0.8rem !important;
     }
   }
 
   .therapyNotesDivider {
     margin-top: 2rem;
     h1 {
-      font-size: .9rem !important;
+      font-size: 0.9rem !important;
       text-align: center;
     }
   }
 
   .therapyForm1Container {
-    padding: .5rem !important;
+    padding: 0.5rem !important;
   }
-
 
   .therapyFormContainerCover {
     // height: 100vh !important;
@@ -613,29 +578,23 @@
   }
 
   .therapyFormContainerTitle {
-   
-  
     h1 {
       font-size: 1.1rem !important;
-    } 
+    }
     p {
-      font-size:  .7rem !important;
+      font-size: 0.7rem !important;
     }
   }
-
 
   .therapyForm1Cover {
     width: 100% !important;
     padding: 1rem !important;
   }
 
-
   .therapyForm1Fields {
-
-
     h2 {
-      font-size: .8rem !important;
-    } 
+      font-size: 0.8rem !important;
+    }
 
     .therapyForm1Field {
       // outline: 3px solid green;
@@ -645,52 +604,47 @@
     }
   }
 
-  .therapyButton01 {  
+  .therapyButton01 {
     button {
-      padding: .5rem 1rem !important;
-      font-size: .8rem !important;
-    
+      padding: 0.5rem 1rem !important;
+      font-size: 0.8rem !important;
     }
   }
 
   .therapyButton {
     //  outline: 3px solid crimson;
-      button {
-        font-size: .8rem !important;
-      }
+    button {
+      font-size: 0.8rem !important;
     }
+  }
 
+  .therapyNotesContainer {
+    // outline: 3px solid green;
+    display: flex;
+    flex-direction: column;
+    width: 100% !important;
+  }
 
-    .therapyNotesContainer {
-      // outline: 3px solid green;
-      display: flex;
-      flex-direction: column;
-      width: 100% !important;
+  .therapyNotesTextarea,
+  .therapyNotesVoicenote {
+    h1 {
+      // color: crimson !important;
+      font-size: 0.8rem !important;
     }
+  }
 
-    .therapyNotesTextarea, .therapyNotesVoicenote {
-   
-      h1 {
-        // color: crimson !important;
-        font-size: .8rem !important;
-      }
-    }
-  
+  .therapyButton02 {
+    // outline: 3px solid green;
+    // padding: 3em;
+    width: 100% !important;
+    margin-top: 5rem;
 
-    .therapyButton02 {
-      // outline: 3px solid green;
-      // padding: 3em;
-      width: 100% !important;
-      margin-top: 5rem;
-
-      button {
+    button {
       //  width: 50%;
-       background-color: #0e0b8b;
+      background-color: #0e0b8b;
       //  padding: .5rem 1rem;
-      padding: .5rem 1rem !important;
-       font-size: .8rem !important;
-     }
-
+      padding: 0.5rem 1rem !important;
+      font-size: 0.8rem !important;
     }
-
+  }
 }

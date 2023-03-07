@@ -5,85 +5,88 @@ import { updateTherapist } from "../../../api/base";
 
 const { Option } = Select;
 
-
-
-
 function TherapistDashboardComp({ therapistToken, therapistInfo }) {
-
-// const { monday, tuesday, wednesday, thursday, friday, saturday, sunday }  = therapistInfo?.availableTimes
-
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [monStartdate, setMonStartdate] = useState(therapistInfo?.availableTimes?.monday.split(" ")[0])
-  const [monEndDate, setMonEnddate] = useState(therapistInfo?.availableTimes?.monday.split(" ")[2])
+  const [monStartdate, setMonStartdate] = useState(
+    therapistInfo?.availableTimes?.monday.split(" ")[0]
+  );
+  const [monEndDate, setMonEnddate] = useState(
+    therapistInfo?.availableTimes?.monday.split(" ")[2]
+  );
   const [reverted, setReverted] = useState(false);
   const [none, setNone] = useState(false);
 
+  // console.log(monStartdate)
+  // console.log(monEndDate)
 
-
-  console.log(monStartdate)
-  console.log(monEndDate)
-
+  // creates a range between two times
   const createRange = (first, last) => {
-   return `${first} - ${last}`
-  }
+    return `${first} - ${last}`;
+  };
 
-  const handleUpdateTime = async() => {
-
+  // updates available times for therapist
+  const handleUpdateTime = async () => {
     const newTime = {
-      monday: createRange(monStartdate, monEndDate)
-    }
+      monday: createRange(monStartdate, monEndDate),
+    };
 
     // const availableTimes = {
     //   monday: newTime.monday
     // }
 
     try {
+      const res = await updateTherapist(
+        therapistInfo?.id,
+        { availableTimes: { monday: newTime.monday } },
+        therapistToken
+      );
 
-      const res = await updateTherapist(therapistInfo?.id, {availableTimes: {monday: newTime.monday}} ,therapistToken)
-      
-
-      console.log(res.data)
-
+      // console.log(res.data)
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
 
-    
+    // console.log(newTime)
+  };
 
-    console.log(newTime)
-  }
-
+  // sets start and end times to none
   const setToNone = () => {
-    setNone(true)
-    setMonEnddate("00:00")
-    setMonStartdate("00:00")
-  }
+    setNone(true);
+    setMonEnddate("00:00");
+    setMonStartdate("00:00");
+  };
 
+  // sets time
   const setToSetTime = () => {
-    setNone(false)
-  }
+    setNone(false);
+  };
 
-
+  // handle change in start time
   const handleMonStartChange = (value) => {
     setMonStartdate(value);
   };
+
+  // handle change in start time
   const handleMonEndChange = (value) => {
     setMonEnddate(value);
   };
 
+  // show modal
   const showModal = () => {
     setIsModalOpen(true);
   };
 
+  // show modal
   const handleOk = () => {
     setIsModalOpen(false);
   };
 
+  // cancel modal
   const handleCancel = () => {
     setIsModalOpen(false);
   };
 
-  console.log(therapistInfo);
+  // console.log(therapistInfo);
 
   return (
     <div>
@@ -126,64 +129,69 @@ function TherapistDashboardComp({ therapistToken, therapistInfo }) {
                 List of Availability Times
                 <div>
                   <small>monday:</small>
-                  {
-                    none ? <h3>No time added for this day of the week</h3> :
-                  <div>
-                  <Select
-                  // defaultValue={monStartdate}
-                    placeholder="Select start time"
-                    style={{
-                      width: 200,
-                    }}
-                    onChange={handleMonStartChange}
-                  >
-                    <Option value="08:00am">08:00 am</Option>
-                    <Option value="09:00am">09:00 am</Option>
-                    <Option value="10:00am">10:00 am</Option>
-                    <Option value="11:00am">11:00 am</Option>
-                    <Option value="12:00pm">12:00 pm</Option>
-                    <Option value="01:00pm">01:00 pm</Option>
-                    <Option value="02:00pm">02:00 pm</Option>
-                    <Option value="03:00pm">03:00 pm</Option>
-                    <Option value="04:00pm">04:00 pm</Option>
-                    <Option value="05:00pm">05:00 pm</Option>
-                    <Option value="06:00pm">06:00 pm</Option>
-                    <Option value="07:00pm">07:00 pm</Option>
-                    <Option value="08:00pm">08:00 pm</Option>
-                    <Option value="09:00pm">09:00 pm</Option>
-                  </Select>
-                  <small>to</small>
-                  <Select
-                  // defaultValue={monEndDate}
-                    placeholder="Select end time"
-                    style={{
-                      width: 200,
-                    }}
-                    onChange={handleMonEndChange}
-                  >
-                    <Option value="08:00am">08:00 am</Option>
-                    <Option value="09:00am">09:00 am</Option>
-                    <Option value="10:00am">10:00 am</Option>
-                    <Option value="11:00am">11:00 am</Option>
-                    <Option value="12:00pm">12:00 pm</Option>
-                    <Option value="01:00pm">01:00 pm</Option>
-                    <Option value="02:00pm">02:00 pm</Option>
-                    <Option value="03:00pm">03:00 pm</Option>
-                    <Option value="04:00pm">04:00 pm</Option>
-                    <Option value="05:00pm">05:00 pm</Option>
-                    <Option value="06:00pm">06:00 pm</Option>
-                    <Option value="07:00pm">07:00 pm</Option>
-                    <Option value="08:00pm">08:00 pm</Option>
-                    <Option value="09:00pm">09:00 pm</Option>
-                  </Select>
-                  </div>
-                  }
-                  {
-                    none ?  <button type="button" onClick={setToSetTime}>Set time range</button> :  <button type="button" onClick={setToNone}>Set to None</button>
-                  }
-                 
+                  {none ? (
+                    <h3>No time added for this day of the week</h3>
+                  ) : (
+                    <div>
+                      <Select
+                        // defaultValue={monStartdate}
+                        placeholder="Select start time"
+                        style={{
+                          width: 200,
+                        }}
+                        onChange={handleMonStartChange}
+                      >
+                        <Option value="08:00am">08:00 am</Option>
+                        <Option value="09:00am">09:00 am</Option>
+                        <Option value="10:00am">10:00 am</Option>
+                        <Option value="11:00am">11:00 am</Option>
+                        <Option value="12:00pm">12:00 pm</Option>
+                        <Option value="01:00pm">01:00 pm</Option>
+                        <Option value="02:00pm">02:00 pm</Option>
+                        <Option value="03:00pm">03:00 pm</Option>
+                        <Option value="04:00pm">04:00 pm</Option>
+                        <Option value="05:00pm">05:00 pm</Option>
+                        <Option value="06:00pm">06:00 pm</Option>
+                        <Option value="07:00pm">07:00 pm</Option>
+                        <Option value="08:00pm">08:00 pm</Option>
+                        <Option value="09:00pm">09:00 pm</Option>
+                      </Select>
+                      <small>to</small>
+                      <Select
+                        // defaultValue={monEndDate}
+                        placeholder="Select end time"
+                        style={{
+                          width: 200,
+                        }}
+                        onChange={handleMonEndChange}
+                      >
+                        <Option value="08:00am">08:00 am</Option>
+                        <Option value="09:00am">09:00 am</Option>
+                        <Option value="10:00am">10:00 am</Option>
+                        <Option value="11:00am">11:00 am</Option>
+                        <Option value="12:00pm">12:00 pm</Option>
+                        <Option value="01:00pm">01:00 pm</Option>
+                        <Option value="02:00pm">02:00 pm</Option>
+                        <Option value="03:00pm">03:00 pm</Option>
+                        <Option value="04:00pm">04:00 pm</Option>
+                        <Option value="05:00pm">05:00 pm</Option>
+                        <Option value="06:00pm">06:00 pm</Option>
+                        <Option value="07:00pm">07:00 pm</Option>
+                        <Option value="08:00pm">08:00 pm</Option>
+                        <Option value="09:00pm">09:00 pm</Option>
+                      </Select>
+                    </div>
+                  )}
+                  {none ? (
+                    <button type="button" onClick={setToSetTime}>
+                      Set time range
+                    </button>
+                  ) : (
+                    <button type="button" onClick={setToNone}>
+                      Set to None
+                    </button>
+                  )}
                 </div>
-
                 <div>
                   <button type="button" onClick={handleUpdateTime}>
                     Update
